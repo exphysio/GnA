@@ -1,0 +1,2541 @@
+<!DOCTYPE html>
+<html lang="en" data-dark="false">
+  <script>
+  // 우클릭(컨텍스트 메뉴) 막기
+  document.addEventListener("contextmenu", (e) => e.preventDefault(), { capture: true });
+
+  // 이미지 드래그/드롭 저장 방지
+  document.addEventListener("dragstart", (e) => {
+    if (e.target.tagName === "IMG") e.preventDefault();
+  }, { capture: true });
+
+  // 일반적인 단축키(Ctrl/Cmd+S, U, P, F12 등) 약한 차단
+  document.addEventListener("keydown", (e) => {
+    const k = e.key.toLowerCase();
+    const mod = e.ctrlKey || e.metaKey;
+    if (
+      (mod && ["s","u","p"].includes(k)) || // 저장, 소스보기, 인쇄
+      (e.shiftKey && mod && ["i","c","j"].includes(k)) || // 개발자도구 계열
+      k === "f12"
+    ) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+  }, { capture: true });
+</script>
+
+
+<head>
+  <!--
+  put your analytics (e.g. Google Analytics) tracking code here
+-->
+
+  <!--
+  put your search engine verification (e.g. Google Search Console) tag here
+-->
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Team | Growth and Aging Lab</title>
+
+<link rel="icon" href="">
+
+<meta name="title" content="Team">
+<meta name="description" content="Exercise Physiology. Research on exercise physiology and aging.">
+
+<meta property="og:title" content="Team">
+<meta property="og:site_title" content="Growth and Aging Lab">
+<meta property="og:description" content="Exercise Physiology. Research on exercise physiology and aging.">
+<meta property="og:url" content="http://localhost:4000">
+<meta property="og:image" content="/images/share.png">
+<meta property="og:locale" content="en_US">
+
+<meta property="twitter:title" content="Team">
+<meta property="twitter:description" content="Exercise Physiology. Research on exercise physiology and aging.">
+<meta property="twitter:url" content="http://localhost:4000">
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="/images/share.png">
+
+
+  <meta property="og:type" content="website">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "WebSite",
+    
+    "name": "Team",
+    "description": "Exercise Physiology. Research on exercise physiology and aging.",
+    "headline": "Team",
+    "publisher": {
+      "@type": "Organization",
+      "logo": { "@type": "ImageObject", "url": "" }
+    },
+    "url": "http://localhost:4000"
+  }
+</script>
+
+<link rel="alternate" type="application/rss+xml" href="http://localhost:4000/feed.xml">
+
+  <!-- Google Fonts -->
+<!-- automatically get url from fonts used in theme file -->
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="---
+---
+
+// colors
+[data-dark="false"] {
+  --primary: #0795d9;
+  --secondary: #7dd3fc;
+  --text: #000000;
+  --background: #ffffff;
+  --background-alt: #fafafa;
+  --light-gray: #e0e0e0;
+  --gray: #808080;
+  --dark-gray: #404040;
+  --overlay: #00000020;
+}
+[data-dark="true"] {
+  --primary: #0795d9;
+  --secondary: #075985;
+  --text: #ffffff;
+  --background: #181818;
+  --background-alt: #1c1c1c;
+  --light-gray: #404040;
+  --gray: #808080;
+  --dark-gray: #b0b0b0;
+  --overlay: #ffffff10;
+}
+
+:root {
+  // font families
+  --title: "Barlow", sans-serif;
+  --heading: "Barlow", sans-serif;
+  --body: "Barlow", sans-serif;
+  --code: "Roboto Mono", monospace;
+
+  // font sizes
+  --large: 1.2rem;
+  --xl: 1.4rem;
+  --xxl: 1.6rem;
+
+  // font weights
+  --thin: 200;
+  --regular: 400;
+  --semi-bold: 500;
+  --bold: 600;
+
+  // text line spacing
+  --spacing: 2;
+  --compact: 1.5;
+
+  // effects
+  --rounded: 3px;
+  --shadow: 0 0 10px 0 var(--overlay);
+  --transition: 0.2s ease;
+}
+" rel="stylesheet">
+
+<!-- Font Awesome icons (load asynchronously due to size) -->
+
+<link
+  href="https://use.fontawesome.com/releases/v6.7.0/css/all.css"
+  rel="stylesheet"
+  media="none"
+  onload="this.removeAttribute('media'); this.onload = null;"
+/>
+<noscript>
+  <link href="https://use.fontawesome.com/releases/v6.7.0/css/all.css" rel="stylesheet">
+</noscript>
+
+  <!-- third party styles -->
+<!-- https://stylishthemes.github.io/Syntax-Themes/pygments/ -->
+<link 
+  href="https://cdn.jsdelivr.net/gh/StylishThemes/Syntax-Themes/pygments/css-github/pygments-tomorrow-night-eighties.css"
+  rel="stylesheet"
+/>
+
+<!-- include all sass in styles folder -->
+
+
+  
+    <link
+      href="/_styles/-theme.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/alert.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/all.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/anchor.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/background.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/body.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/bold.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/button.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/card.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/checkbox.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/citation.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/code.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/cols.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/dark-toggle.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/details.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/feature.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/figure.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/float.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/font.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/footer.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/form.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/grid.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/header.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/heading.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/highlight.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/icon.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/image.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/link.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/list.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/main.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/mobile.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/paragraph.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/portrait.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/post-excerpt.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/post-info.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/post-nav.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/quote.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/rule.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/search-box.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/search-info.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/section.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/table.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/tags.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/textbox.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/tooltip.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/util.css"
+      rel="stylesheet"
+    />
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<!-- include all css in styles folder -->
+
+
+
+<!-- === Image Guard (safe, no DOM wrap) =================== -->
+<style>
+  /* figure/include에서 렌더되는 이미지 컨테이너에 붙일 클래스 */
+  .protect-figure,
+  .protect-figure > a {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* 투명 오버레이: 클릭/롱탭/드래그 이벤트를 흡수 */
+  .protect-figure::after,
+  .protect-figure > a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: transparent;
+    pointer-events: auto;   /* 오버레이가 이벤트를 받도록 */
+  }
+
+  /* 드래그 방지(시각은 그대로) */
+  .protect-figure img {
+    -webkit-user-drag: none;
+    user-drag: none;
+  }
+
+  /* (옵션) 호버 배지 */
+  .protect-figure .protect-badge{
+    position:absolute; right:6px; bottom:6px;
+    padding:2px 6px; font-size:.72rem;
+    background:rgba(0,0,0,.55); color:#fff; border-radius:6px;
+    user-select:none; pointer-events:none;
+  }
+</style>
+
+  <!-- third party scripts -->
+<script src="https://unpkg.com/@popperjs/core@2" defer></script>
+<script src="https://unpkg.com/tippy.js@6" defer></script>
+<script src="https://unpkg.com/mark.js@8" defer></script>
+
+<!-- include all js in scripts folder -->
+
+
+  <script src="/_scripts/anchors.js"></script>
+
+  <script src="/_scripts/dark-mode.js"></script>
+
+  <script src="/_scripts/fetch-tags.js"></script>
+
+  <script src="/_scripts/search.js"></script>
+
+  <script src="/_scripts/site-search.js"></script>
+
+  <script src="/_scripts/table-wrap.js"></script>
+
+  <script src="/_scripts/tooltip.js"></script>
+
+
+<!-- third party scripts -->
+<script src="https://unpkg.com/@popperjs/core@2" defer></script>
+<script src="https://unpkg.com/tippy.js@6" defer></script>
+<script src="https://unpkg.com/mark.js@8" defer></script>
+
+<!-- include all js in scripts folder -->
+
+
+  <script src="/_scripts/anchors.js"></script>
+
+  <script src="/_scripts/dark-mode.js"></script>
+
+  <script src="/_scripts/fetch-tags.js"></script>
+
+  <script src="/_scripts/search.js"></script>
+
+  <script src="/_scripts/site-search.js"></script>
+
+  <script src="/_scripts/table-wrap.js"></script>
+
+  <script src="/_scripts/tooltip.js"></script>
+
+
+
+</head>
+
+  <body>
+    
+
+
+
+
+
+<header
+  class="background"
+  style="--image: url('/images/background2.jpg')"
+  
+  
+>
+
+  <!-- 로고/홈 -->
+  <a href="/" class="home">
+    
+      <span class="logo">
+        
+          <img src="/images/logo2.png" alt="logo">
+        
+      </span>
+    
+    
+      <span class="title-text" data-tooltip="Home">
+        
+          <span class="title">Growth and Aging Lab</span>
+        
+        
+          <span class="subtitle">Exercise Physiology</span>
+        
+      </span>
+    
+  </a>
+
+  <input class="nav-toggle" type="checkbox" aria-label="show/hide nav">
+
+  <!-- ===== Navigation ===== -->
+  
+  
+  <nav>
+    
+      
+        
+        
+
+        <a
+          href="/about/"
+          data-tooltip="About lab, research area, and facility"
+          class=""
+        >
+          About
+        </a>
+      
+    
+      
+        
+        
+
+        <a
+          href="/research/"
+          data-tooltip="Papers (International, Domestic), Thesis (Ph.D., M.S.)"
+          class=""
+        >
+          PUBLICATIONS
+        </a>
+      
+    
+      
+        
+        
+
+        <a
+          href="/projects/"
+          data-tooltip="Projects (Ongoing, Completed)"
+          class=""
+        >
+          Projects
+        </a>
+      
+    
+      
+        
+        
+
+        <a
+          href="/team/"
+          data-tooltip="About our team"
+          class="active"
+        >
+          Team
+        </a>
+      
+    
+      
+        
+        
+
+        <a
+          href="/blog/"
+          data-tooltip="Our story"
+          class=""
+        >
+          Blog
+        </a>
+      
+    
+  </nav>
+
+  <!-- ===== Active 스타일 (라이트/다크 공통) ===== -->
+  <style>
+    header nav a {
+      position: relative;
+      transition: color .2s ease, text-shadow .2s ease, border-color .2s ease;
+    }
+    /* 기본 active (라이트) */
+    header nav a.active {
+      color: #111 !important;
+      border-bottom: 2px solid currentColor;
+      text-shadow: 0 0 6px rgba(0,0,0,.12);
+    }
+    /* 다크모드 active */
+    html[data-dark="true"] header nav a.active {
+      color: #fff !important;
+      border-bottom: 2px solid rgba(255,255,255,.9);
+      text-shadow: 0 0 6px rgba(255,255,255,.7), 0 0 12px rgba(0,123,255,.5);
+    }
+    /* 호버 시 살짝 강조 (active/비active 공통) */
+    header nav a:hover {
+      text-shadow: 0 0 6px rgba(0,0,0,.12);
+    }
+    html[data-dark="true"] header nav a:hover {
+      text-shadow: 0 0 6px rgba(255,255,255,.5);
+    }
+    /* 키보드 포커스 접근성 */
+    header nav a:focus-visible {
+      outline: 2px solid #0a84ff;
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+    html[data-dark="true"] header nav a:focus-visible {
+      outline-color: #82b7ff;
+    }
+  </style>
+</header>
+
+    <main>
+      <!--
+  modify main content of page:
+  - add section breaks
+  - attach section properties
+  - filter out blank sections
+-->
+
+
+
+
+
+
+  
+  
+  
+
+  <section
+    class="background"
+    data-size="page"
+    
+    
+  >
+    <style>
+  /* ===== 전역 값 (숫자만 바꾸면 전체 반영) ===== */
+  :root{
+    --grid-max: 1080px;
+    --card-min: 260px;
+    --card-gap: 28px;          /* 카드-카드 간격 */
+    --card-pad: 18px;          /* 카드 내부 패딩 */
+    --card-radius: 12px;
+    --card-shadow: 0 2px 10px rgba(0,0,0,.06);
+
+    --photo-w: 150px;          /* 사진 가로폭(세로는 자동 3:4) */
+    --title-size: 1.1rem;      /* 이름 글자 크기 */
+    --text-size: .97rem;       /* 본문 글자 크기 */
+
+    --title-color: #1c283a;
+    --accent: #9b3607;         /* 라벨 색상 */
+
+    /* ▼ 간격/줄간격 조절 포인트 */
+    --edu-to-ri-gap: 12px;     /* Education 섹터 ↔ Research 섹터 사이 여백 */
+    --ri-gap: 4px;             /* Research 라벨 ↔ 목록 사이 여백(아주 작게 붙임) */
+    --li-gap: 2px;             /* 불릿 항목 사이 여백(위·아래) */
+    --li-line: 1.4;            /* 불릿 항목 줄간격 */
+  }
+
+  /* ===== 카드 그리드 ===== */
+  .team-cite{
+    display:grid !important;
+    grid-template-columns:repeat(auto-fit, minmax(var(--card-min), 1fr));
+    gap:var(--card-gap);
+    max-width:var(--grid-max);
+    margin:0 auto;
+  }
+
+  /* ===== 카드 컨테이너 ===== */
+  .team-cite .citation-container{
+    border:1px solid #eee;
+    box-shadow:var(--card-shadow);
+    border-radius:var(--card-radius);
+    padding:var(--card-pad);
+    background:#fff;
+    text-align:center;
+  }
+
+  /* ===== 카드 내부 스택 ===== */
+  .team-cite .citation{
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:center !important;
+    gap:12px;
+    padding:0; margin:0 !important; border:0; box-shadow:none;
+    text-align:center;
+  }
+
+  /* ===== 사진 (3:4) ===== */
+  .team-cite .citation-image{
+    width:var(--photo-w) !important;
+    height:calc(var(--photo-w) * 4 / 3) !important;
+    display:grid; place-items:center;
+    overflow:hidden; border-radius:10px;
+    background:#f6f7f9;
+    flex:0 0 auto !important;
+  }
+  .team-cite .citation-image img{ width:100%; height:100%; object-fit:cover; display:block !important; }
+
+  /* ===== 이름 ===== */
+  .team-cite .citation-title{
+    font-size:var(--title-size);
+    font-weight:700;
+    color:var(--title-color) !important;
+    margin:6px 0 2px 0 !important;
+    line-height:1.25;
+    text-align:center;
+  }
+
+  /* ===== description(파서 적용 전 폴백) ===== */
+  .team-cite .citation-description{
+    font-size:var(--text-size);
+    color:#3a3a3a !important;
+    line-height:1.6;
+    margin:0 !important;
+    width:100%;
+    text-align:center;
+  }
+
+  /* ===== 라벨 ===== */
+  .team-cite .label{
+    font-weight:700;
+    color:var(--accent);
+    text-align:center;
+    line-height:1.25;
+  }
+
+  /* ===== 섹터(블록) 여백 규칙 ===== */
+  .team-cite .edu-block .label{ margin:2px 0 0 0; }   /* Education 라벨 ↔ 내용: 붙임 */
+  .team-cite .edu-block .edu-text{ margin:0; }
+
+  .team-cite .ri-block{ margin-top: var(--edu-to-ri-gap); }  /* 섹터 간(교육→리서치) 간격 */
+  .team-cite .ri-block .label{ margin:0; }                   /* 라벨 자체 여백 제거 */
+
+  /* ===== Research interest 목록(불릿) =====
+     - 중앙 배치 유지하면서 항목은 좌정렬 → 줄바꿈도 글머리표 기준으로 정렬
+     - 라벨과 목록 사이를 ri-gap 만큼만 띄움(아주 촘촘) */
+  .team-cite ul.interest{
+    list-style: disc outside;
+    margin: var(--ri-gap) 0 0 0;
+    padding: 0 0 0 1.1em;     /* 불릿 들여쓰기 */
+    display: inline-block;    /* 블록 자체는 가운데 */
+    text-align: left;         /* 항목은 좌정렬(줄바꿈 정렬 예쁘게) */
+  }
+  .team-cite ul.interest li{
+    margin: var(--li-gap) 0;
+    line-height: var(--li-line);
+  }
+
+  /* ===== 다크모드 ===== */
+  html[data-dark="true"] .team-cite .citation-container{ background:#1b1b1b; border-color:rgba(255,255,255,.15); box-shadow:none; }
+  html[data-dark="true"] .team-cite .citation-title{ color:#fff !important; }
+  html[data-dark="true"] .team-cite .citation-description{ color:#ddd !important; }
+  html[data-dark="true"] .team-cite .label,
+  html[data-dark="true"] .team-cite ul.interest{ color:#ddd !important; }
+
+  /* ===== 템플릿이 뿌리는 불필요 메타 숨김 ===== */
+  .team-cite .citation-details,
+  .team-cite .citation-meta,
+  .team-cite .citation-publisher,
+  .team-cite .citation-date,
+  .team-cite .citation-id,
+  .team-cite .citation-details .separator,
+  .team-cite .citation-details span:empty{ display:none !important; }
+  .team-cite .citation-description p:empty{ display:none !important; }
+
+  details{ border:none; background:none; box-shadow:none; padding:0; margin:0 0 1.25rem 0; }
+  summary{ border:none; background:none; padding:0; margin:0; }
+</style>
+
+<h2 style="font-weight:600; font-size:1.8rem; color:#333;">Current Students</h2>
+
+<!-- ✅ Ph.D. Students -->
+<details>
+  <summary style="cursor:pointer; font-weight:400; font-size:1.2rem;">Ph.D. Students</summary>
+  <div class="team-cite">
+    
+    
+      
+      
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a class="citation-image" aria-label="김무성 Moo-Sung, Kim">
+        <img src="/images/members/current/ph.d/%EA%B9%80%EB%AC%B4%EC%84%B1.png" alt="김무성 Moo-Sung, Kim" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a class="citation-title">
+        김무성 (Moo-Sung, Kim)
+      </a>
+      
+      
+
+      
+
+      
+        
+          <div class="citation-description">
+            Education: 2022.03.01 ~ Present<br />Research interest: Atelete Training, Knee cartilage
+
+          </div>
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+    
+      
+      
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a class="citation-image" aria-label="박태영 Tae-Young, Park">
+        <img src="/images/members/current/ph.d/%EB%B0%95%ED%83%9C%EC%98%81.png" alt="박태영 Tae-Young, Park" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a class="citation-title">
+        박태영 (Tae-Young, Park)
+      </a>
+      
+      
+
+      
+
+      
+        
+          <div class="citation-description">
+            Education: 2022.03.01 ~ Present<br />Research interest: Neuroscience
+
+          </div>
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+    
+      
+      
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a class="citation-image" aria-label="정형웅 Hyung-Ung, Jung">
+        <img src="/images/members/current/ph.d/%EC%A0%95%ED%98%95%EC%9B%85.png" alt="정형웅 Hyung-Ung, Jung" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a class="citation-title">
+        정형웅 (Hyung-Ung, Jung)
+      </a>
+      
+      
+
+      
+
+      
+        
+          <div class="citation-description">
+            Education: 2023.03.01 ~ Present<br />Research interest: Growth development, Artificial intelligence
+
+          </div>
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+    
+      
+      
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a class="citation-image" aria-label="박찬호 Chan-Ho, Park">
+        <img src="/images/members/current/ph.d/%EB%B0%95%EC%B0%AC%ED%98%B8.png" alt="박찬호 Chan-Ho, Park" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a class="citation-title">
+        박찬호 (Chan-Ho, Park)
+      </a>
+      
+      
+
+      
+
+      
+        
+          <div class="citation-description">
+            Education: 2024.03.01 ~ Present<br />Research interest: Performance Training, Training Load Monitoring
+
+          </div>
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+    
+      
+      
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a class="citation-image" aria-label="정민지 Min Ji, Jeong">
+        <img src="/images/members/current/ph.d/%EC%A0%95%EB%AF%BC%EC%A7%80.png" alt="정민지 Min Ji, Jeong" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a class="citation-title">
+        정민지 (Min Ji, Jeong)
+      </a>
+      
+      
+
+      
+
+      
+        
+          <div class="citation-description">
+            Education: 2024.09.01 ~ Present<br />
+
+          </div>
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+    
+  </div>
+</details>
+
+<!-- ✅ M.S. Students -->
+<details>
+  <summary style="cursor:pointer; font-weight:400; font-size:1.2rem;">M.S. Students</summary>
+  <div class="team-cite">
+    
+    
+      
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a class="citation-image" aria-label="김소진 So-Jin, Kim">
+        <img src="/images/members/Current/MS/%EA%B9%80%EC%86%8C%EC%A7%84.jpg" alt="김소진 So-Jin, Kim" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a class="citation-title">
+        김소진 (So-Jin, Kim)
+      </a>
+      
+      
+
+      
+
+      
+        
+          <div class="citation-description">
+            Education: 2024.03.01 ~ Present
+
+          </div>
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+    
+      
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a class="citation-image" aria-label="김재근 Jae Geun, Kim">
+        <img src="/images/members/Current/MS/%EA%B9%80%EC%9E%AC%EA%B7%BC.png" alt="김재근 Jae Geun, Kim" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a class="citation-title">
+        김재근 (Jae Geun, Kim)
+      </a>
+      
+      
+
+      
+
+      
+        
+          <div class="citation-description">
+            Education: 2024.03.01 ~ Present
+
+          </div>
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+    
+      
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a class="citation-image" aria-label="김지민 Ji-Min, Kim">
+        <img src="/images/members/Current/MS/%EA%B9%80%EC%A7%80%EB%AF%BC.png" alt="김지민 Ji-Min, Kim" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a class="citation-title">
+        김지민 (Ji-Min, Kim)
+      </a>
+      
+      
+
+      
+
+      
+        
+          <div class="citation-description">
+            Education: 2024.03.01 ~ Present
+
+          </div>
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+    
+      
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a class="citation-image" aria-label="노영빈 Young-Bin, Noh">
+        <img src="/images/members/Current/MS/%EB%85%B8%EC%98%81%EB%B9%88.png" alt="노영빈 Young-Bin, Noh" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a class="citation-title">
+        노영빈 (Young-Bin, Noh)
+      </a>
+      
+      
+
+      
+
+      
+        
+          <div class="citation-description">
+            Education: 2024.03.01 ~ Present
+
+          </div>
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+    
+      
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a class="citation-image" aria-label="모길연 Gil-Yeon, Mo">
+        <img src="/images/members/Current/MS/%EB%AA%A8%EA%B8%B8%EC%97%B0.png" alt="모길연 Gil-Yeon, Mo" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a class="citation-title">
+        모길연 (Gil-Yeon, Mo)
+      </a>
+      
+      
+
+      
+
+      
+        
+          <div class="citation-description">
+            Education: 2024.03.01 ~ Present
+
+          </div>
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+    
+      
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a class="citation-image" aria-label="안예진 Ye-Jin, An">
+        <img src="/images/members/Current/MS/%EC%95%88%EC%98%88%EC%A7%84.jpg" alt="안예진 Ye-Jin, An" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a class="citation-title">
+        안예진 (Ye-Jin, An)
+      </a>
+      
+      
+
+      
+
+      
+        
+          <div class="citation-description">
+            Education: 2024.03.01 ~ Present
+
+          </div>
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+    
+      
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a class="citation-image" aria-label="한지훈 Ji-Hoon, Han">
+        <img src="/images/members/Current/MS/%ED%95%9C%EC%A7%80%ED%9B%88.jpg" alt="한지훈 Ji-Hoon, Han" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a class="citation-title">
+        한지훈 (Ji-Hoon, Han)
+      </a>
+      
+      
+
+      
+
+      
+        
+          <div class="citation-description">
+            Education: 2024.03.01 ~ Present
+
+          </div>
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+    
+      
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a class="citation-image" aria-label="공태현 Tae-Hyun, Kong">
+        <img src="/images/members/Current/MS/%EA%B3%B5%ED%83%9C%ED%98%84.png" alt="공태현 Tae-Hyun, Kong" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a class="citation-title">
+        공태현 (Tae-Hyun, Kong)
+      </a>
+      
+      
+
+      
+
+      
+        
+          <div class="citation-description">
+            Education: 2024.09.01 ~ Present
+
+          </div>
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+    
+      
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a class="citation-image" aria-label="심채영 Chae-Young, Sim">
+        <img src="/images/members/Current/MS/%EC%8B%AC%EC%B1%84%EC%98%81.png" alt="심채영 Chae-Young, Sim" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a class="citation-title">
+        심채영 (Chae-Young, Sim)
+      </a>
+      
+      
+
+      
+
+      
+        
+          <div class="citation-description">
+            Education: 2024.09.01 ~ Present
+
+          </div>
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+    
+      
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a class="citation-image" aria-label="이연화 Yeon-Hwa, Lee">
+        <img src="/images/members/Current/MS/%EC%9D%B4%EC%97%B0%ED%99%94.png" alt="이연화 Yeon-Hwa, Lee" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a class="citation-title">
+        이연화 (Yeon-Hwa, Lee)
+      </a>
+      
+      
+
+      
+
+      
+        
+          <div class="citation-description">
+            Education: 2024.09.01 ~ Present
+
+          </div>
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+    
+      
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a class="citation-image" aria-label="김혜진 Hye-Jin, Kim">
+        <img src="/images/members/Current/MS/%EA%B9%80%ED%98%9C%EC%A7%84.jpg" alt="김혜진 Hye-Jin, Kim" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a class="citation-title">
+        김혜진 (Hye-Jin, Kim)
+      </a>
+      
+      
+
+      
+
+      
+        
+          <div class="citation-description">
+            Education: 2025.03.01 ~ Present
+
+          </div>
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+    
+      
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a class="citation-image" aria-label="노가을 Ga-Eul, Noh">
+        <img src="/images/members/Current/MS/%EB%85%B8%EA%B0%80%EC%9D%84.png" alt="노가을 Ga-Eul, Noh" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a class="citation-title">
+        노가을 (Ga-Eul, Noh)
+      </a>
+      
+      
+
+      
+
+      
+        
+          <div class="citation-description">
+            Education: 2025.03.01 ~ Present
+
+          </div>
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+    
+      
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a class="citation-image" aria-label="서지원 Ji-Won, Seo">
+        <img src="/images/members/Current/MS/%EC%84%9C%EC%A7%80%EC%9B%90.png" alt="서지원 Ji-Won, Seo" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a class="citation-title">
+        서지원 (Ji-Won, Seo)
+      </a>
+      
+      
+
+      
+
+      
+        
+          <div class="citation-description">
+            Education: 2025.03.01 ~ Present
+
+          </div>
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+    
+      
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a class="citation-image" aria-label="송지영 Ji-Young, Song">
+        <img src="/images/members/Current/MS/%EC%86%A1%EC%A7%80%EC%98%81.jpg" alt="송지영 Ji-Young, Song" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a class="citation-title">
+        송지영 (Ji-Young, Song)
+      </a>
+      
+      
+
+      
+
+      
+        
+          <div class="citation-description">
+            Education: 2025.03.01 ~ Present
+
+          </div>
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+    
+      
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a class="citation-image" aria-label="이남송 Nam Song, Lee">
+        <img src="/images/members/Current/MS/%EC%9D%B4%EB%82%A8%EC%86%A1.png" alt="이남송 Nam Song, Lee" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a class="citation-title">
+        이남송 (Nam Song, Lee)
+      </a>
+      
+      
+
+      
+
+      
+        
+          <div class="citation-description">
+            Education: 2025.03.01 ~ Present
+
+          </div>
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+    
+      
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a class="citation-image" aria-label="주용근 Yong-Geun, Ju">
+        <img src="/images/members/Current/MS/%EC%A3%BC%EC%9A%A9%EA%B7%BC.png" alt="주용근 Yong-Geun, Ju" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a class="citation-title">
+        주용근 (Yong-Geun, Ju)
+      </a>
+      
+      
+
+      
+
+      
+        
+          <div class="citation-description">
+            Education: 2025.03.01 ~ Present
+
+          </div>
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+    
+      
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a class="citation-image" aria-label="김수빈 Su-Been, Kim">
+        <img src="/images/members/Current/MS/%EA%B9%80%EC%88%98%EB%B9%88.jpg" alt="김수빈 Su-Been, Kim" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a class="citation-title">
+        김수빈 (Su-Been, Kim)
+      </a>
+      
+      
+
+      
+
+      
+        
+          <div class="citation-description">
+            Education: 2025.09.01 ~ Present
+
+          </div>
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+    
+      
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a class="citation-image" aria-label="백연정 Yeon-Jeong, Baek">
+        <img src="/images/members/Current/MS/%EB%B0%B1%EC%97%B0%EC%A0%95.png" alt="백연정 Yeon-Jeong, Baek" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a class="citation-title">
+        백연정 (Yeon-Jeong, Baek)
+      </a>
+      
+      
+
+      
+
+      
+        
+          <div class="citation-description">
+            Education: 2025.09.01 ~ Present
+
+          </div>
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+    
+  </div>
+</details>
+
+<h2 style="font-weight:600; font-size:1.8rem; color:#333;">Alumni</h2>
+
+<!-- ✅ Ph.D. Graduates -->
+<details>
+  <summary style="cursor:pointer; font-weight:400; font-size:1.2rem;">Ph.D. Graduates</summary>
+  <div class="team-cite">
+    
+    
+  </div>
+</details>
+
+<!-- ✅ M.S. Graduates -->
+<details>
+  <summary style="cursor:pointer; font-weight:400; font-size:1.2rem;">M.S. Students</summary>
+  <div class="team-cite">
+    
+    
+      
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a class="citation-image" aria-label="천요한 Yo-han, Cheon">
+        <img src="/images/members/Alumni/M.S/%EC%B2%9C%EC%9A%94%ED%95%9C.jpg" alt="천요한 Yo-han, Cheon" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a class="citation-title">
+        천요한 (Yo-han, Cheon)
+      </a>
+      
+      
+
+      
+
+      
+        
+          <div class="citation-description">
+            Education: 2020 ~ 2023
+
+          </div>
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+    
+      
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a class="citation-image" aria-label="하경현 Kyeong-Hyon, Ha">
+        <img src="/images/members/Alumni/M.S/%ED%95%98%EA%B2%BD%ED%98%84.jpg" alt="하경현 Kyeong-Hyon, Ha" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a class="citation-title">
+        하경현 (Kyeong-Hyon, Ha)
+      </a>
+      
+      
+
+      
+
+      
+        
+          <div class="citation-description">
+            Education: 2021 ~ 2023
+
+          </div>
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+    
+      
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a class="citation-image" aria-label="고현서 Hyun Seo, Ko">
+        <img src="/images/members/Alumni/M.S/%EA%B3%A0%ED%98%84%EC%84%9C.png" alt="고현서 Hyun Seo, Ko" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a class="citation-title">
+        고현서 (Hyun Seo, Ko)
+      </a>
+      
+      
+
+      
+
+      
+        
+          <div class="citation-description">
+            Education: 2021 ~ 2023
+
+          </div>
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+    
+      
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a class="citation-image" aria-label="김지율 Ji-Yul, Kim">
+        <img src="/images/members/Alumni/M.S/%EA%B9%80%EC%A7%80%EC%9C%A8.png" alt="김지율 Ji-Yul, Kim" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a class="citation-title">
+        김지율 (Ji-Yul, Kim)
+      </a>
+      
+      
+
+      
+
+      
+        
+          <div class="citation-description">
+            Education: 2022 ~ 2024
+
+          </div>
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+    
+      
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a class="citation-image" aria-label="박희란 Hee-Ran, Park">
+        <img src="/images/members/Alumni/M.S/%EB%B0%95%ED%9D%AC%EB%9E%80.png" alt="박희란 Hee-Ran, Park" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a class="citation-title">
+        박희란 (Hee-Ran, Park)
+      </a>
+      
+      
+
+      
+
+      
+        
+          <div class="citation-description">
+            Education: 2022 ~ 2024
+
+          </div>
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+    
+      
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a class="citation-image" aria-label="이수민 Soo-Min, Lee">
+        <img src="/images/members/Alumni/M.S/%EC%9D%B4%EC%88%98%EB%AF%BC.png" alt="이수민 Soo-Min, Lee" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a class="citation-title">
+        이수민 (Soo-Min, Lee)
+      </a>
+      
+      
+
+      
+
+      
+        
+          <div class="citation-description">
+            Education: 2022 ~ 2024
+
+          </div>
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+    
+      
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a class="citation-image" aria-label="전요한 Yo-Han, Chun">
+        <img src="/images/members/Alumni/M.S/%EC%A0%84%EC%9A%94%ED%95%9C.png" alt="전요한 Yo-Han, Chun" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a class="citation-title">
+        전요한 (Yo-Han, Chun)
+      </a>
+      
+      
+
+      
+
+      
+        
+          <div class="citation-description">
+            Education: 2022 ~ 2024
+
+          </div>
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+    
+      
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a class="citation-image" aria-label="곽준후 Jun Hoo, Kwak">
+        <img src="/images/members/Alumni/M.S/%EA%B3%BD%EC%A4%80%ED%9B%84.jpg" alt="곽준후 Jun Hoo, Kwak" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a class="citation-title">
+        곽준후 (Jun Hoo, Kwak)
+      </a>
+      
+      
+
+      
+
+      
+        
+          <div class="citation-description">
+            Education: 2023 ~ 2025
+
+          </div>
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+    
+      
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a class="citation-image" aria-label="김태진 Tae-Jin, Kim">
+        <img src="/images/members/Alumni/M.S/%EA%B9%80%ED%83%9C%EC%A7%84.png" alt="김태진 Tae-Jin, Kim" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a class="citation-title">
+        김태진 (Tae-Jin, Kim)
+      </a>
+      
+      
+
+      
+
+      
+        
+          <div class="citation-description">
+            Education: 2023 ~ 2025
+
+          </div>
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+    
+      
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a class="citation-image" aria-label="유희승 Hee-Seung, Yoo">
+        <img src="/images/members/Alumni/M.S/%EC%9C%A0%ED%9D%AC%EC%8A%B9.png" alt="유희승 Hee-Seung, Yoo" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a class="citation-title">
+        유희승 (Hee-Seung, Yoo)
+      </a>
+      
+      
+
+      
+
+      
+        
+          <div class="citation-description">
+            Education: 2023 ~ 2025
+
+          </div>
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+    
+      
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a class="citation-image" aria-label="정우성 Woo-Sung, Jung">
+        <img src="/images/members/Alumni/M.S/%EC%A0%95%EC%9A%B0%EC%84%B1.jpg" alt="정우성 Woo-Sung, Jung" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a class="citation-title">
+        정우성 (Woo-Sung, Jung)
+      </a>
+      
+      
+
+      
+
+      
+        
+          <div class="citation-description">
+            Education: 2023 ~ 2025
+
+          </div>
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+    
+  </div>
+</details>
+
+<script>
+/* =========================================================
+ * description 파서
+ * - Education: 라벨 + 일반 텍스트(불릿 X, 라벨과 붙임)
+ * - Research interest: 불릿(•) 목록(라벨과 붙임)
+ * - 두 섹터는 서로 떨어짐(edu→ri는 --edu-to-ri-gap)
+ * ========================================================= */
+(function(){
+  const nodes = document.querySelectorAll('.team-cite .citation-description');
+  nodes.forEach(el => {
+    const raw = el.innerHTML;
+    if (!raw) return;
+
+    const parts = raw.split(/<br\s*\/?>/i).map(s => s.trim()).filter(Boolean);
+    if (!parts.length) return;
+
+    const edu = [];
+    const ri  = [];
+    let mode = '';
+
+    parts.forEach(line => {
+      let m = line.match(/^Education\s*:?\s*(.*)$/i);
+      if (m){ mode = 'edu'; if (m[1]) edu.push(m[1]); return; }
+
+      m = line.match(/^Research\s*interest\s*:?\s*(.*)$/i);
+      if (m){
+        mode = 'ri';
+        if (m[1]) m[1].split(/\s*,\s*|\s*·\s*/).forEach(v => v && ri.push(v));
+        return;
+      }
+
+      if (mode === 'edu'){ edu.push(line); return; }
+      if (mode === 'ri'){
+        const segs = line.split(/\s*,\s*|\s*·\s*/).filter(Boolean);
+        ri.push(...(segs.length ? segs : [line]));
+      }
+    });
+
+    if (!edu.length && !ri.length) return;
+
+    const chunks = [];
+    if (edu.length){
+      chunks.push(
+        '<div class="edu-block">' +
+          '<div class="label">Education</div>' +
+          '<div class="edu-text">'+ edu.join('<br/>') +'</div>' +
+        '</div>'
+      );
+    }
+    if (ri.length){
+      chunks.push(
+        '<div class="ri-block">' +
+          '<div class="label">Research interest</div>' +
+          '<ul class="interest">' + ri.map(x => `<li>${x}</li>`).join('') + '</ul>' +
+        '</div>'
+      );
+    }
+    el.innerHTML = chunks.join('');
+  });
+})();
+</script>
+  </section>
+
+
+    </main>
+    
+
+
+<footer
+  class="background"
+  style="--image: url('/images/background2.jpg')"
+  
+  data-size="wide"
+>
+  <!--
+    <div>
+      Extra details like contact info or address
+    </div>
+  -->
+
+  <div>
+    
+      
+      
+      
+
+
+
+  <div class="button-wrapper">
+    <a
+      class="button"
+      href="/jhc@khu.ac.kr"
+      
+      data-style="bare"
+      
+      aria-label="button"
+    >
+      
+      
+    </a>
+  </div>
+
+
+    
+      
+      
+      
+
+
+
+  <div class="button-wrapper">
+    <a
+      class="button"
+      href="/0000-0002-3465-8965"
+      
+      data-style="bare"
+      
+      aria-label="button"
+    >
+      
+      
+    </a>
+  </div>
+
+
+    
+      
+      
+      
+
+
+
+  <div class="button-wrapper">
+    <a
+      class="button"
+      href="https://scholar.google.com/citations?user=qm1Ao-oAAAAJ&hl=ko&oi=ao"
+      
+      data-style="bare"
+      
+      aria-label="button"
+    >
+      
+      
+    </a>
+  </div>
+
+
+    
+      
+      
+      
+
+
+
+  <div class="button-wrapper">
+    <a
+      class="button"
+      href="/YourLabChannel"
+      
+      data-style="bare"
+      
+      aria-label="button"
+    >
+      
+      
+    </a>
+  </div>
+
+
+    
+  </div>
+
+  <!-- 푸터 정보 박스 -->
+  <div class="lab-footer-info" style="font-size:14px; color:#000000; text-align:center; line-height:1.4; margin:0; padding:5px 0;">
+    <p style="margin:2px 0;">
+      <strong>연구실명 :</strong> 성장 노화 연구실 
+      (<em>Growth and Aging Lab</em>) &nbsp;&nbsp; | &nbsp;&nbsp;
+      <strong>지도교수 :</strong> 정현철
+    </p>
+    <p style="margin:2px 0;">
+      <strong>주소 :</strong> (우)17104 경기도 용인시 기흥구 덕영대로 1732(서천동)  
+      경희대학교 국제캠퍼스 체육대학 114호
+    </p>
+    <p style="margin:2px 0; font-size:12px; color:#333333;">
+      COPYRIGHT © SINCE 2025 Growth and Aging Lab. ALL RIGHTS RESERVED.
+    </p>
+  </div>
+
+  <!-- 다크 모드 토글 -->
+  <input
+    type="checkbox"
+    class="dark-toggle"
+    data-tooltip="Dark mode"
+    aria-label="toggle dark mode"
+    oninput="onDarkToggleChange(event)"
+  >
+
+  <!-- 다크모드에서 푸터 글자만 흰색으로 -->
+  <style>
+    html[data-dark="true"] .lab-footer-info,
+    html[data-dark="true"] .lab-footer-info * {
+      color: #fff !important;
+    }
+  </style>
+</footer>
+
+  </body>
+</html>

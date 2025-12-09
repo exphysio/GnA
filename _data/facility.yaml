@@ -1,0 +1,136 @@
+- title: "Martin’s human body measuring kit"
+  subtitle: "(TTM, Mentone Educational Centre, Victoria, Australia)"
+  image: "/images/facility/martin.png"
+
+- title: "Skinfold caliper"
+  subtitle: "(Lange, Cambridge Scientific Industries Inc., Cambridge, MD, USA)"
+  image: "/images/facility/skinfold.jpg"
+
+- title: "Dual-energy X-ray absorptiometry"
+  subtitle: "(QDR-4500W, Hologic, Waltham, MA, USA)"
+  image: "/images/facility/dxa.png"
+
+- title: "Heart rate sensor"
+  subtitle: "(Polar H7, Polar Electro Oy, Kempele, Finland)"
+  image: "/images/facility/h7.jpg"
+
+- title: "Heart rate sensor"
+  subtitle: "(Polar H10, Polar Electro Oy, Kempele, Finland)"
+  image: "/images/facility/h10.png"
+
+- title: "ECG recorder"
+  subtitle: "(Actiwave Cardio, CamNtech Ltd., Cambridge, UK)"
+  image: "/images/facility/actiheart5.webp"
+
+- title: "Height meter"
+  subtitle: "(T.K.K. 11253, Takei, Niigata, Japan)"
+  image: "/images/facility/신장계.png"
+
+- title: "Weighing scale"
+  subtitle: "(Cas 150A, Cas Co. Ltd., Seoul, South Korea)"
+  image: "/images/facility/체중계.jpg"
+
+- title: "Sitting height meter"
+  subtitle: "(P-059240, Samhwa Measuring Instruments, Seoul, South Korea)"
+  image: "/images/facility/좌고계.jpg"
+
+- title: "Isokinetic dynamometer"
+  subtitle: "(Cybex Humac Norm Model 770, CSMi, Stoughton, MA, USA)"
+  image: "/images/facility/cybex.jpg"
+
+- title: "Automated PWV/ABI analyzer"
+  subtitle: "(VP-1000, Colin Co., Ltd., Komaki, Japan)"
+  image: "/images/facility/vp1000.jpg"
+
+- title: "Jump performance mat"
+  subtitle: "(TKK 5406 Jump-MD, Takei Scientific Instruments Co., Niigata, Japan)"
+  image: "/images/facility/jump md.jpg"
+
+- title: " Laser-based <br>wireless timing system"
+  subtitle: "(Sprint Timing, Brower Timing Systems, Salt Lake City, UT, USA)"
+  image: "/images/facility/timing gate.webp"
+
+- title: "Blood lactate analyzer"
+  subtitle: "(Accutrend Plus, Roche Diagnostics GmbH, Mannheim, Germany)"
+  image: "/images/facility/젖산측정기.jpg"
+
+- title: "Ultrasound linear probe"
+  subtitle: "(H10L, SonoMe, Seoul, South Korea)"
+  image: "/images/facility/ultrasound.png"
+
+- title: "Skeletal maturity analyzer"
+  subtitle: "(CORUS, Y.C Growth Well Co., Seoul, South Korea)"
+  image: "/images/facility/tw3.png"
+
+- title: "Cycle ergometer"
+  subtitle: "(Monark Ergomedic 894E, Monark, Varberg, Sweden)"
+  image: "/images/facility/894e.jpg"
+
+- title: "Cycle ergometer"
+  subtitle: "(Monark Ergomedic 828E, Monark, Varberg, Sweden)"
+  image: "/images/facility/828e.jpg"
+
+- title: "Glycohemoglobin analyzer"
+  subtitle: "(A1c Chek Express, BioHermes, Wuxi, China)"
+  image: "/images/facility/당화혈색소.png"
+
+- title: "Lancing device"
+  subtitle: "(CareLance, i-SENS Inc., Seoul, South Korea)"
+  image: "/images/facility/채혈기.webp"
+
+- title: "Digital jump performance mat"
+  subtitle: "(Plyomat Switch Mat 1.0, Plyomat, Lawrenceville, GA, USA)"
+  image: "/images/facility/Plyomat Portable System.webp"
+
+- title: "Functional Movement Screen"
+  subtitle: "(FMS Test Kit, Functional Movement Systems, Inc., Chatham, VA, USA)"
+  image: "/images/facility/FMS.jpg"
+
+- title: "Y Balance Test Kit"
+  subtitle: "(FMS Y Balance Test Kit, Functional Movement Systems, Inc., Chatham, VA, USA)"
+  image: "/images/facility/ybalance.jpg"
+
+- title: "Balance beam"
+  subtitle: ""
+  image: "/images/facility/balance beam.webp"
+
+- title: "Digital sphygmomanometer"
+  subtitle: "(Omron M3 HEM-7154-E, Omron Corporation, Kyoto, Japan)"
+  image: "/images/facility/자동혈압계.jpg"
+
+- title: "Grip strength tester"
+  subtitle: "(TKK 5401, Takei, Niigata, Japan)"
+  image: "/images/facility/악력측정기.jpg"
+
+- title: "Flexion tester"
+  subtitle: "(FT-7300, Donghwa Electronic, Seoul, South Korea)"
+  image: "/images/facility/체전굴계.webp"
+
+- title: "Arm ergometer"
+  subtitle: "Angio Ergometer Type 917900, Lode B.V. Medical Technology, Groningen, Netherlands"
+  image: "/images/facility/arm ergometer.webp"
+
+- title: "Accelerometer"
+  subtitle: "(ActiGraph wGT3X-BT, ActiGraph LLC, Pensacola, FL, USA)"
+  image: "/images/facility/액티그래프.jpg"
+
+- title: "Lipid profile analyzer"
+  subtitle: "(CardioChek® PA, PTS Diagnostics, Indianapolis, IN, USA)"
+  image: "/images/facility/혈중지질.png"
+
+- title: "Glucose meter"
+  subtitle: "(CareSens N, i-SENS Inc., Seoul, South Korea)"
+  image: "/images/facility/공복혈당.jpg"
+
+- title: "HRV analysis software"
+  subtitle: "(Kubios HRV Premium version 3.4.2; Kubios Oy, Kuopio, Finland)"
+  image: "/images/facility/Kubios HRV Premium.webp"
+
+- title: "Pressotherapy device"
+  subtitle: "(Reboots One, Reboots GmbH, Munich, Germany)"
+  image: "/images/facility/Reboots On.webp"
+
+- title: "Lancing device"
+  subtitle: "(Accu-Chek Softclix, Roche Diagnostics GmbH, Mannheim, Germany)"
+  image: "/images/facility/Accu-Chek Softclix.png"
+

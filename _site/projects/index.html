@@ -1,0 +1,1656 @@
+<!DOCTYPE html>
+<html lang="en" data-dark="false">
+  <script>
+  // 우클릭(컨텍스트 메뉴) 막기
+  document.addEventListener("contextmenu", (e) => e.preventDefault(), { capture: true });
+
+  // 이미지 드래그/드롭 저장 방지
+  document.addEventListener("dragstart", (e) => {
+    if (e.target.tagName === "IMG") e.preventDefault();
+  }, { capture: true });
+
+  // 일반적인 단축키(Ctrl/Cmd+S, U, P, F12 등) 약한 차단
+  document.addEventListener("keydown", (e) => {
+    const k = e.key.toLowerCase();
+    const mod = e.ctrlKey || e.metaKey;
+    if (
+      (mod && ["s","u","p"].includes(k)) || // 저장, 소스보기, 인쇄
+      (e.shiftKey && mod && ["i","c","j"].includes(k)) || // 개발자도구 계열
+      k === "f12"
+    ) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+  }, { capture: true });
+</script>
+
+
+<head>
+  <!--
+  put your analytics (e.g. Google Analytics) tracking code here
+-->
+
+  <!--
+  put your search engine verification (e.g. Google Search Console) tag here
+-->
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Projects | Growth and Aging Lab</title>
+
+<link rel="icon" href="">
+
+<meta name="title" content="Projects">
+<meta name="description" content="Exercise Physiology. Research on exercise physiology and aging.">
+
+<meta property="og:title" content="Projects">
+<meta property="og:site_title" content="Growth and Aging Lab">
+<meta property="og:description" content="Exercise Physiology. Research on exercise physiology and aging.">
+<meta property="og:url" content="http://localhost:4000">
+<meta property="og:image" content="/images/share.png">
+<meta property="og:locale" content="en_US">
+
+<meta property="twitter:title" content="Projects">
+<meta property="twitter:description" content="Exercise Physiology. Research on exercise physiology and aging.">
+<meta property="twitter:url" content="http://localhost:4000">
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="/images/share.png">
+
+
+  <meta property="og:type" content="website">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "WebSite",
+    
+    "name": "Projects",
+    "description": "Exercise Physiology. Research on exercise physiology and aging.",
+    "headline": "Projects",
+    "publisher": {
+      "@type": "Organization",
+      "logo": { "@type": "ImageObject", "url": "" }
+    },
+    "url": "http://localhost:4000"
+  }
+</script>
+
+<link rel="alternate" type="application/rss+xml" href="http://localhost:4000/feed.xml">
+
+  <!-- Google Fonts -->
+<!-- automatically get url from fonts used in theme file -->
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="---
+---
+
+// colors
+[data-dark="false"] {
+  --primary: #0795d9;
+  --secondary: #7dd3fc;
+  --text: #000000;
+  --background: #ffffff;
+  --background-alt: #fafafa;
+  --light-gray: #e0e0e0;
+  --gray: #808080;
+  --dark-gray: #404040;
+  --overlay: #00000020;
+}
+[data-dark="true"] {
+  --primary: #0795d9;
+  --secondary: #075985;
+  --text: #ffffff;
+  --background: #181818;
+  --background-alt: #1c1c1c;
+  --light-gray: #404040;
+  --gray: #808080;
+  --dark-gray: #b0b0b0;
+  --overlay: #ffffff10;
+}
+
+:root {
+  // font families
+  --title: "Barlow", sans-serif;
+  --heading: "Barlow", sans-serif;
+  --body: "Barlow", sans-serif;
+  --code: "Roboto Mono", monospace;
+
+  // font sizes
+  --large: 1.2rem;
+  --xl: 1.4rem;
+  --xxl: 1.6rem;
+
+  // font weights
+  --thin: 200;
+  --regular: 400;
+  --semi-bold: 500;
+  --bold: 600;
+
+  // text line spacing
+  --spacing: 2;
+  --compact: 1.5;
+
+  // effects
+  --rounded: 3px;
+  --shadow: 0 0 10px 0 var(--overlay);
+  --transition: 0.2s ease;
+}
+" rel="stylesheet">
+
+<!-- Font Awesome icons (load asynchronously due to size) -->
+
+<link
+  href="https://use.fontawesome.com/releases/v6.7.0/css/all.css"
+  rel="stylesheet"
+  media="none"
+  onload="this.removeAttribute('media'); this.onload = null;"
+/>
+<noscript>
+  <link href="https://use.fontawesome.com/releases/v6.7.0/css/all.css" rel="stylesheet">
+</noscript>
+
+  <!-- third party styles -->
+<!-- https://stylishthemes.github.io/Syntax-Themes/pygments/ -->
+<link 
+  href="https://cdn.jsdelivr.net/gh/StylishThemes/Syntax-Themes/pygments/css-github/pygments-tomorrow-night-eighties.css"
+  rel="stylesheet"
+/>
+
+<!-- include all sass in styles folder -->
+
+
+  
+    <link
+      href="/_styles/-theme.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/alert.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/all.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/anchor.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/background.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/body.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/bold.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/button.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/card.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/checkbox.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/citation.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/code.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/cols.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/dark-toggle.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/details.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/feature.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/figure.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/float.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/font.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/footer.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/form.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/grid.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/header.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/heading.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/highlight.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/icon.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/image.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/link.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/list.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/main.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/mobile.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/paragraph.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/portrait.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/post-excerpt.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/post-info.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/post-nav.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/quote.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/rule.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/search-box.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/search-info.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/section.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/table.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/tags.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/textbox.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/tooltip.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/util.css"
+      rel="stylesheet"
+    />
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<!-- include all css in styles folder -->
+
+
+
+<!-- === Image Guard (safe, no DOM wrap) =================== -->
+<style>
+  /* figure/include에서 렌더되는 이미지 컨테이너에 붙일 클래스 */
+  .protect-figure,
+  .protect-figure > a {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* 투명 오버레이: 클릭/롱탭/드래그 이벤트를 흡수 */
+  .protect-figure::after,
+  .protect-figure > a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: transparent;
+    pointer-events: auto;   /* 오버레이가 이벤트를 받도록 */
+  }
+
+  /* 드래그 방지(시각은 그대로) */
+  .protect-figure img {
+    -webkit-user-drag: none;
+    user-drag: none;
+  }
+
+  /* (옵션) 호버 배지 */
+  .protect-figure .protect-badge{
+    position:absolute; right:6px; bottom:6px;
+    padding:2px 6px; font-size:.72rem;
+    background:rgba(0,0,0,.55); color:#fff; border-radius:6px;
+    user-select:none; pointer-events:none;
+  }
+</style>
+
+  <!-- third party scripts -->
+<script src="https://unpkg.com/@popperjs/core@2" defer></script>
+<script src="https://unpkg.com/tippy.js@6" defer></script>
+<script src="https://unpkg.com/mark.js@8" defer></script>
+
+<!-- include all js in scripts folder -->
+
+
+  <script src="/_scripts/anchors.js"></script>
+
+  <script src="/_scripts/dark-mode.js"></script>
+
+  <script src="/_scripts/fetch-tags.js"></script>
+
+  <script src="/_scripts/search.js"></script>
+
+  <script src="/_scripts/site-search.js"></script>
+
+  <script src="/_scripts/table-wrap.js"></script>
+
+  <script src="/_scripts/tooltip.js"></script>
+
+
+<!-- third party scripts -->
+<script src="https://unpkg.com/@popperjs/core@2" defer></script>
+<script src="https://unpkg.com/tippy.js@6" defer></script>
+<script src="https://unpkg.com/mark.js@8" defer></script>
+
+<!-- include all js in scripts folder -->
+
+
+  <script src="/_scripts/anchors.js"></script>
+
+  <script src="/_scripts/dark-mode.js"></script>
+
+  <script src="/_scripts/fetch-tags.js"></script>
+
+  <script src="/_scripts/search.js"></script>
+
+  <script src="/_scripts/site-search.js"></script>
+
+  <script src="/_scripts/table-wrap.js"></script>
+
+  <script src="/_scripts/tooltip.js"></script>
+
+
+
+</head>
+
+  <body>
+    
+
+
+
+
+
+<header
+  class="background"
+  style="--image: url('/images/background2.jpg')"
+  
+  
+>
+
+  <!-- 로고/홈 -->
+  <a href="/" class="home">
+    
+      <span class="logo">
+        
+          <img src="/images/logo2.png" alt="logo">
+        
+      </span>
+    
+    
+      <span class="title-text" data-tooltip="Home">
+        
+          <span class="title">Growth and Aging Lab</span>
+        
+        
+          <span class="subtitle">Exercise Physiology</span>
+        
+      </span>
+    
+  </a>
+
+  <input class="nav-toggle" type="checkbox" aria-label="show/hide nav">
+
+  <!-- ===== Navigation ===== -->
+  
+  
+  <nav>
+    
+      
+        
+        
+
+        <a
+          href="/about/"
+          data-tooltip="About lab, research area, and facility"
+          class=""
+        >
+          About
+        </a>
+      
+    
+      
+        
+        
+
+        <a
+          href="/research/"
+          data-tooltip="Papers (International, Domestic), Thesis (Ph.D., M.S.)"
+          class=""
+        >
+          PUBLICATIONS
+        </a>
+      
+    
+      
+        
+        
+
+        <a
+          href="/projects/"
+          data-tooltip="Projects (Ongoing, Completed)"
+          class="active"
+        >
+          Projects
+        </a>
+      
+    
+      
+        
+        
+
+        <a
+          href="/team/"
+          data-tooltip="About our team"
+          class=""
+        >
+          Team
+        </a>
+      
+    
+      
+        
+        
+
+        <a
+          href="/blog/"
+          data-tooltip="Our story"
+          class=""
+        >
+          Blog
+        </a>
+      
+    
+  </nav>
+
+  <!-- ===== Active 스타일 (라이트/다크 공통) ===== -->
+  <style>
+    header nav a {
+      position: relative;
+      transition: color .2s ease, text-shadow .2s ease, border-color .2s ease;
+    }
+    /* 기본 active (라이트) */
+    header nav a.active {
+      color: #111 !important;
+      border-bottom: 2px solid currentColor;
+      text-shadow: 0 0 6px rgba(0,0,0,.12);
+    }
+    /* 다크모드 active */
+    html[data-dark="true"] header nav a.active {
+      color: #fff !important;
+      border-bottom: 2px solid rgba(255,255,255,.9);
+      text-shadow: 0 0 6px rgba(255,255,255,.7), 0 0 12px rgba(0,123,255,.5);
+    }
+    /* 호버 시 살짝 강조 (active/비active 공통) */
+    header nav a:hover {
+      text-shadow: 0 0 6px rgba(0,0,0,.12);
+    }
+    html[data-dark="true"] header nav a:hover {
+      text-shadow: 0 0 6px rgba(255,255,255,.5);
+    }
+    /* 키보드 포커스 접근성 */
+    header nav a:focus-visible {
+      outline: 2px solid #0a84ff;
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+    html[data-dark="true"] header nav a:focus-visible {
+      outline-color: #82b7ff;
+    }
+  </style>
+</header>
+
+    <main>
+      <!--
+  modify main content of page:
+  - add section breaks
+  - attach section properties
+  - filter out blank sections
+-->
+
+
+
+
+
+
+  
+  
+  
+
+  <section
+    class="background"
+    data-size="page"
+    
+    
+  >
+    <style>
+  /* ===== Projects Styles ===== */
+  .projects-wrap{max-width:1100px;margin:0 auto;padding:0 12px;}
+  .projects-wrap h2{
+    font-size:1.6rem;font-weight:700;margin:1.2rem 0 .6rem;color:#222;
+    text-align:center; /* 제목 중앙 정렬 */
+  }
+
+  /* 한 항목(로고 + 정보) */
+  .project-item{
+    display:grid;
+    grid-template-columns:260px 1fr; /* ← 로고(250px) 비율에 맞춰 컬럼 폭 조정 */
+    gap:24px; align-items:center;    /* ← 간격 약간 넓혀 가독성 향상 */
+    padding:22px 8px;
+    border-top:1px solid #eaeaea;
+    background:#fff;
+  }
+  .project-group .project-item:first-child{ border-top:0; }
+
+  /* 로고 영역 */
+  .project-logo{
+    width:240px; height:200px; /* 요청하신 크기 */
+    display:flex; align-items:center; justify-content:center;
+    border-radius:12px;
+  }
+
+  .project-logo img{
+    max-width:90%; max-height:90%;
+    object-fit:contain; object-position:center;
+    display:block;
+  }
+
+  .project-info{ text-align:center; }
+
+  /* 제목은 그대로 */
+  .project-title-ko{
+    font-size:1.05rem; font-weight:700; color:#111; margin:0 0 .25rem;
+    text-align:center;
+  }
+
+  /* 스폰서/역할 글자 크기 ↑ + 색 살짝 진하게 */
+  .project-meta,
+  .project-period {
+    font-size:1.05rem;  /* 글자 크기 */
+    color:#555;
+    line-height:1.6;
+    margin: 0 0 0px;   /* 아래쪽 간격 동일하게 */
+  }
+
+  /* 기간 글자 크기 ↑ + 색 살짝 진하게 */
+  .project-period{
+    font-size:1rem;     /* 기존 .88rem → 1rem */
+    color:#555;
+  }
+
+  /* 반응형 */
+  @media (max-width: 760px){
+    .project-item{
+      grid-template-columns: 1fr; text-align:center; gap:12px;
+      padding:18px 6px;
+    }
+    .project-logo{ width:120px; height:86px; margin:0 auto; }
+  }
+
+  /* ===== Dark Mode for Projects page ===== */
+  html[data-dark="true"] .projects-wrap h2 {
+    color: #eee !important;
+  }
+
+  html[data-dark="true"] .project-item {
+    background: #1e1e1e !important;
+    border-top: 1px solid #333 !important;
+  }
+
+  html[data-dark="true"] .project-logo {
+    background: #1e1e1e !important;
+  }
+
+  html[data-dark="true"] .project-title-ko {
+    color: #fff !important;
+  }
+
+  /* 스폰서/기간/역할 텍스트 색 */
+  html[data-dark="true"] .project-meta,
+  html[data-dark="true"] .project-period {
+    color: #bbb !important;
+  }
+</style>
+
+<div class="projects-wrap">
+
+  
+  
+  
+
+  
+    <section class="project-group">
+      <h2>Ongoing Projects</h2>
+      
+        
+        
+
+        <article class="project-item">
+          <div class="project-logo">
+            
+              <img src="/images/projects/%EA%B2%BD%ED%9D%AC%EB%8C%80%ED%95%99%EA%B5%90.jpg" alt="경희대학교" />
+            
+          </div>
+          <div class="project-info">
+            <h3 class="project-title-ko">[교비][4단계 BK21][Khreative U+ SDGs 대학원생 RA/GCR 연구과제]<br />초고령사회 진입에 따른 노인의 낙상예방 운동 프로그램 개발</h3>
+
+            
+              <div class="project-meta">경희대학교</div>
+            
+
+            
+              <div class="project-period">2025.03.01 – 2026.02.28</div>
+            
+
+            
+              <div class="project-meta">연구 책임자</div>
+            
+          </div>
+        </article>
+      
+        
+        
+
+        <article class="project-item">
+          <div class="project-logo">
+            
+              <img src="/images/projects/%ED%95%9C%EA%B5%AD%EC%97%B0%EA%B5%AC%EC%9E%AC%EB%8B%A8.jpg" alt="한국연구재단(통합)" />
+            
+          </div>
+          <div class="project-info">
+            <h3 class="project-title-ko">[인문신진] 청소년 태권도 선수의 부상 관리 시스템 구축 및 효용성 검증:<br /> 개인 맞춤형 ACWR 모델 개발(2/4)</h3>
+
+            
+              <div class="project-meta">한국연구재단(통합)</div>
+            
+
+            
+              <div class="project-period">2025.03.01 – 2026.02.28</div>
+            
+
+            
+              <div class="project-meta">연구 책임자</div>
+            
+          </div>
+        </article>
+      
+        
+        
+
+        <article class="project-item">
+          <div class="project-logo">
+            
+              <img src="/images/projects/%EA%B2%BD%ED%9D%AC%EB%8C%80%ED%95%99%EA%B5%90.jpg" alt="경희대학교" />
+            
+          </div>
+          <div class="project-info">
+            <h3 class="project-title-ko">[2025-1 융·복합 국제공동연구] 8주간의 현대무용이 <br />노인 여성의 낙상 위험 요인 및 근육 네트워크에 미치는 영향</h3>
+
+            
+              <div class="project-meta">경희대학교</div>
+            
+
+            
+              <div class="project-period">2025.03.01 – 2027.02.28</div>
+            
+
+            
+              <div class="project-meta">연구 책임자</div>
+            
+          </div>
+        </article>
+      
+        
+        
+
+        <article class="project-item">
+          <div class="project-logo">
+            
+              <img src="/images/projects/%EA%B2%BD%ED%9D%AC%EB%8C%80%ED%95%99%EA%B5%90.jpg" alt="경희대학교" />
+            
+          </div>
+          <div class="project-info">
+            <h3 class="project-title-ko">[2025-1 융복합 연구교류] 한국 전통적 인체의 아름다움과 <br />건강에 대한 융복합 연구</h3>
+
+            
+              <div class="project-meta">경희대학교</div>
+            
+
+            
+              <div class="project-period">2025.03.01 – 2026.02.28</div>
+            
+
+            
+              <div class="project-meta">공동 연구자</div>
+            
+          </div>
+        </article>
+      
+        
+        
+
+        <article class="project-item">
+          <div class="project-logo">
+            
+              <img src="/images/projects/%ED%95%9C%EA%B5%AD%EC%8A%A4%ED%8F%AC%EC%B8%A0%EA%B3%BC%ED%95%99%EC%9B%90.png" alt="한국스포츠과학원" />
+            
+          </div>
+          <div class="project-info">
+            <h3 class="project-title-ko">2025년 스포츠과학 코칭 아카데미 개설 및 운영 용역(1/1)</h3>
+
+            
+              <div class="project-meta">한국스포츠과학원</div>
+            
+
+            
+              <div class="project-period">2025.06.25 – 2025.11.30</div>
+            
+
+            
+              <div class="project-meta">연구 책임자</div>
+            
+          </div>
+        </article>
+      
+    </section>
+  
+
+  
+    <section class="project-group">
+      <h2>Completed Projects</h2>
+      
+        
+        
+
+        <article class="project-item">
+          <div class="project-logo">
+            
+              <img src="/images/projects/%EA%B2%BD%ED%9D%AC%EB%8C%80%ED%95%99%EA%B5%90.jpg" alt="경희대학교" />
+            
+          </div>
+          <div class="project-info">
+            <h3 class="project-title-ko">[연구인력] 고강도 간헐적 운동 프로토콜 유형에 따른 근 기능 및 <br />스트레스 호르몬 지표 변화 분석</h3>
+
+            
+              <div class="project-meta">경희대학교</div>
+            
+
+            
+              <div class="project-period">2020.03.01 – 2021.02.28</div>
+            
+
+            
+              <div class="project-meta">공동 연구자</div>
+            
+          </div>
+        </article>
+      
+        
+        
+
+        <article class="project-item">
+          <div class="project-logo">
+            
+              <img src="/images/projects/%EA%B2%BD%ED%9D%AC%EB%8C%80%ED%95%99%EA%B5%90.jpg" alt="경희대학교" />
+            
+          </div>
+          <div class="project-info">
+            <h3 class="project-title-ko">[2020-2 신진] 수상스키선수들의 부상과 만성 통증에 관한 연구</h3>
+
+            
+              <div class="project-meta">경희대학교</div>
+            
+
+            
+              <div class="project-period">2020.09.01 – 2021.08.31</div>
+            
+
+            
+              <div class="project-meta">연구 책임자</div>
+            
+          </div>
+        </article>
+      
+        
+        
+
+        <article class="project-item">
+          <div class="project-logo">
+            
+              <img src="/images/projects/%EA%B2%BD%ED%9D%AC%EB%8C%80%ED%95%99%EA%B5%90.jpg" alt="경희대학교" />
+            
+          </div>
+          <div class="project-info">
+            <h3 class="project-title-ko">[스포츠과학연구원] 2021 대학부설연구소 학술진흥 프로젝트 지원사업</h3>
+
+            
+              <div class="project-meta">경희대학교</div>
+            
+
+            
+              <div class="project-period">2021.03.01 – 2022.02.28</div>
+            
+
+            
+              <div class="project-meta">공동 연구자</div>
+            
+          </div>
+        </article>
+      
+        
+        
+
+        <article class="project-item">
+          <div class="project-logo">
+            
+              <img src="/images/projects/%EA%B5%AD%EB%AF%BC%EC%B2%B4%EC%9C%A1%EC%A7%84%ED%9D%A5%EA%B3%B5%EB%8B%A8.jpg" alt="국민체육진흥공단" />
+            
+          </div>
+          <div class="project-info">
+            <h3 class="project-title-ko">[지정2] 스포츠 중소제조기업 디지털 전환을 위한 스포츠 데이터 유통연계 <br />제조서비스 기술개발 (1/3)</h3>
+
+            
+              <div class="project-meta">국민체육진흥공단</div>
+            
+
+            
+              <div class="project-period">2021.07.01 – 2021.12.31</div>
+            
+
+            
+              <div class="project-meta">공동 연구자</div>
+            
+          </div>
+        </article>
+      
+        
+        
+
+        <article class="project-item">
+          <div class="project-logo">
+            
+              <img src="/images/projects/%EA%B5%AD%EB%AF%BC%EC%B2%B4%EC%9C%A1%EC%A7%84%ED%9D%A5%EA%B3%B5%EB%8B%A8.jpg" alt="국민체육진흥공단" />
+            
+          </div>
+          <div class="project-info">
+            <h3 class="project-title-ko">[지정3] 홈트레이닝 스마트 운동기기 및 게이미피케이션 서비스 기술개발 (1/2)</h3>
+
+            
+              <div class="project-meta">국민체육진흥공단</div>
+            
+
+            
+              <div class="project-period">2021.07.01 – 2021.12.31</div>
+            
+
+            
+              <div class="project-meta">공동 연구자</div>
+            
+          </div>
+        </article>
+      
+        
+        
+
+        <article class="project-item">
+          <div class="project-logo">
+            
+              <img src="/images/projects/%EA%B5%AD%EB%AF%BC%EC%B2%B4%EC%9C%A1%EC%A7%84%ED%9D%A5%EA%B3%B5%EB%8B%A8.jpg" alt="국민체육진흥공단" />
+            
+          </div>
+          <div class="project-info">
+            <h3 class="project-title-ko">[지정3] 홈트레이닝 스마트 운동기기 및 게이미피케이션 서비스 기술개발 (2/2)</h3>
+
+            
+              <div class="project-meta">국민체육진흥공단</div>
+            
+
+            
+              <div class="project-period">2022.01.01 – 2022.12.31</div>
+            
+
+            
+              <div class="project-meta">공동 연구자</div>
+            
+          </div>
+        </article>
+      
+        
+        
+
+        <article class="project-item">
+          <div class="project-logo">
+            
+              <img src="/images/projects/%ED%95%9C%EA%B5%AD%EC%BD%98%ED%85%90%EC%B8%A0%EC%A7%84%ED%9D%A5%EC%9B%90.png" alt="한국콘텐츠진흥원" />
+            
+          </div>
+          <div class="project-info">
+            <h3 class="project-title-ko">[지정2] 스포츠 중소제조기업 디지털 전환을 위한 스포츠 데이터 유통연계 <br />제조서비스 기술 개발 (2/3)</h3>
+
+            
+              <div class="project-meta">한국콘텐츠진흥원</div>
+            
+
+            
+              <div class="project-period">2022.01.01 – 2022.12.31</div>
+            
+
+            
+              <div class="project-meta">공동 연구자</div>
+            
+          </div>
+        </article>
+      
+        
+        
+
+        <article class="project-item">
+          <div class="project-logo">
+            
+              <img src="/images/projects/%EA%B2%BD%ED%9D%AC%EB%8C%80%ED%95%99%EA%B5%90.jpg" alt="경희대학교" />
+            
+          </div>
+          <div class="project-info">
+            <h3 class="project-title-ko">[2022-1미래선도] 청소년 운동선수들의 성숙도에 따른 하지 근력 비율 차이 및 비접촉식 하지 부상과의 관계</h3>
+
+            
+              <div class="project-meta">경희대학교</div>
+            
+
+            
+              <div class="project-period">2022.03.01 – 2024.02.29</div>
+            
+
+            
+              <div class="project-meta">연구 책임자</div>
+            
+          </div>
+        </article>
+      
+        
+        
+
+        <article class="project-item">
+          <div class="project-logo">
+            
+              <img src="/images/projects/%EA%B2%BD%ED%9D%AC%EB%8C%80%ED%95%99%EA%B5%90.jpg" alt="경희대학교" />
+            
+          </div>
+          <div class="project-info">
+            <h3 class="project-title-ko">[2023-2차 학술연구과제] 청소년들의 우울, 불안 증상과 심박변이도의 상관성 검증 및 비대면 고강도 간헐적 운동 참여를 통한 건강 개선효과 검증</h3>
+
+            
+              <div class="project-meta">경희대학교</div>
+            
+
+            
+              <div class="project-period">2023.06.01 – 2024.02.29</div>
+            
+
+            
+              <div class="project-meta">연구 책임자</div>
+            
+          </div>
+        </article>
+      
+        
+        
+
+        <article class="project-item">
+          <div class="project-logo">
+            
+              <img src="/images/projects/%EA%B2%BD%ED%9D%AC%EB%8C%80%ED%95%99%EA%B5%90.jpg" alt="경희대학교" />
+            
+          </div>
+          <div class="project-info">
+            <h3 class="project-title-ko">[2023-3차 학술연구과제] 스포츠 선진국의 장기 선수 발달 시스템 분석을 통한 우리나라 시스템 개선 방안 연구</h3>
+
+            
+              <div class="project-meta">경희대학교</div>
+            
+
+            
+              <div class="project-period">2023.09.01 – 2024.02.29</div>
+            
+
+            
+              <div class="project-meta">연구 책임자</div>
+            
+          </div>
+        </article>
+      
+        
+        
+
+        <article class="project-item">
+          <div class="project-logo">
+            
+              <img src="/images/projects/%EC%82%BC%EC%84%B1.png" alt="삼성전자㈜" />
+            
+          </div>
+          <div class="project-info">
+            <h3 class="project-title-ko">삼성전자 신사업 피트니스 서비스 내 운동 관련 생리 자료 발굴(1/1)</h3>
+
+            
+              <div class="project-meta">삼성전자㈜</div>
+            
+
+            
+              <div class="project-period">2023.12.18 – 2024.06.30</div>
+            
+
+            
+              <div class="project-meta">연구 책임자</div>
+            
+          </div>
+        </article>
+      
+        
+        
+
+        <article class="project-item">
+          <div class="project-logo">
+            
+              <img src="/images/projects/%EA%B2%BD%ED%9D%AC%EB%8C%80%ED%95%99%EA%B5%90.jpg" alt="경희대학교" />
+            
+          </div>
+          <div class="project-info">
+            <h3 class="project-title-ko">[2024 1차 학술] 고강도 저볼륨 및 저강도 고볼륨 플라이오메트릭 훈련이 <br />태권도 품새 선수의 운동 수행 능력에 미치는 영향</h3>
+
+            
+              <div class="project-meta">경희대학교</div>
+            
+
+            
+              <div class="project-period">2024.03.01 – 2025.02.28</div>
+            
+
+            
+              <div class="project-meta">연구 책임자</div>
+            
+          </div>
+        </article>
+      
+        
+        
+
+        <article class="project-item">
+          <div class="project-logo">
+            
+              <img src="/images/projects/%EA%B2%BD%ED%9D%AC%EB%8C%80%ED%95%99%EA%B5%90.jpg" alt="경희대학교" />
+            
+          </div>
+          <div class="project-info">
+            <h3 class="project-title-ko">[2024-1 학술연구과제] 고강도 간헐적 운동(HIIT)과 저강도 지속운동(MICT)이 신체 구성 및 심혈관 건강에 미치는 효과 비교</h3>
+
+            
+              <div class="project-meta">경희대학교</div>
+            
+
+            
+              <div class="project-period">2024.03.01 – 2025.02.28</div>
+            
+
+            
+              <div class="project-meta">연구 책임자</div>
+            
+          </div>
+        </article>
+      
+        
+        
+
+        <article class="project-item">
+          <div class="project-logo">
+            
+              <img src="/images/projects/%ED%95%9C%EA%B5%AD%EC%97%B0%EA%B5%AC%EC%9E%AC%EB%8B%A8.jpg" alt="한국연구재단(통합)" />
+            
+          </div>
+          <div class="project-info">
+            <h3 class="project-title-ko">[인문신진] 청소년 태권도 선수의 부상 관리 시스템 구축 및 효용성 검증:<br /> 개인 맞춤형 ACWR 모델 개발(1/4)</h3>
+
+            
+              <div class="project-meta">한국연구재단(통합)</div>
+            
+
+            
+              <div class="project-period">2024.06.01 – 2025.02.28</div>
+            
+
+            
+              <div class="project-meta">연구 책임자</div>
+            
+          </div>
+        </article>
+      
+        
+        
+
+        <article class="project-item">
+          <div class="project-logo">
+            
+              <img src="/images/projects/%ED%95%9C%EA%B5%AD%EC%8A%A4%ED%8F%AC%EC%B8%A0%EA%B3%BC%ED%95%99%EC%9B%90.png" alt="한국스포츠과학원" />
+            
+          </div>
+          <div class="project-info">
+            <h3 class="project-title-ko">2024년 스포츠과학 코칭 아카데미 개설 및 운영 용역(1/1)</h3>
+
+            
+              <div class="project-meta">한국스포츠과학원</div>
+            
+
+            
+              <div class="project-period">2024.07.16 – 2024.11.30</div>
+            
+
+            
+              <div class="project-meta">공동 연구자</div>
+            
+          </div>
+        </article>
+      
+        
+        
+
+        <article class="project-item">
+          <div class="project-logo">
+            
+              <img src="/images/projects/%EA%B2%BD%ED%9D%AC%EB%8C%80%ED%95%99%EA%B5%90.jpg" alt="경희대학교" />
+            
+          </div>
+          <div class="project-info">
+            <h3 class="project-title-ko">[2024-2 신임교수정착연구] 남녀 대학 태권도 선수들의 버추얼 태권도 경기 <br />참여에 따른 생리 및 심리적 반응 비교</h3>
+
+            
+              <div class="project-meta">경희대학교</div>
+            
+
+            
+              <div class="project-period">2024.09.01 – 2025.08.31</div>
+            
+
+            
+              <div class="project-meta">공동 연구자</div>
+            
+          </div>
+        </article>
+      
+        
+        
+
+        <article class="project-item">
+          <div class="project-logo">
+            
+              <img src="/images/projects/%EA%B2%BD%ED%9D%AC%EB%8C%80%ED%95%99%EA%B5%90.jpg" alt="경희대학교" />
+            
+          </div>
+          <div class="project-info">
+            <h3 class="project-title-ko">[교비][4단계 BK21][Khreative U+ SDGs 대학원생 RA/GCR 연구과제] <br />스마트폰 중독 성인의 우울, 불안 증상과 심박변이도의 상관성 검증 및 건강 개선을 위한 전략 방안 수립</h3>
+
+            
+              <div class="project-meta">경희대학교</div>
+            
+
+            
+              <div class="project-period">2024.09.01 – 2025.08.31</div>
+            
+
+            
+              <div class="project-meta">연구 책임자</div>
+            
+          </div>
+        </article>
+      
+    </section>
+  
+
+</div>
+  </section>
+
+
+    </main>
+    
+
+
+<footer
+  class="background"
+  style="--image: url('/images/background2.jpg')"
+  
+  data-size="wide"
+>
+  <!--
+    <div>
+      Extra details like contact info or address
+    </div>
+  -->
+
+  <div>
+    
+      
+      
+      
+
+
+
+  <div class="button-wrapper">
+    <a
+      class="button"
+      href="/jhc@khu.ac.kr"
+      
+      data-style="bare"
+      
+      aria-label="button"
+    >
+      
+      
+    </a>
+  </div>
+
+
+    
+      
+      
+      
+
+
+
+  <div class="button-wrapper">
+    <a
+      class="button"
+      href="/0000-0002-3465-8965"
+      
+      data-style="bare"
+      
+      aria-label="button"
+    >
+      
+      
+    </a>
+  </div>
+
+
+    
+      
+      
+      
+
+
+
+  <div class="button-wrapper">
+    <a
+      class="button"
+      href="https://scholar.google.com/citations?user=qm1Ao-oAAAAJ&hl=ko&oi=ao"
+      
+      data-style="bare"
+      
+      aria-label="button"
+    >
+      
+      
+    </a>
+  </div>
+
+
+    
+      
+      
+      
+
+
+
+  <div class="button-wrapper">
+    <a
+      class="button"
+      href="/YourLabChannel"
+      
+      data-style="bare"
+      
+      aria-label="button"
+    >
+      
+      
+    </a>
+  </div>
+
+
+    
+  </div>
+
+  <!-- 푸터 정보 박스 -->
+  <div class="lab-footer-info" style="font-size:14px; color:#000000; text-align:center; line-height:1.4; margin:0; padding:5px 0;">
+    <p style="margin:2px 0;">
+      <strong>연구실명 :</strong> 성장 노화 연구실 
+      (<em>Growth and Aging Lab</em>) &nbsp;&nbsp; | &nbsp;&nbsp;
+      <strong>지도교수 :</strong> 정현철
+    </p>
+    <p style="margin:2px 0;">
+      <strong>주소 :</strong> (우)17104 경기도 용인시 기흥구 덕영대로 1732(서천동)  
+      경희대학교 국제캠퍼스 체육대학 114호
+    </p>
+    <p style="margin:2px 0; font-size:12px; color:#333333;">
+      COPYRIGHT © SINCE 2025 Growth and Aging Lab. ALL RIGHTS RESERVED.
+    </p>
+  </div>
+
+  <!-- 다크 모드 토글 -->
+  <input
+    type="checkbox"
+    class="dark-toggle"
+    data-tooltip="Dark mode"
+    aria-label="toggle dark mode"
+    oninput="onDarkToggleChange(event)"
+  >
+
+  <!-- 다크모드에서 푸터 글자만 흰색으로 -->
+  <style>
+    html[data-dark="true"] .lab-footer-info,
+    html[data-dark="true"] .lab-footer-info * {
+      color: #fff !important;
+    }
+  </style>
+</footer>
+
+  </body>
+</html>

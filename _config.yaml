@@ -1,0 +1,82 @@
+# =========================
+# site properties and page defaults
+# =========================
+title: Growth and Aging Lab
+subtitle: Exercise Physiology
+description: Research on exercise physiology and aging.
+header: images/background2.jpg
+footer: images/background2.jpg
+proofer: false
+
+# (선택) 나중에 도메인 고정되면 주석 해제하고 사용
+# url: "https://your-domain.example.com"
+baseurl: ""   # 루트 배포일 땐 빈 문자열
+
+# =========================
+# site social media and other links
+# =========================
+links:
+  email: jhc@khu.ac.kr
+  orcid: 0000-0002-3465-8965
+  google-scholar: https://scholar.google.com/citations?user=qm1Ao-oAAAAJ&hl=ko&oi=ao
+  youtube: YourLabChannel
+
+# =========================
+# jekyll settings
+# =========================
+
+# front matter defaults
+defaults:
+  # all markdown files
+  - scope:
+      path: ""
+    values:
+      layout: default
+  # markdown files in /_members
+  - scope:
+      type: "members"
+    values:
+      layout: member
+  # markdown files in /_posts
+  - scope:
+      type: "posts"
+    values:
+      layout: post
+
+collections:
+  members:
+    output: true
+  posts:
+    output: true
+
+# plugins
+plugins:
+  - jekyll-sitemap
+  - jekyll-redirect-from
+  - jekyll-feed
+  - jekyll-last-modified-at
+
+# markdown / permalinks (필요시 조정)
+markdown: kramdown
+highlighter: rouge
+permalink: /:categories/:title/
+
+# theme
+theme: null
+
+# sass settings
+sass:
+  sass_dir: _styles
+
+# include/exclude
+include:
+  - _styles
+  - _scripts
+exclude:
+  - README.md
+  - LICENSE.md
+  - CITATION.cff
+
+# (선택) 빌드/로컬 설정 예시
+# timezone: Asia/Seoul
+# lang: ko

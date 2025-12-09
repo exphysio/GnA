@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="en" data-dark="false">
+  <script>
+  // 우클릭(컨텍스트 메뉴) 막기
+  document.addEventListener("contextmenu", (e) => e.preventDefault(), { capture: true });
+
+  // 이미지 드래그/드롭 저장 방지
+  document.addEventListener("dragstart", (e) => {
+    if (e.target.tagName === "IMG") e.preventDefault();
+  }, { capture: true });
+
+  // 일반적인 단축키(Ctrl/Cmd+S, U, P, F12 등) 약한 차단
+  document.addEventListener("keydown", (e) => {
+    const k = e.key.toLowerCase();
+    const mod = e.ctrlKey || e.metaKey;
+    if (
+      (mod && ["s","u","p"].includes(k)) || // 저장, 소스보기, 인쇄
+      (e.shiftKey && mod && ["i","c","j"].includes(k)) || // 개발자도구 계열
+      k === "f12"
+    ) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+  }, { capture: true });
+</script>
+
+
+<head>
+  <!--
+  put your analytics (e.g. Google Analytics) tracking code here
+-->
+
+  <!--
+  put your search engine verification (e.g. Google Search Console) tag here
+-->
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Blog | Growth and Aging Lab</title>
+
+<link rel="icon" href="">
+
+<meta name="title" content="Blog">
+<meta name="description" content="Exercise Physiology. Research on exercise physiology and aging.">
+
+<meta property="og:title" content="Blog">
+<meta property="og:site_title" content="Growth and Aging Lab">
+<meta property="og:description" content="Exercise Physiology. Research on exercise physiology and aging.">
+<meta property="og:url" content="http://localhost:4000">
+<meta property="og:image" content="/images/share.png">
+<meta property="og:locale" content="en_US">
+
+<meta property="twitter:title" content="Blog">
+<meta property="twitter:description" content="Exercise Physiology. Research on exercise physiology and aging.">
+<meta property="twitter:url" content="http://localhost:4000">
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="/images/share.png">
+
+
+  <meta property="og:type" content="website">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "WebSite",
+    
+    "name": "Blog",
+    "description": "Exercise Physiology. Research on exercise physiology and aging.",
+    "headline": "Blog",
+    "publisher": {
+      "@type": "Organization",
+      "logo": { "@type": "ImageObject", "url": "" }
+    },
+    "url": "http://localhost:4000"
+  }
+</script>
+
+<link rel="alternate" type="application/rss+xml" href="http://localhost:4000/feed.xml">
+
+  <!-- Google Fonts -->
+<!-- automatically get url from fonts used in theme file -->
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="---
+---
+
+// colors
+[data-dark="false"] {
+  --primary: #0795d9;
+  --secondary: #7dd3fc;
+  --text: #000000;
+  --background: #ffffff;
+  --background-alt: #fafafa;
+  --light-gray: #e0e0e0;
+  --gray: #808080;
+  --dark-gray: #404040;
+  --overlay: #00000020;
+}
+[data-dark="true"] {
+  --primary: #0795d9;
+  --secondary: #075985;
+  --text: #ffffff;
+  --background: #181818;
+  --background-alt: #1c1c1c;
+  --light-gray: #404040;
+  --gray: #808080;
+  --dark-gray: #b0b0b0;
+  --overlay: #ffffff10;
+}
+
+:root {
+  // font families
+  --title: "Barlow", sans-serif;
+  --heading: "Barlow", sans-serif;
+  --body: "Barlow", sans-serif;
+  --code: "Roboto Mono", monospace;
+
+  // font sizes
+  --large: 1.2rem;
+  --xl: 1.4rem;
+  --xxl: 1.6rem;
+
+  // font weights
+  --thin: 200;
+  --regular: 400;
+  --semi-bold: 500;
+  --bold: 600;
+
+  // text line spacing
+  --spacing: 2;
+  --compact: 1.5;
+
+  // effects
+  --rounded: 3px;
+  --shadow: 0 0 10px 0 var(--overlay);
+  --transition: 0.2s ease;
+}
+" rel="stylesheet">
+
+<!-- Font Awesome icons (load asynchronously due to size) -->
+
+<link
+  href="https://use.fontawesome.com/releases/v6.7.0/css/all.css"
+  rel="stylesheet"
+  media="none"
+  onload="this.removeAttribute('media'); this.onload = null;"
+/>
+<noscript>
+  <link href="https://use.fontawesome.com/releases/v6.7.0/css/all.css" rel="stylesheet">
+</noscript>
+
+  <!-- third party styles -->
+<!-- https://stylishthemes.github.io/Syntax-Themes/pygments/ -->
+<link 
+  href="https://cdn.jsdelivr.net/gh/StylishThemes/Syntax-Themes/pygments/css-github/pygments-tomorrow-night-eighties.css"
+  rel="stylesheet"
+/>
+
+<!-- include all sass in styles folder -->
+
+
+  
+    <link
+      href="/_styles/-theme.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/alert.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/all.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/anchor.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/background.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/body.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/bold.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/button.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/card.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/checkbox.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/citation.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/code.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/cols.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/dark-toggle.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/details.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/feature.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/figure.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/float.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/font.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/footer.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/form.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/grid.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/header.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/heading.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/highlight.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/icon.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/image.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/link.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/list.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/main.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/mobile.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/paragraph.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/portrait.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/post-excerpt.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/post-info.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/post-nav.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/quote.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/rule.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/search-box.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/search-info.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/section.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/table.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/tags.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/textbox.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/tooltip.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/util.css"
+      rel="stylesheet"
+    />
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<!-- include all css in styles folder -->
+
+
+
+<!-- === Image Guard (safe, no DOM wrap) =================== -->
+<style>
+  /* figure/include에서 렌더되는 이미지 컨테이너에 붙일 클래스 */
+  .protect-figure,
+  .protect-figure > a {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* 투명 오버레이: 클릭/롱탭/드래그 이벤트를 흡수 */
+  .protect-figure::after,
+  .protect-figure > a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: transparent;
+    pointer-events: auto;   /* 오버레이가 이벤트를 받도록 */
+  }
+
+  /* 드래그 방지(시각은 그대로) */
+  .protect-figure img {
+    -webkit-user-drag: none;
+    user-drag: none;
+  }
+
+  /* (옵션) 호버 배지 */
+  .protect-figure .protect-badge{
+    position:absolute; right:6px; bottom:6px;
+    padding:2px 6px; font-size:.72rem;
+    background:rgba(0,0,0,.55); color:#fff; border-radius:6px;
+    user-select:none; pointer-events:none;
+  }
+</style>
+
+  <!-- third party scripts -->
+<script src="https://unpkg.com/@popperjs/core@2" defer></script>
+<script src="https://unpkg.com/tippy.js@6" defer></script>
+<script src="https://unpkg.com/mark.js@8" defer></script>
+
+<!-- include all js in scripts folder -->
+
+
+  <script src="/_scripts/anchors.js"></script>
+
+  <script src="/_scripts/dark-mode.js"></script>
+
+  <script src="/_scripts/fetch-tags.js"></script>
+
+  <script src="/_scripts/search.js"></script>
+
+  <script src="/_scripts/site-search.js"></script>
+
+  <script src="/_scripts/table-wrap.js"></script>
+
+  <script src="/_scripts/tooltip.js"></script>
+
+
+<!-- third party scripts -->
+<script src="https://unpkg.com/@popperjs/core@2" defer></script>
+<script src="https://unpkg.com/tippy.js@6" defer></script>
+<script src="https://unpkg.com/mark.js@8" defer></script>
+
+<!-- include all js in scripts folder -->
+
+
+  <script src="/_scripts/anchors.js"></script>
+
+  <script src="/_scripts/dark-mode.js"></script>
+
+  <script src="/_scripts/fetch-tags.js"></script>
+
+  <script src="/_scripts/search.js"></script>
+
+  <script src="/_scripts/site-search.js"></script>
+
+  <script src="/_scripts/table-wrap.js"></script>
+
+  <script src="/_scripts/tooltip.js"></script>
+
+
+
+</head>
+
+  <body>
+    
+
+
+
+
+
+<header
+  class="background"
+  style="--image: url('/images/background2.jpg')"
+  
+  
+>
+
+  <!-- 로고/홈 -->
+  <a href="/" class="home">
+    
+      <span class="logo">
+        
+          <img src="/images/logo2.png" alt="logo">
+        
+      </span>
+    
+    
+      <span class="title-text" data-tooltip="Home">
+        
+          <span class="title">Growth and Aging Lab</span>
+        
+        
+          <span class="subtitle">Exercise Physiology</span>
+        
+      </span>
+    
+  </a>
+
+  <input class="nav-toggle" type="checkbox" aria-label="show/hide nav">
+
+  <!-- ===== Navigation ===== -->
+  
+  
+  <nav>
+    
+      
+        
+        
+
+        <a
+          href="/about/"
+          data-tooltip="About lab, research area, and facility"
+          class=""
+        >
+          About
+        </a>
+      
+    
+      
+        
+        
+
+        <a
+          href="/research/"
+          data-tooltip="Papers (International, Domestic), Thesis (Ph.D., M.S.)"
+          class=""
+        >
+          PUBLICATIONS
+        </a>
+      
+    
+      
+        
+        
+
+        <a
+          href="/projects/"
+          data-tooltip="Projects (Ongoing, Completed)"
+          class=""
+        >
+          Projects
+        </a>
+      
+    
+      
+        
+        
+
+        <a
+          href="/team/"
+          data-tooltip="About our team"
+          class=""
+        >
+          Team
+        </a>
+      
+    
+      
+        
+        
+
+        <a
+          href="/blog/"
+          data-tooltip="Our story"
+          class="active"
+        >
+          Blog
+        </a>
+      
+    
+  </nav>
+
+  <!-- ===== Active 스타일 (라이트/다크 공통) ===== -->
+  <style>
+    header nav a {
+      position: relative;
+      transition: color .2s ease, text-shadow .2s ease, border-color .2s ease;
+    }
+    /* 기본 active (라이트) */
+    header nav a.active {
+      color: #111 !important;
+      border-bottom: 2px solid currentColor;
+      text-shadow: 0 0 6px rgba(0,0,0,.12);
+    }
+    /* 다크모드 active */
+    html[data-dark="true"] header nav a.active {
+      color: #fff !important;
+      border-bottom: 2px solid rgba(255,255,255,.9);
+      text-shadow: 0 0 6px rgba(255,255,255,.7), 0 0 12px rgba(0,123,255,.5);
+    }
+    /* 호버 시 살짝 강조 (active/비active 공통) */
+    header nav a:hover {
+      text-shadow: 0 0 6px rgba(0,0,0,.12);
+    }
+    html[data-dark="true"] header nav a:hover {
+      text-shadow: 0 0 6px rgba(255,255,255,.5);
+    }
+    /* 키보드 포커스 접근성 */
+    header nav a:focus-visible {
+      outline: 2px solid #0a84ff;
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+    html[data-dark="true"] header nav a:focus-visible {
+      outline-color: #82b7ff;
+    }
+  </style>
+</header>
+
+    <main>
+      <!--
+  modify main content of page:
+  - add section breaks
+  - attach section properties
+  - filter out blank sections
+-->
+
+
+
+
+
+
+  
+  
+  
+
+  <section
+    class="background"
+    data-size="page"
+    
+    
+  >
+    <h1 id="blog"><i class="icon fa-solid fa-feather-pointed"></i>Blog</h1>
+
+<!-- ✅ 클래스 부여해서 다크모드에서 쉽게 색상 덮어쓰기 -->
+<p class="blog-subtitle" style="text-align:center; font-size:1.4rem; line-height:1.6; margin:0.75rem auto 1.5rem; color:#333; max-width:900px; text-transform:none;">
+  Our lab diary – capturing the moments that make us grow together.
+</p>
+
+<style>
+  /* 연도 아코디언 (기존 모양 유지) */
+  .year-acc details { margin: 0 0 12px 0; }
+  .year-acc summary{
+    cursor:pointer; font-weight:600; font-size:1.3rem; color:#222;
+    background:#f7f7f7; border:1px solid #e5e5e5; border-radius:8px;
+    padding:10px 12px; list-style:none;
+  }
+  .year-acc summary::-webkit-details-marker{ display:none; }
+  .year-acc summary::marker{ display:none; }
+  .year-acc .year-body{ padding:10px 4px 0; }
+
+  /* ===========================
+     ✅ 바 길이 중앙 정렬
+     =========================== */
+  .year-acc{ --bar-w: 110%; }
+  .year-acc details{
+    width: var(--bar-w);
+    margin-left: calc((100% - var(--bar-w)) / 2);
+  }
+
+  /* 제목 바 */
+  .year-acc summary{
+    display:flex; align-items:center; justify-content:center;
+    width:110%;
+    box-sizing:border-box; position:relative;
+  }
+
+  /* 눌림(클릭) 효과 */
+  .year-acc summary:active::after{
+    content:""; position:absolute; inset:0;
+    border-radius:inherit; background:rgba(0,0,0,.06);
+    pointer-events:none;
+  }
+
+  /* 모바일 */
+  @media (max-width: 768px){
+    .year-acc{ --bar-w: 100%; }
+  }
+
+  /* ✅ 갤러리: 3열 + 고정 높이 */
+  .year-gallery{
+    --min: 360px;
+    --gap: 24px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--min), 1fr));
+    gap: var(--gap);
+    margin: .5rem 0 1rem;
+  }
+
+  .yg-item{
+    margin: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 3px 12px rgba(0,0,0,.08);
+  }
+  .yg-item img{
+    display: block;
+    width: 100%;
+    height: var(--h);
+    object-fit: cover;
+    object-position: center;
+  }
+  .yg-item figcaption{
+    padding: 8px 10px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #444;
+    border-top: 1px solid #eee;
+    background: #fff;
+    text-align: center;
+  }
+  /* 이미지 강제 폭 */
+  .year-acc .year-body .year-gallery .yg-item > img{
+    display:block;
+    width:100% !important;
+    max-width:none !important;
+    height:var(--h, 350px);
+    object-fit:cover;
+    object-position:center;
+  }
+
+  /* ===========================
+     🌙 다크모드 스타일 (html[data-dark="true"])
+     =========================== */
+
+  /* Our lab diary 문구 흰색으로 */
+  html[data-dark="true"] .blog-subtitle{
+    color:#fff !important;
+  }
+
+  /* 아코디언 summary 바: 어두운 회색 + 흰 테두리 */
+  html[data-dark="true"] .year-acc summary{
+    background:#2a2a2a !important;
+    color:#fff !important;
+    border:1px solid rgba(255,255,255,0.45) !important;
+  }
+
+  /* 갤러리 카드(네모): 배경 회색 + 흰 테두리 + 그림자 제거 */
+  html[data-dark="true"] .yg-item{
+    background:#2a2a2a !important;
+    box-shadow:none !important;
+    outline:1px solid rgba(255,255,255,0.5);   /* 전체적으로 흰색 테두리 */
+    outline-offset:-1px;                        /* 테두리가 카드 안쪽으로 붙게 */
+  }
+
+  /* 캡션: 배경 회색, 글자/테두리 흰색 계열 */
+  html[data-dark="true"] .yg-item figcaption{
+    background:#2a2a2a !important;
+    color:#fff !important;
+    border-top:1px solid rgba(255,255,255,0.35) !important;
+  }
+
+  /* (옵션) 카드 호버 시 테두리 조금 더 선명하게 */
+  html[data-dark="true"] .yg-item:hover{
+    outline-color: rgba(255,255,255,0.75);
+  }
+</style>
+
+<div class="year-acc"><details data-year="2025">
+      <summary>2025</summary>
+      <div class="year-body"><div class="year-gallery" style="--cols:4;--h:350px;"><figure class="yg-item">
+                <img loading="lazy" src="/images/blog/2025/20250404.jpg" alt="일반대학원 공개발표" /><figcaption>일반대학원 공개발표</figcaption><!-- DEBUG: /images/blog/2025/20250404.jpg -->
+              </figure><figure class="yg-item">
+                <img loading="lazy" src="/images/blog/2025/20250417.jpg" alt="체육대학원 공개발표" /><figcaption>체육대학원 공개발표</figcaption><!-- DEBUG: /images/blog/2025/20250417.jpg -->
+              </figure><figure class="yg-item">
+                <img loading="lazy" src="/images/blog/2025/20250515.jpg" alt="스승의 날" /><figcaption>스승의 날</figcaption><!-- DEBUG: /images/blog/2025/20250515.jpg -->
+              </figure></div></div>
+    </details><details data-year="2024">
+      <summary>2024</summary>
+      <div class="year-body"><div class="year-gallery" style="--cols:4;--h:350px;"><figure class="yg-item">
+                <img loading="lazy" src="/images/blog/2024/20240501.jpg" alt="성장노화연구실 회식" /><figcaption>성장노화연구실 회식</figcaption><!-- DEBUG: /images/blog/2024/20240501.jpg -->
+              </figure><figure class="yg-item">
+                <img loading="lazy" src="/images/blog/2024/20241218.jpg" alt="성장노화연구실 송년회" /><figcaption>성장노화연구실 송년회</figcaption><!-- DEBUG: /images/blog/2024/20241218.jpg -->
+              </figure></div></div>
+    </details></div>
+  </section>
+
+
+    </main>
+    
+
+
+<footer
+  class="background"
+  style="--image: url('/images/background2.jpg')"
+  
+  data-size="wide"
+>
+  <!--
+    <div>
+      Extra details like contact info or address
+    </div>
+  -->
+
+  <div>
+    
+      
+      
+      
+
+
+
+  <div class="button-wrapper">
+    <a
+      class="button"
+      href="/jhc@khu.ac.kr"
+      
+      data-style="bare"
+      
+      aria-label="button"
+    >
+      
+      
+    </a>
+  </div>
+
+
+    
+      
+      
+      
+
+
+
+  <div class="button-wrapper">
+    <a
+      class="button"
+      href="/0000-0002-3465-8965"
+      
+      data-style="bare"
+      
+      aria-label="button"
+    >
+      
+      
+    </a>
+  </div>
+
+
+    
+      
+      
+      
+
+
+
+  <div class="button-wrapper">
+    <a
+      class="button"
+      href="https://scholar.google.com/citations?user=qm1Ao-oAAAAJ&hl=ko&oi=ao"
+      
+      data-style="bare"
+      
+      aria-label="button"
+    >
+      
+      
+    </a>
+  </div>
+
+
+    
+      
+      
+      
+
+
+
+  <div class="button-wrapper">
+    <a
+      class="button"
+      href="/YourLabChannel"
+      
+      data-style="bare"
+      
+      aria-label="button"
+    >
+      
+      
+    </a>
+  </div>
+
+
+    
+  </div>
+
+  <!-- 푸터 정보 박스 -->
+  <div class="lab-footer-info" style="font-size:14px; color:#000000; text-align:center; line-height:1.4; margin:0; padding:5px 0;">
+    <p style="margin:2px 0;">
+      <strong>연구실명 :</strong> 성장 노화 연구실 
+      (<em>Growth and Aging Lab</em>) &nbsp;&nbsp; | &nbsp;&nbsp;
+      <strong>지도교수 :</strong> 정현철
+    </p>
+    <p style="margin:2px 0;">
+      <strong>주소 :</strong> (우)17104 경기도 용인시 기흥구 덕영대로 1732(서천동)  
+      경희대학교 국제캠퍼스 체육대학 114호
+    </p>
+    <p style="margin:2px 0; font-size:12px; color:#333333;">
+      COPYRIGHT © SINCE 2025 Growth and Aging Lab. ALL RIGHTS RESERVED.
+    </p>
+  </div>
+
+  <!-- 다크 모드 토글 -->
+  <input
+    type="checkbox"
+    class="dark-toggle"
+    data-tooltip="Dark mode"
+    aria-label="toggle dark mode"
+    oninput="onDarkToggleChange(event)"
+  >
+
+  <!-- 다크모드에서 푸터 글자만 흰색으로 -->
+  <style>
+    html[data-dark="true"] .lab-footer-info,
+    html[data-dark="true"] .lab-footer-info * {
+      color: #fff !important;
+    }
+  </style>
+</footer>
+
+  </body>
+</html>

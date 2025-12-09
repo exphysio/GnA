@@ -1,0 +1,75 @@
+@charset "UTF-8";
+.card {
+  display: inline-flex;
+  justify-content: stretch;
+  align-items: center;
+  flex-direction: column;
+  width: 350px;
+  max-width: calc(100% - 20px - 20px);
+  margin: 20px;
+  background: var(--background);
+  border-radius: var(--rounded);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  vertical-align: top;
+}
+
+.card[data-style=small] {
+  width: 250px;
+}
+
+.card-text {
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 100%;
+  padding: 20px;
+}
+
+.card-text > * {
+  margin: 0 !important;
+}
+
+.card-title {
+  font-family: var(--heading);
+  font-weight: var(--semi-bold);
+}
+
+.card-subtitle {
+  margin-top: -10px !important;
+  font-style: italic;
+}
+
+/* 1) 고정형 썸네일 박스: 가로 110px, 책(세로) 비율 3:4 */
+.card {
+  display: flex; /* 가로 정렬이면 row, 세로면 column 그대로 사용 */
+  align-items: center;
+}
+
+.card-media { /* 새로 추가한 래퍼 */
+  width: 110px; /* 썸네일 고정 너비 */
+  aspect-ratio: 3/4; /* 책/저널 비율 */
+  flex: 0 0 110px; /* 줄바꿈/늘어남 방지 */
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+/* 2) 전역 img 규칙 무력화 + 동일 렌더링 */
+.card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* contain을 원하면 여기만 contain으로 */
+  display: block;
+  max-height: none !important; /* image.css의 max-height:100% 덮어쓰기 */
+  max-width: none !important; /* 상황에 따라 필요 */
+}
+
+/* 3) 텍스트 영역은 유동 */
+.card-body {
+  flex: 1 1 auto;
+  min-width: 0; /* 긴 제목 줄바꿈 시 레이아웃 흔들림 방지 */
+}
+
+/*# sourceMappingURL=card.css.map */

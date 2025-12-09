@@ -1,0 +1,5206 @@
+<!DOCTYPE html>
+<html lang="en" data-dark="false">
+  <script>
+  // 우클릭(컨텍스트 메뉴) 막기
+  document.addEventListener("contextmenu", (e) => e.preventDefault(), { capture: true });
+
+  // 이미지 드래그/드롭 저장 방지
+  document.addEventListener("dragstart", (e) => {
+    if (e.target.tagName === "IMG") e.preventDefault();
+  }, { capture: true });
+
+  // 일반적인 단축키(Ctrl/Cmd+S, U, P, F12 등) 약한 차단
+  document.addEventListener("keydown", (e) => {
+    const k = e.key.toLowerCase();
+    const mod = e.ctrlKey || e.metaKey;
+    if (
+      (mod && ["s","u","p"].includes(k)) || // 저장, 소스보기, 인쇄
+      (e.shiftKey && mod && ["i","c","j"].includes(k)) || // 개발자도구 계열
+      k === "f12"
+    ) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+  }, { capture: true });
+</script>
+
+
+<head>
+  <!--
+  put your analytics (e.g. Google Analytics) tracking code here
+-->
+
+  <!--
+  put your search engine verification (e.g. Google Search Console) tag here
+-->
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>PUBLICATIONS | Growth and Aging Lab</title>
+
+<link rel="icon" href="">
+
+<meta name="title" content="PUBLICATIONS">
+<meta name="description" content="Exercise Physiology. Research on exercise physiology and aging.">
+
+<meta property="og:title" content="PUBLICATIONS">
+<meta property="og:site_title" content="Growth and Aging Lab">
+<meta property="og:description" content="Exercise Physiology. Research on exercise physiology and aging.">
+<meta property="og:url" content="http://localhost:4000">
+<meta property="og:image" content="/images/share.png">
+<meta property="og:locale" content="en_US">
+
+<meta property="twitter:title" content="PUBLICATIONS">
+<meta property="twitter:description" content="Exercise Physiology. Research on exercise physiology and aging.">
+<meta property="twitter:url" content="http://localhost:4000">
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="/images/share.png">
+
+
+  <meta property="og:type" content="website">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "WebSite",
+    
+    "name": "PUBLICATIONS",
+    "description": "Exercise Physiology. Research on exercise physiology and aging.",
+    "headline": "PUBLICATIONS",
+    "publisher": {
+      "@type": "Organization",
+      "logo": { "@type": "ImageObject", "url": "" }
+    },
+    "url": "http://localhost:4000"
+  }
+</script>
+
+<link rel="alternate" type="application/rss+xml" href="http://localhost:4000/feed.xml">
+
+  <!-- Google Fonts -->
+<!-- automatically get url from fonts used in theme file -->
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="---
+---
+
+// colors
+[data-dark="false"] {
+  --primary: #0795d9;
+  --secondary: #7dd3fc;
+  --text: #000000;
+  --background: #ffffff;
+  --background-alt: #fafafa;
+  --light-gray: #e0e0e0;
+  --gray: #808080;
+  --dark-gray: #404040;
+  --overlay: #00000020;
+}
+[data-dark="true"] {
+  --primary: #0795d9;
+  --secondary: #075985;
+  --text: #ffffff;
+  --background: #181818;
+  --background-alt: #1c1c1c;
+  --light-gray: #404040;
+  --gray: #808080;
+  --dark-gray: #b0b0b0;
+  --overlay: #ffffff10;
+}
+
+:root {
+  // font families
+  --title: "Barlow", sans-serif;
+  --heading: "Barlow", sans-serif;
+  --body: "Barlow", sans-serif;
+  --code: "Roboto Mono", monospace;
+
+  // font sizes
+  --large: 1.2rem;
+  --xl: 1.4rem;
+  --xxl: 1.6rem;
+
+  // font weights
+  --thin: 200;
+  --regular: 400;
+  --semi-bold: 500;
+  --bold: 600;
+
+  // text line spacing
+  --spacing: 2;
+  --compact: 1.5;
+
+  // effects
+  --rounded: 3px;
+  --shadow: 0 0 10px 0 var(--overlay);
+  --transition: 0.2s ease;
+}
+" rel="stylesheet">
+
+<!-- Font Awesome icons (load asynchronously due to size) -->
+
+<link
+  href="https://use.fontawesome.com/releases/v6.7.0/css/all.css"
+  rel="stylesheet"
+  media="none"
+  onload="this.removeAttribute('media'); this.onload = null;"
+/>
+<noscript>
+  <link href="https://use.fontawesome.com/releases/v6.7.0/css/all.css" rel="stylesheet">
+</noscript>
+
+  <!-- third party styles -->
+<!-- https://stylishthemes.github.io/Syntax-Themes/pygments/ -->
+<link 
+  href="https://cdn.jsdelivr.net/gh/StylishThemes/Syntax-Themes/pygments/css-github/pygments-tomorrow-night-eighties.css"
+  rel="stylesheet"
+/>
+
+<!-- include all sass in styles folder -->
+
+
+  
+    <link
+      href="/_styles/-theme.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/alert.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/all.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/anchor.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/background.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/body.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/bold.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/button.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/card.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/checkbox.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/citation.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/code.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/cols.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/dark-toggle.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/details.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/feature.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/figure.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/float.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/font.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/footer.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/form.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/grid.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/header.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/heading.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/highlight.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/icon.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/image.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/link.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/list.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/main.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/mobile.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/paragraph.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/portrait.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/post-excerpt.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/post-info.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/post-nav.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/quote.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/rule.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/search-box.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/search-info.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/section.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/table.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/tags.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/textbox.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/tooltip.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/_styles/util.css"
+      rel="stylesheet"
+    />
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<!-- include all css in styles folder -->
+
+
+
+<!-- === Image Guard (safe, no DOM wrap) =================== -->
+<style>
+  /* figure/include에서 렌더되는 이미지 컨테이너에 붙일 클래스 */
+  .protect-figure,
+  .protect-figure > a {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* 투명 오버레이: 클릭/롱탭/드래그 이벤트를 흡수 */
+  .protect-figure::after,
+  .protect-figure > a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: transparent;
+    pointer-events: auto;   /* 오버레이가 이벤트를 받도록 */
+  }
+
+  /* 드래그 방지(시각은 그대로) */
+  .protect-figure img {
+    -webkit-user-drag: none;
+    user-drag: none;
+  }
+
+  /* (옵션) 호버 배지 */
+  .protect-figure .protect-badge{
+    position:absolute; right:6px; bottom:6px;
+    padding:2px 6px; font-size:.72rem;
+    background:rgba(0,0,0,.55); color:#fff; border-radius:6px;
+    user-select:none; pointer-events:none;
+  }
+</style>
+
+  <!-- third party scripts -->
+<script src="https://unpkg.com/@popperjs/core@2" defer></script>
+<script src="https://unpkg.com/tippy.js@6" defer></script>
+<script src="https://unpkg.com/mark.js@8" defer></script>
+
+<!-- include all js in scripts folder -->
+
+
+  <script src="/_scripts/anchors.js"></script>
+
+  <script src="/_scripts/dark-mode.js"></script>
+
+  <script src="/_scripts/fetch-tags.js"></script>
+
+  <script src="/_scripts/search.js"></script>
+
+  <script src="/_scripts/site-search.js"></script>
+
+  <script src="/_scripts/table-wrap.js"></script>
+
+  <script src="/_scripts/tooltip.js"></script>
+
+
+<!-- third party scripts -->
+<script src="https://unpkg.com/@popperjs/core@2" defer></script>
+<script src="https://unpkg.com/tippy.js@6" defer></script>
+<script src="https://unpkg.com/mark.js@8" defer></script>
+
+<!-- include all js in scripts folder -->
+
+
+  <script src="/_scripts/anchors.js"></script>
+
+  <script src="/_scripts/dark-mode.js"></script>
+
+  <script src="/_scripts/fetch-tags.js"></script>
+
+  <script src="/_scripts/search.js"></script>
+
+  <script src="/_scripts/site-search.js"></script>
+
+  <script src="/_scripts/table-wrap.js"></script>
+
+  <script src="/_scripts/tooltip.js"></script>
+
+
+
+</head>
+
+  <body>
+    
+
+
+
+
+
+<header
+  class="background"
+  style="--image: url('/images/background2.jpg')"
+  
+  
+>
+
+  <!-- 로고/홈 -->
+  <a href="/" class="home">
+    
+      <span class="logo">
+        
+          <img src="/images/logo2.png" alt="logo">
+        
+      </span>
+    
+    
+      <span class="title-text" data-tooltip="Home">
+        
+          <span class="title">Growth and Aging Lab</span>
+        
+        
+          <span class="subtitle">Exercise Physiology</span>
+        
+      </span>
+    
+  </a>
+
+  <input class="nav-toggle" type="checkbox" aria-label="show/hide nav">
+
+  <!-- ===== Navigation ===== -->
+  
+  
+  <nav>
+    
+      
+        
+        
+
+        <a
+          href="/about/"
+          data-tooltip="About lab, research area, and facility"
+          class=""
+        >
+          About
+        </a>
+      
+    
+      
+        
+        
+
+        <a
+          href="/research/"
+          data-tooltip="Papers (International, Domestic), Thesis (Ph.D., M.S.)"
+          class="active"
+        >
+          PUBLICATIONS
+        </a>
+      
+    
+      
+        
+        
+
+        <a
+          href="/projects/"
+          data-tooltip="Projects (Ongoing, Completed)"
+          class=""
+        >
+          Projects
+        </a>
+      
+    
+      
+        
+        
+
+        <a
+          href="/team/"
+          data-tooltip="About our team"
+          class=""
+        >
+          Team
+        </a>
+      
+    
+      
+        
+        
+
+        <a
+          href="/blog/"
+          data-tooltip="Our story"
+          class=""
+        >
+          Blog
+        </a>
+      
+    
+  </nav>
+
+  <!-- ===== Active 스타일 (라이트/다크 공통) ===== -->
+  <style>
+    header nav a {
+      position: relative;
+      transition: color .2s ease, text-shadow .2s ease, border-color .2s ease;
+    }
+    /* 기본 active (라이트) */
+    header nav a.active {
+      color: #111 !important;
+      border-bottom: 2px solid currentColor;
+      text-shadow: 0 0 6px rgba(0,0,0,.12);
+    }
+    /* 다크모드 active */
+    html[data-dark="true"] header nav a.active {
+      color: #fff !important;
+      border-bottom: 2px solid rgba(255,255,255,.9);
+      text-shadow: 0 0 6px rgba(255,255,255,.7), 0 0 12px rgba(0,123,255,.5);
+    }
+    /* 호버 시 살짝 강조 (active/비active 공통) */
+    header nav a:hover {
+      text-shadow: 0 0 6px rgba(0,0,0,.12);
+    }
+    html[data-dark="true"] header nav a:hover {
+      text-shadow: 0 0 6px rgba(255,255,255,.5);
+    }
+    /* 키보드 포커스 접근성 */
+    header nav a:focus-visible {
+      outline: 2px solid #0a84ff;
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+    html[data-dark="true"] header nav a:focus-visible {
+      outline-color: #82b7ff;
+    }
+  </style>
+</header>
+
+    <main>
+      <!--
+  modify main content of page:
+  - add section breaks
+  - attach section properties
+  - filter out blank sections
+-->
+
+
+
+
+
+
+  
+  
+  
+
+  <section
+    class="background"
+    data-size="page"
+    
+    
+  >
+    <h1 id="publications"><i class="icon fa-solid fa-microscope"></i>Publications</h1>
+<!-- 🔎 페이지 공통 검색: 한 번만 -->
+<div id="pubs-search" style="position:sticky;top:8px;background:#fff;padding:.5rem 0;z-index:10;">
+  <div class="search-box">
+  <input type="text" class="search-input" oninput="onSearchInput(this)" placeholder="Search items on this page" />
+  <button disabled="" data-tooltip="Clear search" aria-label="clear search" onclick="onSearchClear()">
+    <i class="icon fa-solid fa-magnifying-glass"></i>
+  </button>
+</div>
+
+  <div class="search-info"></div>
+
+</div>
+<p>Our group contributes to the literature across disciplines, with publications and conference presentations in domestic and international venues. We encourage student-led work and provide full support for submissions by M.S. and Ph.D. students, including first-author manuscripts and conference papers.</p>
+  </section>
+
+  
+  
+  
+
+  <section
+    class="background"
+    data-size="page"
+    
+    
+  >
+    <!--
+  <background></background>
+  <dark></dark>
+  <size></size>
+-->
+
+<style>
+  /* ======================
+     제목 스타일
+     ====================== */
+  h2.section-major {
+    text-align: center;
+    font-weight: 600;   
+    font-size: 1.8rem;   
+    margin: 2rem 0 1rem; 
+    color: #333;
+    text-transform: none;
+    border-bottom: none !important;
+    box-shadow: none !important;
+    text-decoration: none !important;
+    padding-bottom: 0 !important;
+  }
+  h2.section-major::before,
+  h2.section-major::after {
+    display: none !important;
+  }
+  h3.section-sub {
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin: 2rem 0 .75rem;
+    text-transform: none;
+  }
+
+  /* ======================
+     Citation 카드 기본
+     ====================== */
+  .citation {
+    display: flex !important;
+    align-items: center !important;
+    gap: 16px !important;
+    margin-bottom: 0.5rem;   /* 카드 간격 */
+    padding: 0.3rem;         /* 카드 안 여백 */
+  }
+
+  /* 썸네일 박스 */
+  .citation .citation-image {
+    width: 110px !important;          /* 가로 고정 */
+    flex: 0 0 110px !important;
+    aspect-ratio: 3 / 4 !important;   /* 세로 직사각형 (책/저널 비율) */
+    overflow: hidden !important;
+    border-radius: 8px !important;
+  }
+
+ .citation .citation-image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;   /* 👈 cover →  contain */
+    background: #fff;                 /* 이미지   비율이 안 맞을 때 생기는 여백 색 */
+    display: block !important;
+    max-height: none !important;
+    max-width: none !important;
+  }
+
+
+  /* 텍스트 영역 */
+  .citation .citation-body {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;          /* 줄바꿈 안정화 */
+  }
+
+  /* 🌙 Dark mode: 검색 바 */
+  html[data-dark="true"] #pubs-search {
+    background: transparent !important;
+    box-shadow: none !important;
+    border-top: 0 !important;
+    border-bottom: 0 !important;
+  }
+  html[data-dark="true"] #pubs-search::before,
+  html[data-dark="true"] #pubs-search::after {
+    content: none !important;
+  }
+  html[data-dark="true"] .search,
+  html[data-dark="true"] .search * {
+    color: #fff !important;
+  }
+  html[data-dark="true"] input[type="search"],
+  html[data-dark="true"] input[type="text"] {
+    background: #2a2a2a !important;
+    color: #fff !important;
+    border: 1px solid #555 !important;
+  }
+  html[data-dark="true"] .search-info {
+    color: #bbb !important;
+  }
+
+  /* 🌙 Dark mode: Papers / Thesis 제목 흰색 */
+  html[data-dark="true"] h2.section-major {
+    color: #fff !important;
+  }
+
+  /* (선택) 모바일 대응: 썸네일 크기 축소 */
+  @media (max-width: 640px) {
+    .citation .citation-image {
+      width: 90px !important;
+      flex-basis: 90px !important;
+    }
+  }
+
+  /* 저널 썸네일 박스만 전체를 살짝 오른쪽으로 */
+.citation .citation-image{ margin-left: 12px !important; }
+
+/* 모바일에서는 가운데 유지 */
+@media (max-width: 640px){
+  .citation .citation-image{ margin-left: 0 !important; }
+}
+</style>
+
+<h2 class="section-major">Papers</h2>
+
+<details>
+  <summary style="cursor:pointer; font-weight:400; font-size:1.4rem;">
+    International Papers
+  </summary>
+
+  
+
+
+
+  
+
+  <h3 id="2025">2025</h3>
+  
+
+  
+    
+
+    
+    
+    
+
+    
+      
+        
+        
+          
+          
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a href="https://doi.org/10.23736/S0022-4707.25.16696-6" class="citation-image" aria-label="Effects of high-intensity low-volume vs. low-intensity high-volume plyometric jump training on athletic performance in taekwondo athletes: randomized trial">
+        <img src="/images/publications/Sports%20Medicine%20and%20Physical%20Fitness.jpg" alt="Effects of high-intensity low-volume vs. low-intensity high-volume plyometric jump training on athletic performance in taekwondo athletes: randomized trial" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a href="https://doi.org/10.23736/S0022-4707.25.16696-6" class="citation-title">
+        Effects of high-intensity low-volume vs. low-intensity high-volume plyometric jump training on athletic performance in taekwondo athletes: randomized trial
+      </a>
+        <div class="citation-authors" tabindex="0">
+          Chan-Ho Park, Moo-Sung Kim, Jae-Kyun Ryu, Geon-Tak Kim, Hyun-Chul Jung
+
+        </div>
+      
+      
+      
+
+      
+        <div class="citation-details">
+          
+
+          
+            <span class="citation-publisher">
+              The Journal of Sports Medicine and Physical Fitness
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-date">
+              2025-09
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-id">
+              doi:10.23736/S0022-4707.25.16696-6
+            </span>
+          
+        </div>
+      
+
+      
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+        
+      
+    
+  
+    
+
+    
+    
+    
+
+    
+      
+        
+        
+          
+          
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a href="https://doi.org/10.1055/a-2542-9124" class="citation-image" aria-label="Biomechanical changes after total vs. resurfacing hip replacement: a systematic review">
+        <img src="/images/publications/sports%20medicine.jpg" alt="Biomechanical changes after total vs. resurfacing hip replacement: a systematic review" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a href="https://doi.org/10.1055/a-2542-9124" class="citation-title">
+        Biomechanical changes after total vs. resurfacing hip replacement: a systematic review
+      </a>
+        <div class="citation-authors" tabindex="0">
+          Jung-Ha Sung, Geon-Tak Kim, Jaemoo Lee, Hyun Chul Jung, Junsig Wang
+
+        </div>
+      
+      
+      
+
+      
+        <div class="citation-details">
+          
+
+          
+            <span class="citation-publisher">
+              International Journal of Sports Medicine
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-date">
+              2025-08
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-id">
+              doi:10.1055/a-2542-9124
+            </span>
+          
+        </div>
+      
+
+      
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+        
+      
+    
+  
+    
+
+    
+    
+    
+
+    
+      
+        
+        
+          
+          
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a href="https://doi.org/10.1055/a-2602-9020" class="citation-image" aria-label="Hypoxic exercise enhances post-exercise hypotension compared to normoxic exercise">
+        <img src="/images/publications/sports%20medicine.jpg" alt="Hypoxic exercise enhances post-exercise hypotension compared to normoxic exercise" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a href="https://doi.org/10.1055/a-2602-9020" class="citation-title">
+        Hypoxic exercise enhances post-exercise hypotension compared to normoxic exercise
+      </a>
+        <div class="citation-authors" tabindex="0">
+          Tae-Jin Kim, Min-Hyeok Jang, Jean-Hee Han, Hyun-Chul Jung, Jung-Hyun Kim
+
+        </div>
+      
+      
+      
+
+      
+        <div class="citation-details">
+          
+
+          
+            <span class="citation-publisher">
+              International Journal of Sports Medicine
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-date">
+              2025-07
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-id">
+              doi:10.1055/a-2602-9020
+            </span>
+          
+        </div>
+      
+
+      
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+        
+      
+    
+  
+    
+
+    
+    
+    
+
+    
+      
+        
+        
+          
+          
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a href="https://doi.org/10.5114/jhk/203236" class="citation-image" aria-label="Effects of Partial-Body Cryotherapy on Athletic Performance and Sleep Quality in Division I Collegiate Basketball Athletes">
+        <img src="/images/publications/human%20kinetics.jpg" alt="Effects of Partial-Body Cryotherapy on Athletic Performance and Sleep Quality in Division I Collegiate Basketball Athletes" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a href="https://doi.org/10.5114/jhk/203236" class="citation-title">
+        Effects of Partial-Body Cryotherapy on Athletic Performance and Sleep Quality in Division I Collegiate Basketball Athletes
+      </a>
+        <div class="citation-authors" tabindex="0">
+          Tae-Jin Kim, Kyeong-Hyon Ha, Tae-Young Park, Jung-Hyun Kim, Jung-Min Lee, Hyun Chul Jung
+
+        </div>
+      
+      
+      
+
+      
+        <div class="citation-details">
+          
+
+          
+            <span class="citation-publisher">
+              Journal of Human Kinetics
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-date">
+              2025-04
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-id">
+              doi:10.5114/jhk/203236
+            </span>
+          
+        </div>
+      
+
+      
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+        
+      
+    
+  
+    
+
+    
+    
+    
+
+    
+      
+        
+        
+          
+          
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a href="https://doi.org/10.3390/ijtm5010005" class="citation-image" aria-label="Acute Effects of Wild Ginseng Extract on Exercise Performance, Cognitive Function, and Fatigue Recovery: A Randomized Cross-Over, Placebo-Controlled, and Double-Blind Study">
+        <img src="/images/publications/translational%20medicine.png" alt="Acute Effects of Wild Ginseng Extract on Exercise Performance, Cognitive Function, and Fatigue Recovery: A Randomized Cross-Over, Placebo-Controlled, and Double-Blind Study" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a href="https://doi.org/10.3390/ijtm5010005" class="citation-title">
+        Acute Effects of Wild Ginseng Extract on Exercise Performance, Cognitive Function, and Fatigue Recovery: A Randomized Cross-Over, Placebo-Controlled, and Double-Blind Study
+      </a>
+        <div class="citation-authors" tabindex="0">
+          Sukho Lee, Hyun Chul Jung, Michael Sargent, Minsoo Kang
+
+        </div>
+      
+      
+      
+
+      
+        <div class="citation-details">
+          
+
+          
+            <span class="citation-publisher">
+              International Journal of Translational Medicine
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-date">
+              2025-01
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-id">
+              doi:10.3390/ijtm5010005
+            </span>
+          
+        </div>
+      
+
+      
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+        
+      
+    
+  
+
+  
+
+  <h3 id="2024">2024</h3>
+  
+
+  
+    
+
+    
+    
+    
+
+    
+      
+        
+        
+          
+          
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a href="https://doi.org/10.3390/healthcare12232447" class="citation-image" aria-label="Effect of Reformer Spring Resistance Modifications on Core Muscle Activity During Basic Core Muscle Exercises">
+        <img src="/images/publications/healthcare.png" alt="Effect of Reformer Spring Resistance Modifications on Core Muscle Activity During Basic Core Muscle Exercises" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a href="https://doi.org/10.3390/healthcare12232447" class="citation-title">
+        Effect of Reformer Spring Resistance Modifications on Core Muscle Activity During Basic Core Muscle Exercises
+      </a>
+        <div class="citation-authors" tabindex="0">
+          Hee-Jeong Kim, Jung-Ha Sung, Jae-Kyun Ryu, Hyun Chul Jung, Junsig Wang
+
+        </div>
+      
+      
+      
+
+      
+        <div class="citation-details">
+          
+
+          
+            <span class="citation-publisher">
+              Healthcare
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-date">
+              2024-12
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-id">
+              doi:10.3390/healthcare12232447
+            </span>
+          
+        </div>
+      
+
+      
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+        
+      
+    
+  
+    
+
+    
+    
+    
+
+    
+      
+        
+        
+      
+        
+        
+          
+          
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a href="https://doi.org/10.1080/02640414.2024.2416812" class="citation-image" aria-label="Comparisons of tactical and technical performance factors between winners and non-winners in Para Taekwondo: A comprehensive analysis of the 2020 Tokyo Paralympic Games">
+        <img src="/images/publications/sports%20science.jpg" alt="Comparisons of tactical and technical performance factors between winners and non-winners in Para Taekwondo: A comprehensive analysis of the 2020 Tokyo Paralympic Games" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a href="https://doi.org/10.1080/02640414.2024.2416812" class="citation-title">
+        Comparisons of tactical and technical performance factors between winners and non-winners in Para Taekwondo: A comprehensive analysis of the 2020 Tokyo Paralympic Games
+      </a>
+        <div class="citation-authors" tabindex="0">
+          Chan-Ho Park, David Michael O’Sullivan, Moo Sung Kim, Ye-Jin An, Hyun Chul Jung
+
+        </div>
+      
+      
+      
+
+      
+        <div class="citation-details">
+          
+
+          
+            <span class="citation-publisher">
+              Journal of Sports Sciences
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-date">
+              2024-11
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-id">
+              doi:10.1080/02640414.2024.2416812
+            </span>
+          
+        </div>
+      
+
+      
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+        
+      
+    
+      
+        
+        
+          
+          
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a href="https://doi.org/10.3389/fphys.2024.1435671" class="citation-image" aria-label="Comparisons of functional movements and core muscle activity in women according to Pilates proficiency">
+        <img src="/images/publications/frontier.jpg" alt="Comparisons of functional movements and core muscle activity in women according to Pilates proficiency" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a href="https://doi.org/10.3389/fphys.2024.1435671" class="citation-title">
+        Comparisons of functional movements and core muscle activity in women according to Pilates proficiency
+      </a>
+        <div class="citation-authors" tabindex="0">
+          Hyun Seo Ko, Hyung-Ung Jung, Tae-Young Park, Jong-Kook Song, Junsig Wang, Hyun Chul Jung
+
+        </div>
+      
+      
+      
+
+      
+        <div class="citation-details">
+          
+
+          
+            <span class="citation-publisher">
+              Frontiers in Physiology
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-date">
+              2024-11
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-id">
+              doi:10.3389/fphys.2024.1435671
+            </span>
+          
+        </div>
+      
+
+      
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+        
+      
+        
+        
+      
+    
+  
+    
+
+    
+    
+    
+
+    
+      
+        
+        
+          
+          
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a href="https://doi.org/10.22514/jomh.2024.111" class="citation-image" aria-label="Asymmetry of conventional and functional strength ratios in youth male taekwondo players">
+        <img src="/images/publications/men%20s%20health.jpg" alt="Asymmetry of conventional and functional strength ratios in youth male taekwondo players" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a href="https://doi.org/10.22514/jomh.2024.111" class="citation-title">
+        Asymmetry of conventional and functional strength ratios in youth male taekwondo players
+      </a>
+        <div class="citation-authors" tabindex="0">
+          Yo-Han Cheon, Tae-Young Park, Jong-Kook Song, Myong-Won Seo, Kyung-Min Kim, Hyun Chul Jung
+
+        </div>
+      
+      
+      
+
+      
+        <div class="citation-details">
+          
+
+          
+            <span class="citation-publisher">
+              Journal of Men's Health
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-date">
+              2024-07
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-id">
+              doi:10.22514/jomh.2024.111
+            </span>
+          
+        </div>
+      
+
+      
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+        
+      
+    
+  
+    
+
+    
+    
+    
+
+    
+      
+        
+        
+          
+          
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a href="https://doi.org/10.1007/s00421-023-05402-1" class="citation-image" aria-label="Impact of supra-maximal interval training vs. high-intensity interval training on cardiac auto-regulation response in physically active adults">
+        <img src="/images/publications/european%20applied%20physiology.jpg" alt="Impact of supra-maximal interval training vs. high-intensity interval training on cardiac auto-regulation response in physically active adults" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a href="https://doi.org/10.1007/s00421-023-05402-1" class="citation-title">
+        Impact of supra-maximal interval training vs. high-intensity interval training on cardiac auto-regulation response in physically active adults
+      </a>
+        <div class="citation-authors" tabindex="0">
+          Myong-Won Seo, Sukho Lee, Hyun Chul Jung
+
+        </div>
+      
+      
+      
+
+      
+        <div class="citation-details">
+          
+
+          
+            <span class="citation-publisher">
+              European Journal of Applied Physiology
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-date">
+              2024-01
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-id">
+              doi:10.1007/s00421-023-05402-1
+            </span>
+          
+        </div>
+      
+
+      
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+        
+      
+        
+        
+          
+          
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a href="https://doi.org/10.5114/jhk/170964" class="citation-image" aria-label="Sex Differences in Heart Rate Variability and Vascular Function Following High-Intensity Interval Training in Young Adults">
+        <img src="/images/publications/human%20kinetics.jpg" alt="Sex Differences in Heart Rate Variability and Vascular Function Following High-Intensity Interval Training in Young Adults" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a href="https://doi.org/10.5114/jhk/170964" class="citation-title">
+        Sex Differences in Heart Rate Variability and Vascular Function Following High-Intensity Interval Training in Young Adults
+      </a>
+        <div class="citation-authors" tabindex="0">
+          Myong-Won Seo, Tae-Young Park, Hyun Chul Jung
+
+        </div>
+      
+      
+      
+
+      
+        <div class="citation-details">
+          
+
+          
+            <span class="citation-publisher">
+              Journal of Human Kinetics
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-date">
+              2024-01
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-id">
+              doi:10.5114/jhk/170964
+            </span>
+          
+        </div>
+      
+
+      
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+        
+      
+    
+  
+
+  
+
+  <h3 id="2023">2023</h3>
+  
+
+  
+    
+
+    
+    
+    
+
+    
+      
+        
+        
+          
+          
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a href="https://doi.org/10.1186/s12889-023-17340-w" class="citation-image" aria-label="Leisure time physical activity: a protective factor against metabolic syndrome development">
+        <img src="/images/publications/bmc.jpg" alt="Leisure time physical activity: a protective factor against metabolic syndrome development" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a href="https://doi.org/10.1186/s12889-023-17340-w" class="citation-title">
+        Leisure time physical activity: a protective factor against metabolic syndrome development
+      </a>
+        <div class="citation-authors" tabindex="0">
+          Myong-Won Seo, Youngseob Eum, Hyun Chul Jung
+
+        </div>
+      
+      
+      
+
+      
+        <div class="citation-details">
+          
+
+          
+            <span class="citation-publisher">
+              BMC Public Health
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-date">
+              2023-12
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-id">
+              doi:10.1186/s12889-023-17340-w
+            </span>
+          
+        </div>
+      
+
+      
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+        
+      
+    
+  
+    
+
+    
+    
+    
+
+    
+      
+        
+        
+          
+          
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a href="https://doi.org/10.3390/healthcare11182479" class="citation-image" aria-label="Effects of Aerobic vs. Resistance Exercise on Vascular Function and Vascular Endothelial Growth Factor in Older Women">
+        <img src="/images/publications/healthcare.png" alt="Effects of Aerobic vs. Resistance Exercise on Vascular Function and Vascular Endothelial Growth Factor in Older Women" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a href="https://doi.org/10.3390/healthcare11182479" class="citation-title">
+        Effects of Aerobic vs. Resistance Exercise on Vascular Function and Vascular Endothelial Growth Factor in Older Women
+      </a>
+        <div class="citation-authors" tabindex="0">
+          Hyun-Bae Kim, Myong-Won Seo, Hyun Chul Jung
+
+        </div>
+      
+      
+      
+
+      
+        <div class="citation-details">
+          
+
+          
+            <span class="citation-publisher">
+              Healthcare
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-date">
+              2023-09
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-id">
+              doi:10.3390/healthcare11182479
+            </span>
+          
+        </div>
+      
+
+      
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+        
+      
+        
+        
+      
+    
+      
+        
+        
+      
+        
+        
+          
+          
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a href="https://doi.org/10.1016/j.orcp.2023.09.003" class="citation-image" aria-label="Increased risk of cardiometabolic disease in normal-weight individuals with non-alcoholic fatty liver disease">
+        <img src="/images/publications/obesity%20clinical%20practice.gif" alt="Increased risk of cardiometabolic disease in normal-weight individuals with non-alcoholic fatty liver disease" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a href="https://doi.org/10.1016/j.orcp.2023.09.003" class="citation-title">
+        Increased risk of cardiometabolic disease in normal-weight individuals with non-alcoholic fatty liver disease
+      </a>
+        <div class="citation-authors" tabindex="0">
+          Myong-Won Seo, Youngseob Eum, Hyun Chul Jung
+
+        </div>
+      
+      
+      
+
+      
+        <div class="citation-details">
+          
+
+          
+            <span class="citation-publisher">
+              Obesity Research &amp; Clinical Practice
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-date">
+              2023-09
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-id">
+              doi:10.1016/j.orcp.2023.09.003
+            </span>
+          
+        </div>
+      
+
+      
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+        
+      
+    
+  
+    
+
+    
+    
+    
+
+    
+      
+        
+        
+          
+          
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a href="https://doi.org/10.3389/fpubh.2023.1150121" class="citation-image" aria-label="Potential impact of metabolic syndrome on cognitive function in US firefighters">
+        <img src="/images/publications/frontier.jpg" alt="Potential impact of metabolic syndrome on cognitive function in US firefighters" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a href="https://doi.org/10.3389/fpubh.2023.1150121" class="citation-title">
+        Potential impact of metabolic syndrome on cognitive function in US firefighters
+      </a>
+        <div class="citation-authors" tabindex="0">
+          Myong-Won Seo, Joshua Gann, Jung-Min Lee, Kevin S. Heffernan, Joon Young Kim, Hyun Chul Jung
+
+        </div>
+      
+      
+      
+
+      
+        <div class="citation-details">
+          
+
+          
+            <span class="citation-publisher">
+              Frontiers in Public Health
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-date">
+              2023-05
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-id">
+              doi:10.3389/fpubh.2023.1150121
+            </span>
+          
+        </div>
+      
+
+      
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+        
+      
+    
+  
+    
+
+    
+    
+    
+
+    
+      
+        
+        
+          
+          
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a href="https://doi.org/10.1016/j.orcp.2023.03.002" class="citation-image" aria-label="Prevalence of combined metabolic health and weight status by various diagnosis criteria and association with cardiometabolic disease in Korean adults">
+        <img src="/images/publications/obesity%20clinical%20practice.gif" alt="Prevalence of combined metabolic health and weight status by various diagnosis criteria and association with cardiometabolic disease in Korean adults" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a href="https://doi.org/10.1016/j.orcp.2023.03.002" class="citation-title">
+        Prevalence of combined metabolic health and weight status by various diagnosis criteria and association with cardiometabolic disease in Korean adults
+      </a>
+        <div class="citation-authors" tabindex="0">
+          Myong-Won Seo, Jung-Min Lee, Hyun Chul Jung
+
+        </div>
+      
+      
+      
+
+      
+        <div class="citation-details">
+          
+
+          
+            <span class="citation-publisher">
+              Obesity Research &amp; Clinical Practice
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-date">
+              2023-03
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-id">
+              doi:10.1016/j.orcp.2023.03.002
+            </span>
+          
+        </div>
+      
+
+      
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+        
+      
+    
+  
+
+  
+
+  <h3 id="2022">2022</h3>
+  
+
+  
+    
+
+    
+    
+    
+
+    
+      
+        
+        
+          
+          
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a href="https://ojs.srce.hr/index.php/kinesiology/article/view/22120" class="citation-image" aria-label="Identification of the Optimal HIIT Protocol for Fatigue Resistance in Adolescent Athletes: A Randomized Controlled Trial">
+        <img src="/images/publications/fundamnetal%20applied%20kinesiology.jpg" alt="Identification of the Optimal HIIT Protocol for Fatigue Resistance in Adolescent Athletes: A Randomized Controlled Trial" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a href="https://ojs.srce.hr/index.php/kinesiology/article/view/22120" class="citation-title">
+        Identification of the Optimal HIIT Protocol for Fatigue Resistance in Adolescent Athletes: A Randomized Controlled Trial
+      </a>
+        <div class="citation-authors" tabindex="0">
+          Myong-Won Seo, Jung-Min Lee, Hyun Chul Jung, Joon Young Kim, Jong Koon Song
+
+        </div>
+      
+      
+      
+
+      
+        <div class="citation-details">
+          
+
+          
+            <span class="citation-publisher">
+              Kinesiology (International Journal of Fundamental and Applied Kinesiology)
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-date">
+              2022-12
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-id">
+              ojs:22120
+            </span>
+          
+        </div>
+      
+
+      
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+        
+      
+    
+  
+    
+
+    
+    
+    
+
+    
+      
+        
+        
+          
+          
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a href="https://doi.org/10.1519/JSC.0000000000003754" class="citation-image" aria-label="The Impact of Recovery Time on Performance in Division I Collegiate Beach Volleyball Players">
+        <img src="/images/publications/strength%20and%20conditioning.jpeg" alt="The Impact of Recovery Time on Performance in Division I Collegiate Beach Volleyball Players" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a href="https://doi.org/10.1519/JSC.0000000000003754" class="citation-title">
+        The Impact of Recovery Time on Performance in Division I Collegiate Beach Volleyball Players
+      </a>
+        <div class="citation-authors" tabindex="0">
+          Rebecca N. Holtgeerts, Joshua Gann, Hyun Chul Jung, William Hey
+
+        </div>
+      
+      
+      
+
+      
+        <div class="citation-details">
+          
+
+          
+            <span class="citation-publisher">
+              Journal of Strength and Conditioning Research
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-date">
+              2022-03
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-id">
+              doi:10.1519/JSC.0000000000003754
+            </span>
+          
+        </div>
+      
+
+      
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+        
+      
+    
+  
+
+
+
+</details>
+
+<details>
+  <summary style="cursor:pointer; font-weight:400; font-size:1.4rem;">
+    Domestic Papers
+  </summary>
+
+  
+
+
+
+  
+
+  <h3 id="2024">2024</h3>
+  
+
+  
+    
+
+    
+    
+    
+
+    
+      
+        
+        
+          
+          
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a href="https://doi.org/10.24881/tjk.2024.15.4.109" class="citation-image" aria-label="급성:만성 작업부하 비율 ACWR 과 부상 및 회복 간의 연관성: 팀 스포츠와 개인 스포츠의 비교 분석 및 태권도에서의 적용 가능성에 대한 체계적 검토">
+        <img src="/images/publications/%EA%B5%AD%EA%B8%B0%EC%9B%90.png" alt="급성:만성 작업부하 비율 ACWR 과 부상 및 회복 간의 연관성: 팀 스포츠와 개인 스포츠의 비교 분석 및 태권도에서의 적용 가능성에 대한 체계적 검토" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a href="https://doi.org/10.24881/tjk.2024.15.4.109" class="citation-title">
+        급성:만성 작업부하 비율(ACWR)과 부상 및 회복 간의 연관성: 팀 스포츠와 개인 스포츠의 비교 분석 및 태권도에서의 적용 가능성에 대한 체계적 검토
+      </a>
+        <div class="citation-authors" tabindex="0">
+          박찬호, 유현아, 정현철
+
+        </div>
+      
+      
+      
+
+      
+        <div class="citation-details">
+          
+
+          
+            <span class="citation-publisher">
+              국기원 태권도연구 (Taekwondo Journal of Kukkiwon)
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-date">
+              2024-12
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-id">
+              doi:10.24881/tjk.2024.15.4.109
+            </span>
+          
+        </div>
+      
+
+      
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+        
+      
+        
+        
+      
+    
+      
+        
+        
+      
+        
+        
+          
+          
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a href="http://dx.doi.org/10.21797/ksme.2023.25.4.005" class="citation-image" aria-label="부모의 신체활동 참여가 아동의 Physical Literacy에 미치는 영향 Effect of Parents Participation on Physical Literacy in a Child">
+        <img src="/images/publications/%ED%95%9C%EA%B5%AD%EC%B2%B4%EC%9C%A1%EC%B8%A1%EC%A0%95%ED%8F%89%EA%B0%80%ED%95%99%ED%9A%8C%EC%A7%80.png" alt="부모의 신체활동 참여가 아동의 Physical Literacy에 미치는 영향 Effect of Parents Participation on Physical Literacy in a Child" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a href="http://dx.doi.org/10.21797/ksme.2023.25.4.005" class="citation-title">
+        부모의 신체활동 참여가 아동의 Physical Literacy에 미치는 영향 = Effect of Parents’ Participation on Physical Literacy in a Child
+      </a>
+        <div class="citation-authors" tabindex="0">
+          정형웅, 고현서, 이정민, 송종국, 정현철
+
+        </div>
+      
+      
+      
+
+      
+        <div class="citation-details">
+          
+
+          
+            <span class="citation-publisher">
+              한국체육측정평가학회지 (The Korean Journal of Measurement and Evaluation in Physical Education and Sports Science)
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-date">
+              2024-12
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-id">
+              doi:10.21797/ksme.2023.25.4.005
+            </span>
+          
+        </div>
+      
+
+      
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+        
+      
+    
+  
+    
+
+    
+    
+    
+
+    
+      
+        
+        
+          
+          
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a href="https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003127796" class="citation-image" aria-label="스케이트 캐나다의 Long Term Development 모델 고찰을 통한 국내 피겨스케이팅 장기 선수 발달 프로그램 운영방안">
+        <img src="/images/publications/%ED%95%99%EA%B5%90%EC%B2%B4%EC%9C%A1%EC%97%B0%EA%B5%AC%EC%86%8C.png" alt="스케이트 캐나다의 Long Term Development 모델 고찰을 통한 국내 피겨스케이팅 장기 선수 발달 프로그램 운영방안" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a href="https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003127796" class="citation-title">
+        스케이트 캐나다의 Long Term Development 모델 고찰을 통한 국내 피겨스케이팅 장기 선수 발달 프로그램 운영방안
+      </a>
+        <div class="citation-authors" tabindex="0">
+          정민지, 정현철
+
+        </div>
+      
+      
+      
+
+      
+        <div class="citation-details">
+          
+
+          
+            <span class="citation-publisher">
+              Asian Journal of Physical Education and Sport Science
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-date">
+              2024-09
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-id">
+              doi:10.24007/ajpess.2024.12.5.001
+            </span>
+          
+        </div>
+      
+
+      
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+        
+      
+        
+        
+      
+    
+      
+        
+        
+      
+        
+        
+          
+          
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a href="https://www.riss.kr/link?id=A109291312" class="citation-image" aria-label="운동장 표면 유형이 신체능력 및 축구 경기력에 미치는 영향; 체계적 검토 Effect of Surface Types of Playing Ground on Physical and Soccer Performances; A Systematic Review">
+        <img src="/images/publications/%ED%95%99%EA%B5%90%EC%B2%B4%EC%9C%A1%EC%97%B0%EA%B5%AC%EC%86%8C.png" alt="운동장 표면 유형이 신체능력 및 축구 경기력에 미치는 영향; 체계적 검토 Effect of Surface Types of Playing Ground on Physical and Soccer Performances; A Systematic Review" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a href="https://www.riss.kr/link?id=A109291312" class="citation-title">
+        운동장 표면 유형이 신체능력 및 축구 경기력에 미치는 영향; 체계적 검토 = Effect of Surface Types of Playing Ground on Physical and Soccer Performances; A Systematic Review
+      </a>
+        <div class="citation-authors" tabindex="0">
+          정형웅, 고현서, 박희란, 심채영, 김도균, 정현철
+
+        </div>
+      
+      
+      
+
+      
+        <div class="citation-details">
+          
+
+          
+            <span class="citation-publisher">
+              Asian Journal of Physical Education and Sport Science (AJPESS)
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-date">
+              2024-09
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-id">
+              riss:A109291312
+            </span>
+          
+        </div>
+      
+
+      
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+        
+      
+    
+  
+    
+
+    
+    
+    
+
+    
+      
+        
+        
+          
+          
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a href="https://doi.org/10.24881/tjk.2024.15.1.161" class="citation-image" aria-label="남자 청소년 태권도 선수들의 근력 및 근력 변동률에 대한 연구">
+        <img src="/images/publications/%EA%B5%AD%EA%B8%B0%EC%9B%90.png" alt="남자 청소년 태권도 선수들의 근력 및 근력 변동률에 대한 연구" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a href="https://doi.org/10.24881/tjk.2024.15.1.161" class="citation-title">
+        남자 청소년 태권도 선수들의 근력 및 근력 변동률에 대한 연구
+      </a>
+        <div class="citation-authors" tabindex="0">
+          김무성, 천요한, 박찬호, 왕준식, 정현철
+
+        </div>
+      
+      
+      
+
+      
+        <div class="citation-details">
+          
+
+          
+            <span class="citation-publisher">
+              국기원 태권도연구 (Taekwondo Journal of Kukkiwon)
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-date">
+              2024-03
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-id">
+              doi:10.24881/tjk.2024.15.1.161
+            </span>
+          
+        </div>
+      
+
+      
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+        
+      
+        
+        
+      
+    
+      
+        
+        
+      
+        
+        
+          
+          
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a href="https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003069372" class="citation-image" aria-label="스포츠 선진국의 장기적인 선수 발달 시스템 분석을 통한 우리나라 시스템 개선 방안 연구">
+        <img src="/images/publications/%ED%95%99%EA%B5%90%EC%B2%B4%EC%9C%A1%EC%97%B0%EA%B5%AC%EC%86%8C.png" alt="스포츠 선진국의 장기적인 선수 발달 시스템 분석을 통한 우리나라 시스템 개선 방안 연구" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a href="https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003069372" class="citation-title">
+        스포츠 선진국의 장기적인 선수 발달 시스템 분석을 통한 우리나라 시스템 개선 방안 연구
+      </a>
+        <div class="citation-authors" tabindex="0">
+          박희란, 박현우, 박태영, 서명원, 정현철
+
+        </div>
+      
+      
+      
+
+      
+        <div class="citation-details">
+          
+
+          
+            <span class="citation-publisher">
+              Asian Journal of Physical Education and Sport Science
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-date">
+              2024-03
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-id">
+              doi:10.24007/ajpess.2024.12.2.147
+            </span>
+          
+        </div>
+      
+
+      
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+        
+      
+    
+  
+
+  
+
+  <h3 id="2023">2023</h3>
+  
+
+  
+    
+
+    
+    
+    
+
+    
+      
+        
+        
+          
+          
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a href="https://doi.org/10.23949/kjpe.2024.1.63.1.6" class="citation-image" aria-label="6주간의 필라테스 운동이 럭비선수의 체간 안정성 및 요통에 미치는 영향">
+        <img src="/images/publications/%ED%95%9C%EA%B5%AD%EC%B2%B4%EC%9C%A1%ED%95%99%ED%9A%8C.png" alt="6주간의 필라테스 운동이 럭비선수의 체간 안정성 및 요통에 미치는 영향" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a href="https://doi.org/10.23949/kjpe.2024.1.63.1.6" class="citation-title">
+        6주간의 필라테스 운동이 럭비선수의 체간 안정성 및 요통에 미치는 영향
+      </a>
+        <div class="citation-authors" tabindex="0">
+          김지율, 김무성, 박태영, 송종국, 정현철
+
+        </div>
+      
+      
+      
+
+      
+        <div class="citation-details">
+          
+
+          
+            <span class="citation-publisher">
+              한국체육학회지 (The Korean Journal of Physical Education)
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-date">
+              2023-12
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-id">
+              doi:10.23949/kjpe.2024.1.63.1.6
+            </span>
+          
+        </div>
+      
+
+      
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+        
+      
+        
+        
+      
+    
+      
+        
+        
+      
+        
+        
+          
+          
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a href="http://dx.doi.org/10.23949/kjpe.2023.7.62.4.17" class="citation-image" aria-label="아동의 스포츠 활동 참여 유형이 Physical Literacy와 인지기능에 미치는 영향 Effects of Different Types of Sports Activities on Physical Literacy and Cognitive Function in a Child">
+        <img src="/images/publications/%ED%95%9C%EA%B5%AD%EC%B2%B4%EC%9C%A1%ED%95%99%ED%9A%8C.png" alt="아동의 스포츠 활동 참여 유형이 Physical Literacy와 인지기능에 미치는 영향 Effects of Different Types of Sports Activities on Physical Literacy and Cognitive Function in a Child" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a href="http://dx.doi.org/10.23949/kjpe.2023.7.62.4.17" class="citation-title">
+        아동의 스포츠 활동 참여 유형이 Physical Literacy와 인지기능에 미치는 영향 = Effects of Different Types of Sports Activities on Physical Literacy and Cognitive Function in a Child
+      </a>
+        <div class="citation-authors" tabindex="0">
+          정형웅, 박태영, 송종국, 이정민, 정현철
+
+        </div>
+      
+      
+      
+
+      
+        <div class="citation-details">
+          
+
+          
+            <span class="citation-publisher">
+              한국체육학회지 (Korean Journal of Physical Education)
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-date">
+              2023-12
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-id">
+              doi:10.23949/kjpe.2023.7.62.4.17
+            </span>
+          
+        </div>
+      
+
+      
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+        
+      
+    
+  
+    
+
+    
+    
+    
+
+    
+      
+        
+        
+          
+          
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a href="https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003018111" class="citation-image" aria-label="성인 여성들의 신체활동 수준이 우울, 불안과 심박변이도에 미치는 영향">
+        <img src="/images/publications/%ED%95%99%EA%B5%90%EC%B2%B4%EC%9C%A1%EC%97%B0%EA%B5%AC%EC%86%8C.png" alt="성인 여성들의 신체활동 수준이 우울, 불안과 심박변이도에 미치는 영향" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a href="https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003018111" class="citation-title">
+        성인 여성들의 신체활동 수준이 우울, 불안과 심박변이도에 미치는 영향
+      </a>
+        <div class="citation-authors" tabindex="0">
+          양명주, 송종국, 정현철, 박태영
+
+        </div>
+      
+      
+      
+
+      
+        <div class="citation-details">
+          
+
+          
+            <span class="citation-publisher">
+              Asian Journal of Physical Education and Sport Science
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-date">
+              2023-11
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-id">
+              doi:10.24007/ajpess.2023.11.6.029
+            </span>
+          
+        </div>
+      
+
+      
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+        
+      
+    
+  
+    
+
+    
+    
+    
+
+    
+      
+        
+        
+          
+          
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a href="https://doi.org/10.51979/KSSLS.2023.04.92.399" class="citation-image" aria-label="유착성 관절낭염 환자의 건강개선을 위한 탄성밴드 운동프로그램 효과 검증">
+        <img src="/images/publications/%ED%95%9C%EA%B5%AD%EC%82%AC%ED%9A%8C%EC%B2%B4%EC%9C%A1%ED%95%99%ED%9A%8C%EC%A7%80.jpg" alt="유착성 관절낭염 환자의 건강개선을 위한 탄성밴드 운동프로그램 효과 검증" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a href="https://doi.org/10.51979/KSSLS.2023.04.92.399" class="citation-title">
+        유착성 관절낭염 환자의 건강개선을 위한 탄성밴드 운동프로그램 효과 검증
+      </a>
+        <div class="citation-authors" tabindex="0">
+          박인식, 박정희, 정현철, 김정현, 이정민
+
+        </div>
+      
+      
+      
+
+      
+        <div class="citation-details">
+          
+
+          
+            <span class="citation-publisher">
+              한국사회체육학회지 (Journal of Sport and Leisure Studies)
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-date">
+              2023-04
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-id">
+              doi:10.51979/KSSLS.2023.04.92.399
+            </span>
+          
+        </div>
+      
+
+      
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+        
+      
+    
+  
+    
+
+    
+    
+    
+
+    
+      
+        
+        
+          
+          
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a href="https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART002924800" class="citation-image" aria-label="가속도계로 측정된 중 고강도 신체활동 수준이 한국 노인들의 심혈관 대사 및 골 관련 질환에 미치는 영향: 2017 국민건강영양조사를 이용하여">
+        <img src="/images/publications/%ED%95%9C%EA%B5%AD%EC%B2%B4%EC%9C%A1%EC%B8%A1%EC%A0%95%ED%8F%89%EA%B0%80%ED%95%99%ED%9A%8C%EC%A7%80.png" alt="가속도계로 측정된 중 고강도 신체활동 수준이 한국 노인들의 심혈관 대사 및 골 관련 질환에 미치는 영향: 2017 국민건강영양조사를 이용하여" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a href="https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART002924800" class="citation-title">
+        가속도계로 측정된 중·고강도 신체활동 수준이 한국 노인들의 심혈관 대사 및 골 관련 질환에 미치는 영향: 2017 국민건강영양조사를 이용하여
+      </a>
+        <div class="citation-authors" tabindex="0">
+          서명원, 송종국, 이정민, 정현철
+
+        </div>
+      
+      
+      
+
+      
+        <div class="citation-details">
+          
+
+          
+            <span class="citation-publisher">
+              한국체육측정평가학회지 (Korean Society of Measurement and Evaluation in Physical Education and Sport Science)
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-date">
+              2023-01
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-id">
+              doi:10.21797/ksme.2022.24.4.189
+            </span>
+          
+        </div>
+      
+
+      
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+        
+      
+    
+  
+
+  
+
+  <h3 id="2022">2022</h3>
+  
+
+  
+    
+
+    
+    
+    
+
+    
+      
+        
+        
+          
+          
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a href="https://doi.org/10.24985/kjss.2022.33.4.543" class="citation-image" aria-label="가속도계를 이용한 한국인들의 신체활동수준과 심혈관 대사 질환 요인 및 대사증후군과의 관계: 2014-2016 국민건강영양조사를 활용하여">
+        <img src="/images/publications/%ED%95%9C%EA%B5%AD%EC%8A%A4%ED%8F%AC%EC%B8%A0%EA%B3%BC%ED%95%99%EC%9B%90.jpg" alt="가속도계를 이용한 한국인들의 신체활동수준과 심혈관 대사 질환 요인 및 대사증후군과의 관계: 2014-2016 국민건강영양조사를 활용하여" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a href="https://doi.org/10.24985/kjss.2022.33.4.543" class="citation-title">
+        가속도계를 이용한 한국인들의 신체활동수준과 심혈관 대사 질환 요인 및 대사증후군과의 관계: 2014-2016 국민건강영양조사를 활용하여
+      </a>
+        <div class="citation-authors" tabindex="0">
+          서명원, 이정민, 정현철, 김준영, 송종국
+
+        </div>
+      
+      
+      
+
+      
+        <div class="citation-details">
+          
+
+          
+            <span class="citation-publisher">
+              체육과학연구 (Korean Journal of Sport Science)
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-date">
+              2022-11
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-id">
+              doi:10.24985/kjss.2022.33.4.543
+            </span>
+          
+        </div>
+      
+
+      
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+        
+      
+    
+  
+
+  
+
+  <h3 id="2021">2021</h3>
+  
+
+  
+    
+
+    
+    
+    
+
+    
+      
+        
+        
+          
+          
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a href="https://doi.org/10.23949/kjpe.2021.11.60.6.26" class="citation-image" aria-label="고강도 간헐적 훈련이 건강한 성인의 심박변이도에 미치는 영향: 체계적 검토">
+        <img src="/images/publications/%ED%95%9C%EA%B5%AD%EC%B2%B4%EC%9C%A1%ED%95%99%ED%9A%8C.png" alt="고강도 간헐적 훈련이 건강한 성인의 심박변이도에 미치는 영향: 체계적 검토" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a href="https://doi.org/10.23949/kjpe.2021.11.60.6.26" class="citation-title">
+        고강도 간헐적 훈련이 건강한 성인의 심박변이도에 미치는 영향: 체계적 검토
+      </a>
+        <div class="citation-authors" tabindex="0">
+          박태영, 정현철, 천요한, 송종국
+
+        </div>
+      
+      
+      
+
+      
+        <div class="citation-details">
+          
+
+          
+            <span class="citation-publisher">
+              한국체육학회지 (The Korean Journal of Physical Education)
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-date">
+              2021-11
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-id">
+              doi:10.23949/kjpe.2021.11.60.6.26
+            </span>
+          
+        </div>
+      
+
+      
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+        
+      
+    
+  
+    
+
+    
+    
+    
+
+    
+      
+        
+        
+          
+          
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a href="https://doi.org/10.24007/ajpess.2021.9.6.007" class="citation-image" aria-label="청소년 및 대학생 운동선수의 대퇴이두근 대퇴사두근 근력 비율: 체계적인 검토">
+        <img src="/images/publications/%ED%95%99%EA%B5%90%EC%B2%B4%EC%9C%A1%EC%97%B0%EA%B5%AC%EC%86%8C.png" alt="청소년 및 대학생 운동선수의 대퇴이두근 대퇴사두근 근력 비율: 체계적인 검토" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a href="https://doi.org/10.24007/ajpess.2021.9.6.007" class="citation-title">
+        청소년 및 대학생 운동선수의 대퇴이두근/대퇴사두근 근력 비율: 체계적인 검토
+      </a>
+        <div class="citation-authors" tabindex="0">
+          천요한, 송종국, 박태영, 정현철
+
+        </div>
+      
+      
+      
+
+      
+        <div class="citation-details">
+          
+
+          
+            <span class="citation-publisher">
+              Asian Journal of Physical Education and Sport Science
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-date">
+              2021-10
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-id">
+              doi:10.24007/ajpess.2021.9.6.007
+            </span>
+          
+        </div>
+      
+
+      
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+        
+      
+    
+  
+
+
+
+</details>
+
+<h2 class="section-major">Thesis</h2>
+
+<details>
+  <summary style="cursor:pointer; font-weight:400; font-size:1.4rem;">
+    Ph.D. Thesis
+  </summary>
+
+  
+
+
+
+
+</details>
+
+<details>
+  <summary style="cursor:pointer; font-weight:400; font-size:1.4rem;">
+    M.S. Thesis
+  </summary>
+
+  
+
+
+
+  
+
+  <h3 id="2025-02">2025-02</h3>
+  
+
+  
+    
+
+    
+    
+    
+
+    
+      
+        
+        
+      
+        
+        
+          
+          
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a href="https://www.riss.kr/link?id=T17199099" class="citation-image" aria-label="근지구력 운동시 휴식 시간 차이가 젊은 성인 남성의 심박수, 대사지표에 미치는 영향">
+        <img src="/images/publications/%EA%B2%BD%ED%9D%AC%EB%8C%80%ED%95%99%EA%B5%90.jpg" alt="근지구력 운동시 휴식 시간 차이가 젊은 성인 남성의 심박수, 대사지표에 미치는 영향" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a href="https://www.riss.kr/link?id=T17199099" class="citation-title">
+        근지구력 운동시 휴식 시간 차이가 젊은 성인 남성의 심박수, 대사지표에 미치는 영향
+      </a>
+        <div class="citation-authors" tabindex="0">
+          곽준후
+
+        </div>
+      
+      
+      
+
+      
+        <div class="citation-details">
+          
+
+          
+            <span class="citation-publisher">
+              경희대학교 일반대학원 체육학과 석사 학위논문
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-date">
+              2025-02
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-id">
+              
+            </span>
+          
+        </div>
+      
+
+      
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+    
+      
+        
+        
+      
+        
+        
+      
+        
+        
+          
+          
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a href="https://www.riss.kr/link?id=T17199307" class="citation-image" aria-label="여자 청소년의 척추측만증 유무에 따른 체형, 호흡 및 신체기능의 비교">
+        <img src="/images/publications/%EA%B2%BD%ED%9D%AC%EB%8C%80%ED%95%99%EA%B5%90.jpg" alt="여자 청소년의 척추측만증 유무에 따른 체형, 호흡 및 신체기능의 비교" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a href="https://www.riss.kr/link?id=T17199307" class="citation-title">
+        여자 청소년의 척추측만증 유무에 따른 체형, 호흡 및 신체기능의 비교
+      </a>
+        <div class="citation-authors" tabindex="0">
+          김주희
+
+        </div>
+      
+      
+      
+
+      
+        <div class="citation-details">
+          
+
+          
+            <span class="citation-publisher">
+              경희대학교 체육대학원 스포츠의과학전공 석사 학위논문
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-date">
+              2025-02
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-id">
+              
+            </span>
+          
+        </div>
+      
+
+      
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+    
+      
+        
+        
+          
+          
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a href="https://www.riss.kr/link?id=T17198753" class="citation-image" aria-label="Effect of Hypoxic Exercise on Post-Exercise Hypotension in Sedentary Males">
+        <img src="/images/publications/%EA%B2%BD%ED%9D%AC%EB%8C%80%ED%95%99%EA%B5%90.jpg" alt="Effect of Hypoxic Exercise on Post-Exercise Hypotension in Sedentary Males" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a href="https://www.riss.kr/link?id=T17198753" class="citation-title">
+        Effect of Hypoxic Exercise on Post-Exercise Hypotension in Sedentary Males
+      </a>
+        <div class="citation-authors" tabindex="0">
+          김태진
+
+        </div>
+      
+      
+      
+
+      
+        <div class="citation-details">
+          
+
+          
+            <span class="citation-publisher">
+              경희대학교 일반대학원 체육학과 석사 학위논문
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-date">
+              2025-02
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-id">
+              
+            </span>
+          
+        </div>
+      
+
+      
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+    
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+          
+          
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a href="https://www.riss.kr/link?id=T17199358" class="citation-image" aria-label="일회성 고강도 간헐적 운동이 과체중 및 비만 여성의 심박변이도 및 혈관탄성에 미치는 영향">
+        <img src="/images/publications/%EA%B2%BD%ED%9D%AC%EB%8C%80%ED%95%99%EA%B5%90.jpg" alt="일회성 고강도 간헐적 운동이 과체중 및 비만 여성의 심박변이도 및 혈관탄성에 미치는 영향" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a href="https://www.riss.kr/link?id=T17199358" class="citation-title">
+        일회성 고강도 간헐적 운동이 과체중 및 비만 여성의 심박변이도 및 혈관탄성에 미치는 영향
+      </a>
+        <div class="citation-authors" tabindex="0">
+          유희승
+
+        </div>
+      
+      
+      
+
+      
+        <div class="citation-details">
+          
+
+          
+            <span class="citation-publisher">
+              경희대학교 체육대학원 스포츠의과학전공 석사 학위논문
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-date">
+              2025-02
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-id">
+              
+            </span>
+          
+        </div>
+      
+
+      
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+        
+      
+        
+        
+      
+        
+        
+      
+    
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+          
+          
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a href="https://www.riss.kr/link?id=T17199369" class="citation-image" aria-label="저항성 운동 유형이 젊은 성인 남성의 심박변이도 및 운동 후 초과 산소섭취량에 미치는 영향">
+        <img src="/images/publications/%EA%B2%BD%ED%9D%AC%EB%8C%80%ED%95%99%EA%B5%90.jpg" alt="저항성 운동 유형이 젊은 성인 남성의 심박변이도 및 운동 후 초과 산소섭취량에 미치는 영향" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a href="https://www.riss.kr/link?id=T17199369" class="citation-title">
+        저항성 운동 유형이 젊은 성인 남성의 심박변이도 및 운동 후 초과 산소섭취량에 미치는 영향
+      </a>
+        <div class="citation-authors" tabindex="0">
+          정우성
+
+        </div>
+      
+      
+      
+
+      
+        <div class="citation-details">
+          
+
+          
+            <span class="citation-publisher">
+              경희대학교 일반대학원 체육학과 석사 학위논문
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-date">
+              2025-02
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-id">
+              
+            </span>
+          
+        </div>
+      
+
+      
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+        
+      
+        
+        
+      
+    
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+          
+          
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a href="https://www.riss.kr/link?id=T17199477" class="citation-image" aria-label="태권도 선수와 일반인 간 무릎 연골 두께 및 회복 탄력성의 비교">
+        <img src="/images/publications/%EA%B2%BD%ED%9D%AC%EB%8C%80%ED%95%99%EA%B5%90.jpg" alt="태권도 선수와 일반인 간 무릎 연골 두께 및 회복 탄력성의 비교" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a href="https://www.riss.kr/link?id=T17199477" class="citation-title">
+        태권도 선수와 일반인 간 무릎 연골 두께 및 회복 탄력성의 비교
+      </a>
+        <div class="citation-authors" tabindex="0">
+          추민규
+
+        </div>
+      
+      
+      
+
+      
+        <div class="citation-details">
+          
+
+          
+            <span class="citation-publisher">
+              경희대학교 체육대학원 스포츠의과학전공 석사 학위논문
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-date">
+              2025-02
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-id">
+              
+            </span>
+          
+        </div>
+      
+
+      
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+        
+      
+    
+  
+
+  
+
+  <h3 id="2024-08">2024-08</h3>
+  
+
+  
+    
+
+    
+    
+    
+
+    
+      
+        
+        
+          
+          
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a href="https://www.riss.kr/link?id=T17087256" class="citation-image" aria-label="대학운동선수의 성별, 학년 및 스포츠 참여 유형에 따른 헬스리터러시와 건강증진행위 간 비교 분석">
+        <img src="/images/publications/%EA%B2%BD%ED%9D%AC%EB%8C%80%ED%95%99%EA%B5%90.jpg" alt="대학운동선수의 성별, 학년 및 스포츠 참여 유형에 따른 헬스리터러시와 건강증진행위 간 비교 분석" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a href="https://www.riss.kr/link?id=T17087256" class="citation-title">
+        대학운동선수의 성별, 학년 및 스포츠 참여 유형에 따른 헬스리터러시와 건강증진행위 간 비교 분석
+      </a>
+        <div class="citation-authors" tabindex="0">
+          박희란
+
+        </div>
+      
+      
+      
+
+      
+        <div class="citation-details">
+          
+
+          
+            <span class="citation-publisher">
+              경희대학교 교육대학원 체육교육전공 석사 학위논문
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-date">
+              2024-08
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-id">
+              
+            </span>
+          
+        </div>
+      
+
+      
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+        
+      
+        
+        
+      
+    
+      
+        
+        
+      
+        
+        
+          
+          
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a href="https://www.riss.kr/link?id=T17087467" class="citation-image" aria-label="젊은 성인 남성의 하지 근피로 유발에 따른 근력, 근력 변동률, 근력 비율 및 피로 저항 능력의 변화">
+        <img src="/images/publications/%EA%B2%BD%ED%9D%AC%EB%8C%80%ED%95%99%EA%B5%90.jpg" alt="젊은 성인 남성의 하지 근피로 유발에 따른 근력, 근력 변동률, 근력 비율 및 피로 저항 능력의 변화" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a href="https://www.riss.kr/link?id=T17087467" class="citation-title">
+        젊은 성인 남성의 하지 근피로 유발에 따른 근력, 근력 변동률, 근력 비율 및 피로 저항 능력의 변화
+      </a>
+        <div class="citation-authors" tabindex="0">
+          정민지
+
+        </div>
+      
+      
+      
+
+      
+        <div class="citation-details">
+          
+
+          
+            <span class="citation-publisher">
+              경희대학교 일반대학원 체육학과 석사 학위논문
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-date">
+              2024-08
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-id">
+              
+            </span>
+          
+        </div>
+      
+
+      
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+        
+      
+    
+  
+
+  
+
+  <h3 id="2024-02">2024-02</h3>
+  
+
+  
+    
+
+    
+    
+    
+
+    
+      
+        
+        
+      
+        
+        
+          
+          
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a href="https://www.riss.kr/link?id=T16960342" class="citation-image" aria-label="4주간의 고강도 간헐적 운동과 중강도 지속 운동이 성인 여성의 심혈관기능과 유 무산소 능력에 미치는 영향">
+        <img src="/images/publications/%EA%B2%BD%ED%9D%AC%EB%8C%80%ED%95%99%EA%B5%90.jpg" alt="4주간의 고강도 간헐적 운동과 중강도 지속 운동이 성인 여성의 심혈관기능과 유 무산소 능력에 미치는 영향" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a href="https://www.riss.kr/link?id=T16960342" class="citation-title">
+        4주간의 고강도 간헐적 운동과 중강도 지속 운동이 성인 여성의 심혈관기능과 유·무산소 능력에 미치는 영향
+      </a>
+        <div class="citation-authors" tabindex="0">
+          김사빈
+
+        </div>
+      
+      
+      
+
+      
+        <div class="citation-details">
+          
+
+          
+            <span class="citation-publisher">
+              경희대학교 체육대학원 스포츠의과학전공 석사 학위논문
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-date">
+              2024-02
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-id">
+              
+            </span>
+          
+        </div>
+      
+
+      
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+    
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+          
+          
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a href="https://www.riss.kr/link?id=T16961085" class="citation-image" aria-label="필라테스 운동이 럭비선수의 체간 안정성 및 요통에 미치는 영향">
+        <img src="/images/publications/%EA%B2%BD%ED%9D%AC%EB%8C%80%ED%95%99%EA%B5%90.jpg" alt="필라테스 운동이 럭비선수의 체간 안정성 및 요통에 미치는 영향" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a href="https://www.riss.kr/link?id=T16961085" class="citation-title">
+        필라테스 운동이 럭비선수의 체간 안정성 및 요통에 미치는 영향
+      </a>
+        <div class="citation-authors" tabindex="0">
+          김지율
+
+        </div>
+      
+      
+      
+
+      
+        <div class="citation-details">
+          
+
+          
+            <span class="citation-publisher">
+              경희대학교 일반대학원 체육학과 석사 학위논문
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-date">
+              2024-02
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-id">
+              
+            </span>
+          
+        </div>
+      
+
+      
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+        
+      
+    
+      
+        
+        
+      
+        
+        
+      
+        
+        
+          
+          
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a href="https://www.riss.kr/link?id=T16960450" class="citation-image" aria-label="Effects of High-intensity Low-volume vs. Low-intensity High-volume Plyometric Training on Athletic Performance and Reactive Strength Index in Taekwondo Athletes">
+        <img src="/images/publications/%EA%B2%BD%ED%9D%AC%EB%8C%80%ED%95%99%EA%B5%90.jpg" alt="Effects of High-intensity Low-volume vs. Low-intensity High-volume Plyometric Training on Athletic Performance and Reactive Strength Index in Taekwondo Athletes" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a href="https://www.riss.kr/link?id=T16960450" class="citation-title">
+        Effects of High-intensity Low-volume vs. Low-intensity High-volume Plyometric Training on Athletic Performance and Reactive Strength Index in Taekwondo Athletes
+      </a>
+        <div class="citation-authors" tabindex="0">
+          박찬호
+
+        </div>
+      
+      
+      
+
+      
+        <div class="citation-details">
+          
+
+          
+            <span class="citation-publisher">
+              경희대학교 일반대학원 체육학과 석사 학위논문
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-date">
+              2024-02
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-id">
+              
+            </span>
+          
+        </div>
+      
+
+      
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+    
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+          
+          
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a href="https://www.riss.kr/link?id=T16960663" class="citation-image" aria-label="고강도 간헐적 훈련 이후 가압 마사지 요법이 심혈관 기능 및 혈중 젖산 농도에 미치는 영향">
+        <img src="/images/publications/%EA%B2%BD%ED%9D%AC%EB%8C%80%ED%95%99%EA%B5%90.jpg" alt="고강도 간헐적 훈련 이후 가압 마사지 요법이 심혈관 기능 및 혈중 젖산 농도에 미치는 영향" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a href="https://www.riss.kr/link?id=T16960663" class="citation-title">
+        고강도 간헐적 훈련 이후 가압 마사지 요법이 심혈관 기능 및 혈중 젖산 농도에 미치는 영향
+      </a>
+        <div class="citation-authors" tabindex="0">
+          이수민
+
+        </div>
+      
+      
+      
+
+      
+        <div class="citation-details">
+          
+
+          
+            <span class="citation-publisher">
+              경희대학교 일반대학원 체육학과 석사 학위논문
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-date">
+              2024-02
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-id">
+              
+            </span>
+          
+        </div>
+      
+
+      
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+        
+      
+        
+        
+      
+        
+        
+      
+    
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+          
+          
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a href="https://www.riss.kr/link?id=T16960845" class="citation-image" aria-label="속도기반 저항훈련이 근 활성도 및 운동수행능력에 미치는 영향">
+        <img src="/images/publications/%EA%B2%BD%ED%9D%AC%EB%8C%80%ED%95%99%EA%B5%90.jpg" alt="속도기반 저항훈련이 근 활성도 및 운동수행능력에 미치는 영향" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a href="https://www.riss.kr/link?id=T16960845" class="citation-title">
+        속도기반 저항훈련이 근 활성도 및 운동수행능력에 미치는 영향
+      </a>
+        <div class="citation-authors" tabindex="0">
+          전요한
+
+        </div>
+      
+      
+      
+
+      
+        <div class="citation-details">
+          
+
+          
+            <span class="citation-publisher">
+              경희대학교 일반대학원 체육학과 석사 학위논문
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-date">
+              2024-02
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-id">
+              
+            </span>
+          
+        </div>
+      
+
+      
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+        
+      
+        
+        
+      
+    
+      
+        
+        
+          
+          
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a href="https://www.riss.kr/link?id=T16960336" class="citation-image" aria-label="12주간 필라테스 운동이 산후여성의 신체구성, 심혈관 대사질환 위험요인, 정신건강 및 신체 안정성에 미치는 영향">
+        <img src="/images/publications/%EA%B2%BD%ED%9D%AC%EB%8C%80%ED%95%99%EA%B5%90.jpg" alt="12주간 필라테스 운동이 산후여성의 신체구성, 심혈관 대사질환 위험요인, 정신건강 및 신체 안정성에 미치는 영향" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a href="https://www.riss.kr/link?id=T16960336" class="citation-title">
+        12주간 필라테스 운동이 산후여성의 신체구성, 심혈관 대사질환 위험요인, 정신건강 및 신체 안정성에 미치는 영향
+      </a>
+        <div class="citation-authors" tabindex="0">
+          정희진
+
+        </div>
+      
+      
+      
+
+      
+        <div class="citation-details">
+          
+
+          
+            <span class="citation-publisher">
+              경희대학교 체육대학원 스포츠의과학전공 석사 학위논문
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-date">
+              2024-02
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-id">
+              
+            </span>
+          
+        </div>
+      
+
+      
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+    
+  
+
+  
+
+  <h3 id="2023-02">2023-02</h3>
+  
+
+  
+    
+
+    
+    
+    
+
+    
+      
+        
+        
+      
+        
+        
+          
+          
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a href="https://www.riss.kr/link?id=T16667338" class="citation-image" aria-label="필라테스 숙련도에 따른 기능적 움직임 및 코어 근육 활성도 비교">
+        <img src="/images/publications/%EA%B2%BD%ED%9D%AC%EB%8C%80%ED%95%99%EA%B5%90.jpg" alt="필라테스 숙련도에 따른 기능적 움직임 및 코어 근육 활성도 비교" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a href="https://www.riss.kr/link?id=T16667338" class="citation-title">
+        필라테스 숙련도에 따른 기능적 움직임 및 코어 근육 활성도 비교
+      </a>
+        <div class="citation-authors" tabindex="0">
+          고현서
+
+        </div>
+      
+      
+      
+
+      
+        <div class="citation-details">
+          
+
+          
+            <span class="citation-publisher">
+              경희대학교 체육대학원 스포츠의과학전공 석사 학위논문
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-date">
+              2023-02
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-id">
+              
+            </span>
+          
+        </div>
+      
+
+      
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+        
+      
+    
+      
+        
+        
+          
+          
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a href="https://www.riss.kr/link?id=T16666796" class="citation-image" aria-label="어린이들의 스포츠 참여가 신체역량과 인지기능에 미치는 영향">
+        <img src="/images/publications/%EA%B2%BD%ED%9D%AC%EB%8C%80%ED%95%99%EA%B5%90.jpg" alt="어린이들의 스포츠 참여가 신체역량과 인지기능에 미치는 영향" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a href="https://www.riss.kr/link?id=T16666796" class="citation-title">
+        어린이들의 스포츠 참여가 신체역량과 인지기능에 미치는 영향
+      </a>
+        <div class="citation-authors" tabindex="0">
+          정형웅
+
+        </div>
+      
+      
+      
+
+      
+        <div class="citation-details">
+          
+
+          
+            <span class="citation-publisher">
+              경희대학교 체육대학원 스포츠의과학전공 석사 학위논문
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-date">
+              2023-02
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-id">
+              
+            </span>
+          
+        </div>
+      
+
+      
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+        
+      
+        
+        
+      
+    
+  
+
+  
+
+  <h3 id="2022-02">2022-02</h3>
+  
+
+  
+    
+
+    
+    
+    
+
+    
+      
+        
+        
+          
+          
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a href="https://www.riss.kr/link?id=T16087415" class="citation-image" aria-label="청소년 태권도 선수의 연령에 따른 등속성 하지 근력 및 근력 비율의 차이 비교">
+        <img src="/images/publications/%EA%B2%BD%ED%9D%AC%EB%8C%80%ED%95%99%EA%B5%90.jpg" alt="청소년 태권도 선수의 연령에 따른 등속성 하지 근력 및 근력 비율의 차이 비교" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a href="https://www.riss.kr/link?id=T16087415" class="citation-title">
+        청소년 태권도 선수의 연령에 따른 등속성 하지 근력 및 근력 비율의 차이 비교
+      </a>
+        <div class="citation-authors" tabindex="0">
+          천요한
+
+        </div>
+      
+      
+      
+
+      
+        <div class="citation-details">
+          
+
+          
+            <span class="citation-publisher">
+              경희대학교 일반대학원 체육학과 석사 학위논문
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-date">
+              2022-02
+            </span>
+            
+          
+
+          
+            &nbsp;·&nbsp;
+            <span class="citation-id">
+              
+            </span>
+          
+        </div>
+      
+
+      
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+        
+      
+    
+  
+
+
+</details>
+  </section>
+
+
+    </main>
+    
+
+
+<footer
+  class="background"
+  style="--image: url('/images/background2.jpg')"
+  
+  data-size="wide"
+>
+  <!--
+    <div>
+      Extra details like contact info or address
+    </div>
+  -->
+
+  <div>
+    
+      
+      
+      
+
+
+
+  <div class="button-wrapper">
+    <a
+      class="button"
+      href="/jhc@khu.ac.kr"
+      
+      data-style="bare"
+      
+      aria-label="button"
+    >
+      
+      
+    </a>
+  </div>
+
+
+    
+      
+      
+      
+
+
+
+  <div class="button-wrapper">
+    <a
+      class="button"
+      href="/0000-0002-3465-8965"
+      
+      data-style="bare"
+      
+      aria-label="button"
+    >
+      
+      
+    </a>
+  </div>
+
+
+    
+      
+      
+      
+
+
+
+  <div class="button-wrapper">
+    <a
+      class="button"
+      href="https://scholar.google.com/citations?user=qm1Ao-oAAAAJ&hl=ko&oi=ao"
+      
+      data-style="bare"
+      
+      aria-label="button"
+    >
+      
+      
+    </a>
+  </div>
+
+
+    
+      
+      
+      
+
+
+
+  <div class="button-wrapper">
+    <a
+      class="button"
+      href="/YourLabChannel"
+      
+      data-style="bare"
+      
+      aria-label="button"
+    >
+      
+      
+    </a>
+  </div>
+
+
+    
+  </div>
+
+  <!-- 푸터 정보 박스 -->
+  <div class="lab-footer-info" style="font-size:14px; color:#000000; text-align:center; line-height:1.4; margin:0; padding:5px 0;">
+    <p style="margin:2px 0;">
+      <strong>연구실명 :</strong> 성장 노화 연구실 
+      (<em>Growth and Aging Lab</em>) &nbsp;&nbsp; | &nbsp;&nbsp;
+      <strong>지도교수 :</strong> 정현철
+    </p>
+    <p style="margin:2px 0;">
+      <strong>주소 :</strong> (우)17104 경기도 용인시 기흥구 덕영대로 1732(서천동)  
+      경희대학교 국제캠퍼스 체육대학 114호
+    </p>
+    <p style="margin:2px 0; font-size:12px; color:#333333;">
+      COPYRIGHT © SINCE 2025 Growth and Aging Lab. ALL RIGHTS RESERVED.
+    </p>
+  </div>
+
+  <!-- 다크 모드 토글 -->
+  <input
+    type="checkbox"
+    class="dark-toggle"
+    data-tooltip="Dark mode"
+    aria-label="toggle dark mode"
+    oninput="onDarkToggleChange(event)"
+  >
+
+  <!-- 다크모드에서 푸터 글자만 흰색으로 -->
+  <style>
+    html[data-dark="true"] .lab-footer-info,
+    html[data-dark="true"] .lab-footer-info * {
+      color: #fff !important;
+    }
+  </style>
+</footer>
+
+  </body>
+</html>
