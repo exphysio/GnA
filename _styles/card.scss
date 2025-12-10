@@ -88,3 +88,11 @@
 .card-text li {
   text-align: left !important;
 }
+
+/* 리스트 항목 줄바꿈 깨짐 문제 해결 */
+.card-text li {
+  display: list-item !important;
+  white-space: normal !important;
+  word-break: keep-all !important;
+}
+
