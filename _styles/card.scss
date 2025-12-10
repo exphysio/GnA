@@ -1,6 +1,7 @@
 ---
 ---
 
+/* ▣ 기본 카드 레이아웃 */
 .card {
   display: inline-flex;
   justify-content: stretch;
@@ -20,10 +21,11 @@
   width: 250px;
 }
 
+/* ▣ 카드 내부 텍스트 래퍼 */
 .card-text {
   display: inline-flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: stretch !important;   /* ✔ 텍스트가 전체 폭을 쓰도록 강제 */
   flex-direction: column;
   gap: 20px;
   max-width: 100%;
@@ -44,44 +46,44 @@
   font-style: italic;
 }
 
-/* 1) 고정형 썸네일 박스: 가로 110px, 책(세로) 비율 3:4 */
+/* ▣ 썸네일 이미지 영역 */
 .card {
-  display: flex;                 /* 가로 정렬이면 row, 세로면 column 그대로 사용 */
+  display: flex;
   align-items: center;
 }
 
-.card-media {                     /* 새로 추가한 래퍼 */
-  width: 110px;                   /* 썸네일 고정 너비 */
-  aspect-ratio: 3 / 4;            /* 책/저널 비율 */
-  flex: 0 0 110px;                /* 줄바꿈/늘어남 방지 */
+.card-media {
+  width: 110px;
+  aspect-ratio: 3 / 4;
+  flex: 0 0 110px;
   overflow: hidden;
   border-radius: 8px;
 }
 
-/* 2) 전역 img 규칙 무력화 + 동일 렌더링 */
 .card-media img {
   width: 100%;
   height: 100%;
-  object-fit: cover;              /* contain을 원하면 여기만 contain으로 */
+  object-fit: cover;
   display: block;
-  max-height: none !important;    /* image.css의 max-height:100% 덮어쓰기 */
-  max-width: none !important;     /* 상황에 따라 필요 */
+  max-height: none !important;
+  max-width: none !important;
 }
 
-/* 3) 텍스트 영역은 유동 */
+/* ▣ 텍스트 본문 영역 */
 .card-body {
   flex: 1 1 auto;
-  min-width: 0;                   /* 긴 제목 줄바꿈 시 레이아웃 흔들림 방지 */
+  min-width: 0;
 }
 
-/* Research interest 줄바꿈 자연스럽게 */
+/* ▣ 자연스러운 줄바꿈 + 단어 깨짐 방지 */
 .card-body,
 .card-text {
-  word-break: keep-all;          /* 단어 단위 줄바꿈 */
-  overflow-wrap: break-word;     /* 너무 긴 단어는 자연스럽게 처리 */
-  white-space: normal;           /* 강제 한 줄 유지 같은 문제 제거 */
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
+/* ▣ 왼쪽 정렬 강제 (justify 제거) */
 .card-body,
 .card-text,
 .card-text p,
@@ -89,10 +91,10 @@
   text-align: left !important;
 }
 
-/* 리스트 항목 줄바꿈 깨짐 문제 해결 */
+/* ▣ 리스트(li) 줄바꿈 비정상 문제 해결 */
 .card-text li {
-  display: list-item !important;
-  white-space: normal !important;
-  word-break: keep-all !important;
+  display: list-item !important;     /* ✔ inline-block 문제 제거 */
+  white-space: normal !important;    /* ✔ 자연 줄바꿈 */
+  word-break: keep-all !important;   /* ✔ 영어 단어 단위로 줄바꿈 */
+  width: 100% !important;            /* ✔ flex 안에서 폭 제한 문제 해결 */
 }
-
