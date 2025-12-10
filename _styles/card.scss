@@ -81,3 +81,10 @@
   overflow-wrap: break-word;     /* 너무 긴 단어는 자연스럽게 처리 */
   white-space: normal;           /* 강제 한 줄 유지 같은 문제 제거 */
 }
+
+.card-body,
+.card-text,
+.card-text p,
+.card-text li {
+  text-align: left !important;
+}
