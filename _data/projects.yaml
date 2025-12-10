@@ -32,7 +32,11 @@
   role: "co_pi"
   prof: "정현철"
 
-- status: ongoing
+
+
+# ──Completed────────────────────────────────────────────────
+#1
+- status: completed
   logo: "images/projects/한국스포츠과학원.png"
   title: "2025년 스포츠과학 코칭 아카데미 개설 및 운영 용역(1/1)"
   sponsor: "한국스포츠과학원"
@@ -40,8 +44,6 @@
   role: "pi"
   prof: "정현철"
 
-# ──Completed────────────────────────────────────────────────
-#1
 - status: completed
   logo: "images/projects/경희대학교.jpg"
   title: "[연구인력] 고강도 간헐적 운동 프로토콜 유형에 따른 근 기능 및 <br>스트레스 호르몬 지표 변화 분석"
