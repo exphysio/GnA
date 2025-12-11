@@ -36,7 +36,7 @@ if (!window._easterEggLoaded) {
         <strong style="font-size:1.3rem;">🎉 이스터에그 발견!</strong><br><br>
 
         <img 
-          src="${window.location.origin}/KHU-GnA/images/members/Prof/교수님.jpg"
+          src="${window.location.origin}/KHU-GnA/images/members/Prof/교수님2.jpg"
           alt="Professor"
           style="
             width: 200px;
@@ -53,7 +53,7 @@ if (!window._easterEggLoaded) {
           본 사이트 제작
         </b>
 
-        <span>
+        <span style="white-space: nowrap;">
           정형웅(메인) · 안예진(서브) · 송지영(서브)
         </span>
       `;
