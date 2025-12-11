@@ -53,9 +53,11 @@ if (!window._easterEggLoaded) {
           본 사이트 제작
         </b>
 
-        <span style="white-space: nowrap; display:block; text-align:center;">
-          정형웅(메인) · 안예진(서브) · 송지영(서브)
-        </span>
+        <div style="display:flex; justify-content:center; margin-top:0;">
+          <span style="white-space: nowrap;">
+            정형웅(메인) · 안예진(서브) · 송지영(서브)
+          </span>
+        </div>
       `;
 
       overlay.appendChild(box);
