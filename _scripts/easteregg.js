@@ -49,11 +49,11 @@ if (!window._easterEggLoaded) {
           "
         >
 
-        <span style="white-space: nowrap; display:block; text-align:center;">
+        <b style="font-size:1.15rem; display:block; margin-bottom:6px;">
           본 사이트 제작
         </b>
 
-        <span style="white-space: nowrap;">
+        <span style="white-space: nowrap; display:block; text-align:center;">
           정형웅(메인) · 안예진(서브) · 송지영(서브)
         </span>
       `;
