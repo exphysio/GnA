@@ -28,25 +28,27 @@ if (!window._easterEggLoaded) {
         font-size: 1.1rem;
         text-align: center;
         line-height: 1.5;
-        max-width: 330px;
+        max-width: 350px;
         animation: popIn 0.3s ease-out;
       `;
 
       box.innerHTML = `
+        <strong style="font-size:1.3rem;">🎉 이스터에그 발견!</strong><br><br>
+
         <img 
           src="${window.location.origin}/KHU-GnA/images/members/Prof/교수님.jpg"
           alt="Professor"
           style="
-            width: 110px;
-            height: 110px;
-            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            border-radius: 12px;  /* 네모로 변경 */
             object-fit: cover;
-            margin-bottom: 15px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            margin-bottom: 18px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
           "
         >
-        <strong style="font-size:1.2rem;">🎉 이스터에그 발견!</strong><br><br>
-        <b>본 사이트 제작</b><br>
+
+        <b style="font-size:1.15rem;">본 사이트 제작</b><br>
         정형웅(메인) · 안예진(서브) · 송지영(서브)
       `;
 
