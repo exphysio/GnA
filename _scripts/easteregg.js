@@ -26,7 +26,7 @@ if (!window._easterEggLoaded) {
         border-radius: 16px;
         box-shadow: 0 8px 25px rgba(0,0,0,0.25);
         font-size: 1.1rem;
-        text-align: center;
+        text-align: center;  /* 전체 중앙 정렬 */
         line-height: 1.5;
         max-width: 350px;
         animation: popIn 0.3s ease-out;
@@ -41,15 +41,21 @@ if (!window._easterEggLoaded) {
           style="
             width: 200px;
             height: 200px;
-            border-radius: 12px;  /* 네모로 변경 */
+            border-radius: 12px;
             object-fit: cover;
-            margin-bottom: 18px;
+            margin: 0 auto 20px auto;
+            display: block;
             box-shadow: 0 4px 12px rgba(0,0,0,0.2);
           "
         >
 
-        <b style="font-size:1.15rem;">본 사이트 제작</b><br>
-        정형웅(메인) · 안예진(서브) · 송지영(서브)
+        <b style="font-size:1.15rem; display:block; margin-bottom:6px;">
+          본 사이트 제작
+        </b>
+
+        <span>
+          정형웅(메인) · 안예진(서브) · 송지영(서브)
+        </span>
       `;
 
       overlay.appendChild(box);
