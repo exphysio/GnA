@@ -10,7 +10,7 @@ if (!window._easterEggLoaded) {
       overlay.style = `
         position: fixed;
         inset: 0;
-        background: rgba(0,0,0,0.4);
+        background: rgba(0,0,0,0.45);
         backdrop-filter: blur(3px);
         display: flex;
         align-items: center;
@@ -22,18 +22,32 @@ if (!window._easterEggLoaded) {
       const box = document.createElement("div");
       box.style = `
         background: white;
-        padding: 20px 30px;
-        border-radius: 12px;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+        padding: 25px 35px;
+        border-radius: 16px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.25);
         font-size: 1.1rem;
         text-align: center;
         line-height: 1.5;
+        max-width: 330px;
         animation: popIn 0.3s ease-out;
       `;
+
       box.innerHTML = `
-        <strong>🎉 이스터에그 발견!</strong><br><br>
-        본 사이트 제작:<br>
-        <b>정형웅(메인)</b> · <b>안예진(서브)</b> · <b>송지영(서브)</b>
+        <img 
+          src="${window.location.origin}/KHU-GnA/images/members/Prof/교수님.jpg"
+          alt="Professor"
+          style="
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+          "
+        >
+        <strong style="font-size:1.2rem;">🎉 이스터에그 발견!</strong><br><br>
+        <b>본 사이트 제작</b><br>
+        정형웅(메인) · 안예진(서브) · 송지영(서브)
       `;
 
       overlay.appendChild(box);
@@ -45,7 +59,6 @@ if (!window._easterEggLoaded) {
       });
     }
 
-    // 키 입력 감지
     document.addEventListener("keydown", (e) => {
       buffer += e.key.toLowerCase();
       if (buffer.length > secret.length) {
@@ -57,7 +70,6 @@ if (!window._easterEggLoaded) {
       }
     });
 
-    // CSS 애니메이션 추가
     const style = document.createElement("style");
     style.innerHTML = `
       @keyframes fadeIn {
