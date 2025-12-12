@@ -7,6 +7,8 @@ if (!window._easterEggLoaded) {
     const secret = "gna";
 
     function showPopup() {
+      const BASE = "/" + location.pathname.split("/")[1];
+
       const overlay = document.createElement("div");
       overlay.style = `
         position: fixed;
@@ -37,7 +39,7 @@ if (!window._easterEggLoaded) {
         <strong style="font-size:1.3rem;">🎉 이스터에그 발견!</strong><br><br>
 
         <img 
-          src="/images/members/Prof/교수님2.jpg"
+          src="${BASE}/images/members/Prof/교수님2.jpg"
           alt="Professor"
           style="
             width: 200px;
@@ -83,14 +85,8 @@ if (!window._easterEggLoaded) {
 
     const style = document.createElement("style");
     style.innerHTML = `
-      @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-      }
-      @keyframes fadeOut {
-        from { opacity: 1; }
-        to { opacity: 0; }
-      }
+      @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+      @keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
       @keyframes popIn {
         0% { transform: scale(0.8); opacity: 0; }
         100% { transform: scale(1); opacity: 1; }
