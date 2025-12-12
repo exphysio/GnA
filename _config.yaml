@@ -10,8 +10,8 @@ footer: "images/background2.jpg"
 proofer: false
 
 # GitHub Pages deployment settings
-url: "https://besttkd80.github.io"   # GitHub Pages 기본 도메인
-baseurl: "/KHU-GnA"                  # 리포지토리 이름 (절대 비우면 안 됨)
+url: "https://exphysio.github.io"   
+baseurl: "/GnA"                     
 
 # ============================================
 # SOCIAL / CONTACT
