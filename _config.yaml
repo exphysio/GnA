@@ -10,8 +10,8 @@ footer: "images/background2.jpg"
 proofer: false
 
 # GitHub Pages deployment settings
-url: "https://exphysio.github.io"   
-baseurl: "/GnA"                     
+url: "https://galab.khu.ac.kr"
+baseurl: ""
 
 # ============================================
 # SOCIAL / CONTACT
