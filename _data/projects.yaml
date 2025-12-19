@@ -40,113 +40,49 @@
   prof: "정현철"
 
 
-
 # ──Completed────────────────────────────────────────────────
-#1
+#18
 - status: completed
-  logo: "images/projects/경희대학교.jpg"
-  title: "[연구인력] 고강도 간헐적 운동 프로토콜 유형에 따른 근 기능 및 <br>스트레스 호르몬 지표 변화 분석"
-  sponsor: "경희대학교"
-  period: "2020.03.01 – 2021.02.28"
-  role: "co_pi"
-  prof: "정현철"
-
-#2
-- status: completed
-  logo: "images/projects/경희대학교.jpg"
-  title: "[2020-2 신진] 수상스키선수들의 부상과 만성 통증에 관한 연구"
-  sponsor: "경희대학교"
-  period: "2020.09.01 – 2021.08.31"
+  logo: "images/projects/한국스포츠과학원.png"
+  title: "2025년 스포츠과학 코칭 아카데미 개설 및 운영 용역(1/1)"
+  sponsor: "한국스포츠과학원"
+  period: "2025.06.25 – 2025.11.30"
   role: "pi"
   prof: "정현철"
 
-#3
+#17
 - status: completed
   logo: "images/projects/경희대학교.jpg"
-  title: "[스포츠과학연구원] 2021 대학부설연구소 학술진흥 프로젝트 지원사업"
+  title: "[교비][4단계 BK21][Khreative U+ SDGs 대학원생 RA/GCR 연구과제] <br>스마트폰 중독 성인의 우울, 불안 증상과 심박변이도의 상관성 검증 및 건강 개선을 위한 전략 방안 수립"
   sponsor: "경희대학교"
-  period: "2021.03.01 – 2022.02.28"
-  role: "co_pi"
-  prof: "정현철"
-
-#4
-- status: completed
-  logo: "images/projects/국민체육진흥공단.jpg"
-  title: "[지정2] 스포츠 중소제조기업 디지털 전환을 위한 스포츠 데이터 유통연계 <br>제조서비스 기술개발 (1/3)"
-  sponsor: "국민체육진흥공단"
-  period: "2021.07.01 – 2021.12.31"
-  role: "co_pi"
-  prof: "정현철"
-
-#5
-- status: completed
-  logo: "images/projects/국민체육진흥공단.jpg"
-  title: "[지정3] 홈트레이닝 스마트 운동기기 및 게이미피케이션 서비스 기술개발 (1/2)"
-  sponsor: "국민체육진흥공단"
-  period: "2021.07.01 – 2021.12.31"
-  role: "co_pi"
-  prof: "정현철"
-
-#6
-- status: completed
-  logo: "images/projects/국민체육진흥공단.jpg"
-  title: "[지정3] 홈트레이닝 스마트 운동기기 및 게이미피케이션 서비스 기술개발 (2/2)"
-  sponsor: "국민체육진흥공단"
-  period: "2022.01.01 – 2022.12.31"
-  role: "co_pi"
-  prof: "정현철"
-
-#7
-- status: completed
-  logo: "images/projects/한국콘텐츠진흥원.png"
-  title: "[지정2] 스포츠 중소제조기업 디지털 전환을 위한 스포츠 데이터 유통연계 <br>제조서비스 기술 개발 (2/3)"
-  sponsor: "한국콘텐츠진흥원"
-  period: "2022.01.01 – 2022.12.31"
-  role: "co_pi"
-  prof: "정현철"
-
-#8
-- status: completed
-  logo: "images/projects/경희대학교.jpg"
-  title: "[2022-1미래선도] 청소년 운동선수들의 성숙도에 따른 하지 근력 비율 차이 및 비접촉식 하지 부상과의 관계"
-  sponsor: "경희대학교"
-  period: "2022.03.01 – 2024.02.29"
+  period: "2024.09.01 – 2025.08.31"
   role: "pi"
   prof: "정현철"
 
-#9
+#16
 - status: completed
   logo: "images/projects/경희대학교.jpg"
-  title: "[2023-2차 학술연구과제] 청소년들의 우울, 불안 증상과 심박변이도의 상관성 검증 및 비대면 고강도 간헐적 운동 참여를 통한 건강 개선효과 검증"
+  title: "[2024-2 신임교수정착연구] 남녀 대학 태권도 선수들의 버추얼 태권도 경기 <br>참여에 따른 생리 및 심리적 반응 비교"
   sponsor: "경희대학교"
-  period: "2023.06.01 – 2024.02.29"
-  role: "pi"
+  period: "2024.09.01 – 2025.08.31"
+  role: "co_pi"
   prof: "정현철"
 
-#10
+#15
 - status: completed
-  logo: "images/projects/경희대학교.jpg"
-  title: "[2023-3차 학술연구과제] 스포츠 선진국의 장기 선수 발달 시스템 분석을 통한 우리나라 시스템 개선 방안 연구"
-  sponsor: "경희대학교"
-  period: "2023.09.01 – 2024.02.29"
-  role: "pi"
+  logo: "images/projects/한국스포츠과학원.png"
+  title: "2024년 스포츠과학 코칭 아카데미 개설 및 운영 용역(1/1)"
+  sponsor: "한국스포츠과학원"
+  period: "2024.07.16 – 2024.11.30"
+  role: "co_pi"
   prof: "정현철"
 
-#11
+#14
 - status: completed
-  logo: "images/projects/삼성.png"
-  title: "삼성전자 신사업 피트니스 서비스 내 운동 관련 생리 자료 발굴(1/1)"
-  sponsor: "삼성전자㈜"
-  period: "2023.12.18 – 2024.06.30"
-  role: "pi"
-  prof: "정현철"
-
-#12
-- status: completed
-  logo: "images/projects/경희대학교.jpg"
-  title: "[2024 1차 학술] 고강도 저볼륨 및 저강도 고볼륨 플라이오메트릭 훈련이 <br>태권도 품새 선수의 운동 수행 능력에 미치는 영향"
-  sponsor: "경희대학교"
-  period: "2024.03.01 – 2025.02.28"
+  logo: "images/projects/한국연구재단.jpg"
+  title: "[인문신진] 청소년 태권도 선수의 부상 관리 시스템 구축 및 효용성 검증:<br> 개인 맞춤형 ACWR 모델 개발(1/4)"
+  sponsor: "한국연구재단(통합)"
+  period: "2024.06.01 – 2025.02.28"
   role: "pi"
   prof: "정현철"
 
@@ -159,47 +95,110 @@
   role: "pi"
   prof: "정현철"
 
-#14
+#12
 - status: completed
-  logo: "images/projects/한국연구재단.jpg"
-  title: "[인문신진] 청소년 태권도 선수의 부상 관리 시스템 구축 및 효용성 검증:<br> 개인 맞춤형 ACWR 모델 개발(1/4)"
-  sponsor: "한국연구재단(통합)"
-  period: "2024.06.01 – 2025.02.28"
+  logo: "images/projects/경희대학교.jpg"
+  title: "[2024 1차 학술] 고강도 저볼륨 및 저강도 고볼륨 플라이오메트릭 훈련이 <br>태권도 품새 선수의 운동 수행 능력에 미치는 영향"
+  sponsor: "경희대학교"
+  period: "2024.03.01 – 2025.02.28"
   role: "pi"
   prof: "정현철"
 
-#15
+#11
 - status: completed
-  logo: "images/projects/한국스포츠과학원.png"
-  title: "2024년 스포츠과학 코칭 아카데미 개설 및 운영 용역(1/1)"
-  sponsor: "한국스포츠과학원"
-  period: "2024.07.16 – 2024.11.30"
+  logo: "images/projects/삼성.png"
+  title: "삼성전자 신사업 피트니스 서비스 내 운동 관련 생리 자료 발굴(1/1)"
+  sponsor: "삼성전자㈜"
+  period: "2023.12.18 – 2024.06.30"
+  role: "pi"
+  prof: "정현철"
+
+#10
+- status: completed
+  logo: "images/projects/경희대학교.jpg"
+  title: "[2023-3차 학술연구과제] 스포츠 선진국의 장기 선수 발달 시스템 분석을 통한 우리나라 시스템 개선 방안 연구"
+  sponsor: "경희대학교"
+  period: "2023.09.01 – 2024.02.29"
+  role: "pi"
+  prof: "정현철"
+
+#9
+- status: completed
+  logo: "images/projects/경희대학교.jpg"
+  title: "[2023-2차 학술연구과제] 청소년들의 우울, 불안 증상과 심박변이도의 상관성 검증 및 비대면 고강도 간헐적 운동 참여를 통한 건강 개선효과 검증"
+  sponsor: "경희대학교"
+  period: "2023.06.01 – 2024.02.29"
+  role: "pi"
+  prof: "정현철"
+
+#8
+- status: completed
+  logo: "images/projects/경희대학교.jpg"
+  title: "[2022-1미래선도] 청소년 운동선수들의 성숙도에 따른 하지 근력 비율 차이 및 비접촉식 하지 부상과의 관계"
+  sponsor: "경희대학교"
+  period: "2022.03.01 – 2024.02.29"
+  role: "pi"
+  prof: "정현철"
+
+#7
+- status: completed
+  logo: "images/projects/한국콘텐츠진흥원.png"
+  title: "[지정2] 스포츠 중소제조기업 디지털 전환을 위한 스포츠 데이터 유통연계 <br>제조서비스 기술 개발 (2/3)"
+  sponsor: "한국콘텐츠진흥원"
+  period: "2022.01.01 – 2022.12.31"
   role: "co_pi"
   prof: "정현철"
 
-#16
+#6
 - status: completed
-  logo: "images/projects/경희대학교.jpg"
-  title: "[2024-2 신임교수정착연구] 남녀 대학 태권도 선수들의 버추얼 태권도 경기 <br>참여에 따른 생리 및 심리적 반응 비교"
-  sponsor: "경희대학교"
-  period: "2024.09.01 – 2025.08.31"
+  logo: "images/projects/국민체육진흥공단.jpg"
+  title: "[지정3] 홈트레이닝 스마트 운동기기 및 게이미피케이션 서비스 기술개발 (2/2)"
+  sponsor: "국민체육진흥공단"
+  period: "2022.01.01 – 2022.12.31"
   role: "co_pi"
   prof: "정현철"
 
-#17
+#5
+- status: completed
+  logo: "images/projects/국민체육진흥공단.jpg"
+  title: "[지정3] 홈트레이닝 스마트 운동기기 및 게이미피케이션 서비스 기술개발 (1/2)"
+  sponsor: "국민체육진흥공단"
+  period: "2021.07.01 – 2021.12.31"
+  role: "co_pi"
+  prof: "정현철"
+
+#4
+- status: completed
+  logo: "images/projects/국민체육진흥공단.jpg"
+  title: "[지정2] 스포츠 중소제조기업 디지털 전환을 위한 스포츠 데이터 유통연계 <br>제조서비스 기술개발 (1/3)"
+  sponsor: "국민체육진흥공단"
+  period: "2021.07.01 – 2021.12.31"
+  role: "co_pi"
+  prof: "정현철"
+
+#3
 - status: completed
   logo: "images/projects/경희대학교.jpg"
-  title: "[교비][4단계 BK21][Khreative U+ SDGs 대학원생 RA/GCR 연구과제] <br>스마트폰 중독 성인의 우울, 불안 증상과 심박변이도의 상관성 검증 및 건강 개선을 위한 전략 방안 수립"
+  title: "[스포츠과학연구원] 2021 대학부설연구소 학술진흥 프로젝트 지원사업"
   sponsor: "경희대학교"
-  period: "2024.09.01 – 2025.08.31"
+  period: "2021.03.01 – 2022.02.28"
+  role: "co_pi"
+  prof: "정현철"
+
+#2
+- status: completed
+  logo: "images/projects/경희대학교.jpg"
+  title: "[2020-2 신진] 수상스키선수들의 부상과 만성 통증에 관한 연구"
+  sponsor: "경희대학교"
+  period: "2020.09.01 – 2021.08.31"
   role: "pi"
   prof: "정현철"
 
-#18
+#1
 - status: completed
-  logo: "images/projects/한국스포츠과학원.png"
-  title: "2025년 스포츠과학 코칭 아카데미 개설 및 운영 용역(1/1)"
-  sponsor: "한국스포츠과학원"
-  period: "2025.06.25 – 2025.11.30"
-  role: "pi"
+  logo: "images/projects/경희대학교.jpg"
+  title: "[연구인력] 고강도 간헐적 운동 프로토콜 유형에 따른 근 기능 및 <br>스트레스 호르몬 지표 변화 분석"
+  sponsor: "경희대학교"
+  period: "2020.03.01 – 2021.02.28"
+  role: "co_pi"
   prof: "정현철"
