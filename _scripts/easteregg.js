@@ -34,9 +34,9 @@ if (!window._easterEggLoaded) {
 
       box.innerHTML = `
         <strong style="font-size:1.3rem;">🎉 이스터에그 발견!</strong><br><br>
-
         <img 
-          src="${window.location.origin}/GnA/images/members/Prof/교수님2.jpg"
+          src="/images/members/Prof/교수님2.jpg"
+
           alt="Professor"
           style="
             width: 200px;
