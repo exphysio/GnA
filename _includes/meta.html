@@ -31,11 +31,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ fulltitle }}</title>
 
-<!-- 🔥 캐시 우회 버전 -->
 <link rel="icon" href="{{ icon }}?v=20250201">
 
 <meta name="title" content="{{ title }}">
 <meta name="description" content="{{ description }}">
+
+{% if page.robots %}
+<meta name="robots" content="{{ page.robots }}">
+{% endif %}
+
+{% if page.canonical %}
+<link rel="canonical" href="{{ page.canonical }}">
+{% else %}
+<link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+{% endif %}
 
 <meta property="og:title" content="{{ title }}">
 <meta property="og:description" content="{{ description }}">
