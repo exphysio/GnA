@@ -1,22 +1,3 @@
-{% assign filename = page.path | split: "/" | last %}
-{% if page.name and page.name != filename %}
-  {% assign title = page.name %}
-{% elsif page.title %}
-  {% assign title = page.title %}
-{% else %}
-  {% assign title = nil %}
-{% endif %}
-
-{% assign title = title | xml_escape %}
-{% assign fulltitle = "" | split: "," %}
-{% if title and title != "" %}
-  {% assign fulltitle = fulltitle | push: title %}
-{% endif %}
-{% if site.title and site.title != "" %}
-  {% assign fulltitle = fulltitle | push: site.title %}
-{% endif %}
-{% assign fulltitle = fulltitle | join: " | " %}
-
 {% assign description = page.description | default: site.description %}
 {% if site.subtitle %}
   {% capture description -%}
@@ -28,29 +9,45 @@
 {% assign icon = "images/icon.png" | relative_url %}
 {% assign share_abs = site.url | append: site.baseurl | append: "/images/share2.png?v=1" %}
 
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{{ fulltitle }}</title>
+
+<!-- ================================================= -->
+<!-- TITLE : 모든 페이지 동일 (대표성 통제 핵심) -->
+<!-- ================================================= -->
+<title>{{ site.title }}{% if site.subtitle %} | {{ site.subtitle }}{% endif %}</title>
 
 <link rel="icon" href="{{ icon }}?v=20250201">
 
-<meta name="title" content="{{ title }}">
+<!-- ================================================= -->
+<!-- SEO META -->
+<!-- ================================================= -->
 <meta name="description" content="{{ description }}">
 
 {% if page.robots %}
 <meta name="robots" content="{{ page.robots }}">
 {% endif %}
 
+<!-- ================================================= -->
+<!-- CANONICAL -->
+<!-- ================================================= -->
 {% if page.canonical %}
 <link rel="canonical" href="{{ page.canonical }}">
 {% else %}
 <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
 {% endif %}
 
-<meta property="og:title" content="{{ title }}">
+<!-- ================================================= -->
+<!-- Open Graph -->
+<!-- ================================================= -->
+<meta property="og:title" content="{{ site.title }}">
 <meta property="og:description" content="{{ description }}">
 <meta property="og:image" content="{{ share_abs }}">
 <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}">
 <meta property="og:type" content="website">
 
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="{{ share_abs }}">
+<!-- ================================================= -->
+<!-- Twitter Card -->
+<!-- ================================================= -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{{ share_abs }}">
