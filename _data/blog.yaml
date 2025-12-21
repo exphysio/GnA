@@ -12,6 +12,9 @@
     - order: 3
       image: images/blog/2025/20250515.jpg
       caption: 스승의 날
+    - order: 4
+      image: images/blog/2025/20251002.jpg
+      caption: 회식
 
 - year: "2024"
   cols: 4
@@ -19,8 +22,8 @@
   sort: order
   gallery:
     - order: 1
-      image: images/blog/2024/20240501.jpg   # ← 2024 폴더
-      caption: 성장노화연구실 회식
+      image: images/blog/2024/20240501.jpg   
+      caption: 회식
     - order: 2
       image: images/blog/2024/20241218.jpg
-      caption: 성장노화연구실 송년회
+      caption: 송년회
