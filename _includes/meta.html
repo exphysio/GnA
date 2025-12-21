@@ -1,53 +1,33 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>
+  {{ site.title }}{% if site.subtitle %} | {{ site.subtitle }}{% endif %}
+</title>
+
 {% assign description = page.description | default: site.description %}
 {% if site.subtitle %}
   {% capture description -%}
     {{ site.subtitle }}. {{ description }}
   {%- endcapture %}
 {% endif %}
-{% assign description = description | xml_escape %}
-
-{% assign icon = "images/icon.png" | relative_url %}
-{% assign share_abs = site.url | append: site.baseurl | append: "/images/share2.png?v=1" %}
-
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<!-- ================================================= -->
-<!-- TITLE : 모든 페이지 동일 (대표성 통제 핵심) -->
-<!-- ================================================= -->
-<title>{{ site.title }}{% if site.subtitle %} | {{ site.subtitle }}{% endif %}</title>
-
-<link rel="icon" href="{{ icon }}?v=20250201">
-
-<!-- ================================================= -->
-<!-- SEO META -->
-<!-- ================================================= -->
-<meta name="description" content="{{ description }}">
+<meta name="description" content="{{ description | xml_escape }}">
 
 {% if page.robots %}
 <meta name="robots" content="{{ page.robots }}">
-{% endif %}
-
-<!-- ================================================= -->
-<!-- CANONICAL -->
-<!-- ================================================= -->
-{% if page.canonical %}
-<link rel="canonical" href="{{ page.canonical }}">
 {% else %}
-<link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+<meta name="robots" content="index, follow">
 {% endif %}
 
-<!-- ================================================= -->
-<!-- Open Graph -->
-<!-- ================================================= -->
+<link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+
+<link rel="icon" href="https://galab.khu.ac.kr/images/web_icon.jpg" sizes="192x192">
+
 <meta property="og:title" content="{{ site.title }}">
-<meta property="og:description" content="{{ description }}">
-<meta property="og:image" content="{{ share_abs }}">
+<meta property="og:description" content="{{ description | xml_escape }}">
+<meta property="og:image" content="https://galab.khu.ac.kr/images/web_icon.jpg">
 <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}">
 <meta property="og:type" content="website">
 
-<!-- ================================================= -->
-<!-- Twitter Card -->
-<!-- ================================================= -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="{{ share_abs }}">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://galab.khu.ac.kr/images/web_icon.jpg">

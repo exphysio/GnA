@@ -1,5 +1,6 @@
 ---
 title: Blog
+robots: noindex, follow
 nav:
   order: 5
   tooltip: Our story

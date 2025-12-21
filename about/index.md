@@ -1,5 +1,6 @@
 ---
 title: About
+robots: noindex, follow
 nav:
   order: 1
   tooltip: About lab, research area, and facility

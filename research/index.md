@@ -1,5 +1,6 @@
 ---
 title: PUBLICATIONS
+robots: noindex, follow
 nav:
   order: 2
   tooltip: Papers (International, Domestic), Thesis (Ph.D., M.S.)

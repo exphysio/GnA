@@ -1,5 +1,6 @@
 ---
 title: Projects
+robots: noindex, follow
 nav:
   order: 3
   tooltip: Projects (Ongoing, Completed)
