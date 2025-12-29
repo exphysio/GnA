@@ -15,6 +15,9 @@
     - order: 4
       image: images/blog/2025/20251002.jpg
       caption: 회식
+    - order: 5
+      image: images/blog/2025/1229_캡틴FC_측정.jpg
+      caption: 1229 캡틴FC 체력 측정
 
 - year: "2024"
   cols: 4
