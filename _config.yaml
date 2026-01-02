@@ -44,11 +44,22 @@ defaults:
     values:
       layout: post
 
+  # notice (공지)
+  - scope:
+      type: "notice"
+    values:
+      layout: post
+
 collections:
   members:
     output: true
+
   posts:
     output: true
+
+  notice:
+    output: true
+    permalink: /notice/:name/
 
 # ============================================
 # JEKYLL SETTINGS
