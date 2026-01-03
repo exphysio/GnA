@@ -5,7 +5,8 @@
   gallery:
     - order: 1
       image: images/blog/2025/20250404.jpg
-      caption: 일반대학원 공개발표
+      caption: 일반대학원 공개발표\
+      link: /blog/2025-04-04-general-grad/
     - order: 2
       image: images/blog/2025/20250417.jpg
       caption: 체육대학원 공개발표
