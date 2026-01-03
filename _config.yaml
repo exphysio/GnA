@@ -25,8 +25,9 @@ links:
 # ============================================
 # COLLECTIONS & DEFAULTS
 # ============================================
+
 defaults:
-  # all markdown files
+  # 모든 markdown 기본 레이아웃
   - scope:
       path: ""
     values:
@@ -38,7 +39,7 @@ defaults:
     values:
       layout: member
 
-  # blog posts
+  # blog posts (_posts)
   - scope:
       type: "posts"
     values:
@@ -47,6 +48,12 @@ defaults:
   # notice (공지)
   - scope:
       type: "notice"
+    values:
+      layout: post
+
+  # blog (활동 기록)
+  - scope:
+      type: "blog"
     values:
       layout: post
 
@@ -61,14 +68,22 @@ collections:
     output: true
     permalink: /notice/:name/
 
+  blog:
+    output: true
+    permalink: /blog/:name/
+
 # ============================================
 # JEKYLL SETTINGS
 # ============================================
 markdown: kramdown
 highlighter: rouge
+
+# ⚠️ 이 permalink는 posts에만 적용됨
 permalink: /:categories/:title/
 
-# Plugins enabled by GitHub Pages
+# ============================================
+# PLUGINS (GitHub Pages 허용 범위)
+# ============================================
 plugins:
   - jekyll-sitemap
   - jekyll-redirect-from
