@@ -1,5 +1,6 @@
 ---
-title: Notice
+title: "Notice | Growth and Aging Lab"
+description: "Growth and Aging Lab의 공지사항 및 연구실 안내"
 layout: default
 nav:
   order: 50
@@ -17,3 +18,4 @@ nav:
     </li>
   {% endfor %}
 </ul>
+
