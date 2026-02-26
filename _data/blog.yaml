@@ -1,3 +1,12 @@
+- year: "2026"
+  cols: 4
+  img_h: 350
+  sort: order
+  gallery:
+    - order: 1
+      image: images/blog/2026/20260225.jpg
+      caption: 2026 일반대학원 졸업식
+
 - year: "2025"
   cols: 4
   img_h: 350
