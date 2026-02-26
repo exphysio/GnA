@@ -4,6 +4,9 @@
   sort: order
   gallery:
     - order: 1
+      image: images/blog/2026/20260222.jpg
+      caption: 가정여중 (현대제철) 체력 측정
+    - order: 2
       image: images/blog/2026/20260225.jpg
       caption: 2026 일반대학원 졸업식
 
