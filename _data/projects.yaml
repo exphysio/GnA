@@ -1,13 +1,23 @@
 # 상태값: ongoing | completed
 - status: ongoing
   logo: "images/projects/경희대학교.jpg"
+  title: "[2025-1 융·복합 국제공동연구] 8주간의 현대무용이 <br>노인 여성의 낙상 위험 요인 및 근육 네트워크에 미치는 영향"
+  sponsor: "경희대학교"
+  period: "2025.03.01 – 2027.02.28"
+  role: "pi"
+  prof: "정현철"
+
+
+# ──Completed────────────────────────────────────────────────
+- status: completed
+  logo: "images/projects/경희대학교.jpg"
   title: "[교비][4단계 BK21][Khreative U+ SDGs 대학원생 RA/GCR 연구과제]<br>초고령사회 진입에 따른 노인의 낙상예방 운동 프로그램 개발"
   sponsor: "경희대학교"
   period: "2025.03.01 – 2026.02.28"
   role: "pi"
   prof: "정현철"
 
-- status: ongoing
+- status: completed
   logo: "images/projects/한국연구재단.jpg"
   title: "[인문신진] 청소년 태권도 선수의 부상 관리 시스템 구축 및 효용성 검증:<br> 개인 맞춤형 ACWR 모델 개발(2/4)"
   sponsor: "한국연구재단(통합)"
@@ -15,15 +25,7 @@
   role: "pi"
   prof: "정현철"
 
-- status: ongoing
-  logo: "images/projects/경희대학교.jpg"
-  title: "[2025-1 융·복합 국제공동연구] 8주간의 현대무용이 <br>노인 여성의 낙상 위험 요인 및 근육 네트워크에 미치는 영향"
-  sponsor: "경희대학교"
-  period: "2025.03.01 – 2027.02.28"
-  role: "pi"
-  prof: "정현철"
-
-- status: ongoing
+- status: completed
   logo: "images/projects/경희대학교.jpg"
   title: "[2025-1 융복합 연구교류] 한국 전통적 인체의 아름다움과 <br>건강에 대한 융복합 연구"
   sponsor: "경희대학교"
@@ -31,8 +33,6 @@
   role: "co_pi"
   prof: "정현철"
 
-
-# ──Completed────────────────────────────────────────────────
 - status: completed
   logo: "images/projects/한국스포츠과학원.png"
   title: "차세대 국가대표 스포츠과학지원 외부협업 네트워크 구축 및 운영 (1/1)"
