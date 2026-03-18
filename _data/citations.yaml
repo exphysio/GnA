@@ -1,6 +1,22 @@
 # DO NOT EDIT, GENERATED AUTOMATICALLY
 
 # ── International papers ────────────────────────────────────────────────
+- id: doi:10.3389/fpubh.2026.1776062
+  title: "Differences in health literacy and health-promoting behaviors by gender and sport type in collegiate athletes"
+  authors:
+    - Hyung Ung Jung
+    - Hee Ran Park
+    - Jung-Min Lee
+    - Hyun Chul Jung
+  publisher: Frontiers in Public Health
+  year: 2026
+  date: "2026-03-18"
+  link: https://doi.org/10.3389/fpubh.2026.1776062
+  kind: paper
+  region: international
+  status: published
+  image: "images/publications/frontiers_public_health.jpeg"
+
 - id: doi:10.1519/JSC.0000000000003754
   title: "The Impact of Recovery Time on Performance in Division I Collegiate Beach Volleyball Players"
   authors:
