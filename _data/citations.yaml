@@ -319,6 +319,22 @@
   status: online ahead of print
   image: "images/publications/Sports Medicine and Physical Fitness.jpg"
 
+# ── International papers ────────────────────────────────────────────────
+- id: doi:10.1016/j.jad.2026.121654
+  title: "Association of the SPISE index with depression: comparison with anthropometric obesity indices and surrogate markers of insulin resistance"
+  authors:
+    - Myong-Won Seo
+    - Hyun-Seo Ko
+    - Hyun Chul Jung
+  publisher: Journal of Affective Disorders
+  year: 2026
+  date: "2026-03-19"
+  link: https://doi.org/10.1016/j.jad.2026.121654
+  kind: paper
+  region: international
+  status: in_press
+  image: "images/publications/Journal of Affective Disorders.gif"
+
 # ── Domestic papers (예시 자리, 나중에 채우세요) ───────────────────────────
 - id: doi:10.24007/ajpess.2021.9.6.007
   title: "청소년 및 대학생 운동선수의 대퇴이두근/대퇴사두근 근력 비율: 체계적인 검토"
