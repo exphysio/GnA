@@ -9,7 +9,6 @@
   publisher: Journal of Human Kinetics
   year: 2026
   date: "2026-02-19"
-
   link: https://doi.org/10.5114/jhk/217225 
   kind: paper
   region: international
@@ -357,11 +356,12 @@
     - 추민규
     - 박찬호
     - 정현철
-  publisher: "대한체육학회지"
+  publisher: "대한체육학회지 (Journal of the Korean Society of Sports Science)"
   year: 2026
   volume: 24
   issue: 1
   pages: "123-133"
+  date: "2026-03-20"
   link: https://doi.org/10.22997/jcses.2026.24.1.123
   kind: paper
   region: domestic
