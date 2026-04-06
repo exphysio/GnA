@@ -35,9 +35,6 @@ jobs:
           ruby-version: '3.2'
           bundler-cache: true
 
-      - name: Install dependencies
-        run: bundle install --verbose
-
       - name: Build Jekyll Site
         run: bundle exec jekyll build -V
 
