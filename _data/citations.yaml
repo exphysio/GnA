@@ -1,6 +1,21 @@
 # DO NOT EDIT, GENERATED AUTOMATICALLY
 
 # ── International papers ────────────────────────────────────────────────
+- id: doi:10.5114/jhk/217225 
+  title: "The Relationship between Training Load Indicators and Total Quality Recovery Scale during the Preseason Period in Collegiate Taekwondo Athletes"
+  authors:
+    - Chan-Ho Park
+    - Hyun Chul Jung
+  publisher: Journal of Human Kinetics
+  year: 2026
+  date: "2026-02-19"
+
+  link: https://doi.org/10.5114/jhk/217225 
+  kind: paper
+  region: international
+  status: published
+  image: "images/publications/human kinetics.jpg"
+
 - id: doi:10.3389/fpubh.2026.1776062
   title: "Differences in health literacy and health-promoting behaviors by gender and sport type in collegiate athletes"
   authors:
@@ -319,7 +334,6 @@
   status: online ahead of print
   image: "images/publications/Sports Medicine and Physical Fitness.jpg"
 
-# ── International papers ────────────────────────────────────────────────
 - id: doi:10.1016/j.jad.2026.121654
   title: "Association of the SPISE index with depression: comparison with anthropometric obesity indices and surrogate markers of insulin resistance"
   authors:
@@ -336,6 +350,24 @@
   image: "images/publications/Journal of Affective Disorders.gif"
 
 # ── Domestic papers (예시 자리, 나중에 채우세요) ───────────────────────────
+- id: doi:10.22997/jcses.2026.24.1.123
+  title: "건강한 성인의 성별에 따른 대퇴골 무릎 관절 연골 두께와 드롭랜딩 후 회복 반응 비교"
+  authors:
+    - 김무성
+    - 추민규
+    - 박찬호
+    - 정현철
+  publisher: "대한체육학회지"
+  year: 2026
+  volume: 24
+  issue: 1
+  pages: "123-133"
+  link: https://doi.org/10.22997/jcses.2026.24.1.123
+  kind: paper
+  region: domestic
+  status: published
+  image: "images/publications/대한체육학회지.png"
+
 - id: doi:10.24007/ajpess.2021.9.6.007
   title: "청소년 및 대학생 운동선수의 대퇴이두근/대퇴사두근 근력 비율: 체계적인 검토"
   authors:
