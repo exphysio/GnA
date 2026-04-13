@@ -1,6 +1,23 @@
 # DO NOT EDIT, GENERATED AUTOMATICALLY
 
 # ── International papers ────────────────────────────────────────────────
+- id: doi:10.1080/00222895.2026.2652266
+  title: "Higher Visual Reliance During Single-Leg Balance in Female Dancers: Traditional Center-of-Pressure and Time-to-Boundary Approaches"
+  authors:
+    - Seung-Hee Nam
+    - Min-ju Jeong
+    - Hyun Chul Jung
+    - Jung-Min Lee
+    - Kyung-Min Kim
+  publisher: Journal of Motor Behavior
+  year: 2026
+  date: "2026-04-10"
+  link: https://doi.org/10.1080/00222895.2026.2652266
+  kind: paper
+  region: international
+  status: published
+  image: "images/publications/motor behavior.webp"
+
 - id: doi:10.5114/jhk/217225 
   title: "The Relationship between Training Load Indicators and Total Quality Recovery Scale during the Preseason Period in Collegiate Taekwondo Athletes"
   authors:
