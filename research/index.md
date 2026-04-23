@@ -7,11 +7,6 @@ nav:
 ---
 
 # {% include icon.html icon="fa-solid fa-microscope" %}Publications
-<!-- 🔎 페이지 공통 검색: 한 번만 -->
-<div id="pubs-search" style="position:sticky;top:8px;background:#fff;padding:.5rem 0;z-index:10;">
-  {% include search-box.html %}
-  {% include search-info.html %}
-</div>
 Our group contributes to the literature across disciplines, with publications and conference presentations in domestic and international venues. We encourage student-led work and provide full support for submissions by M.S. and Ph.D. students, including first-author manuscripts and conference papers.
 
 {% include section.html %}
@@ -78,31 +73,6 @@ Our group contributes to the literature across disciplines, with publications an
   .citation .citation-body {
     flex: 1 1 auto !important;
     min-width: 0 !important;          /* 줄바꿈 안정화 */
-  }
-
-  /* 🌙 Dark mode: 검색 바 */
-  html[data-dark="true"] #pubs-search {
-    background: transparent !important;
-    box-shadow: none !important;
-    border-top: 0 !important;
-    border-bottom: 0 !important;
-  }
-  html[data-dark="true"] #pubs-search::before,
-  html[data-dark="true"] #pubs-search::after {
-    content: none !important;
-  }
-  html[data-dark="true"] .search,
-  html[data-dark="true"] .search * {
-    color: #fff !important;
-  }
-  html[data-dark="true"] input[type="search"],
-  html[data-dark="true"] input[type="text"] {
-    background: #2a2a2a !important;
-    color: #fff !important;
-    border: 1px solid #555 !important;
-  }
-  html[data-dark="true"] .search-info {
-    color: #bbb !important;
   }
 
   /* 🌙 Dark mode: Papers / Thesis 제목 흰색 */
