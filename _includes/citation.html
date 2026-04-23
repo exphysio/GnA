@@ -68,7 +68,10 @@
       {%- endcomment -%}
       {% assign has_publisher = citation.publisher %}
       {% assign has_date = citation.date %}
-      {% assign has_id = citation.kind != "thesis" and citation.id %}
+      {% assign has_id = false %}
+      {% if citation.kind != "thesis" and citation.id %}
+        {% assign has_id = true %}
+      {% endif %}
 
       {% if has_publisher or has_date or has_id %}
         <div class="citation-details">
