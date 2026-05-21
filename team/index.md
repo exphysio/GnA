@@ -139,6 +139,58 @@ nav:
 
   details{ border:none; background:none; box-shadow:none; padding:0; margin:0 0 1.25rem 0; }
   summary{ border:none; background:none; padding:0; margin:0; }
+
+  .student-group{
+    margin:18px 0 32px;
+  }
+  .student-group:last-child{
+    margin-bottom:8px;
+  }
+  .student-subhead{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    max-width:var(--grid-max);
+    margin:18px auto 14px;
+    color:#1c283a;
+    font-size:1.05rem;
+    font-weight:700;
+    line-height:1.35;
+  }
+  .student-subhead::before{
+    content:"";
+    width:6px;
+    height:22px;
+    border-radius:999px;
+    background:var(--accent);
+    flex:0 0 auto;
+  }
+  .student-count{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-width:28px;
+    height:24px;
+    padding:0 9px;
+    border-radius:999px;
+    background:#f1e7e1;
+    color:var(--accent);
+    font-size:.82rem;
+    font-weight:700;
+  }
+  .student-empty{
+    max-width:var(--grid-max);
+    margin:0 auto;
+    padding:16px 18px;
+    border:1px dashed #ddd;
+    border-radius:10px;
+    color:#777;
+    font-size:.95rem;
+    background:#fafafa;
+  }
+  html[data-dark="true"] .student-subhead{ color:#eee; }
+  html[data-dark="true"] .student-count{ background:rgba(255,255,255,.12); color:#f1d0bd; }
+  html[data-dark="true"] .student-empty{ background:#1b1b1b; border-color:rgba(255,255,255,.18); color:#bbb; }
 </style>
 
 <h2 style="font-weight:600; font-size:1.8rem; color:#333;">Current Students</h2>
@@ -146,26 +198,65 @@ nav:
 <!-- ✅ Ph.D. Students -->
 <details>
   <summary style="cursor:pointer; font-weight:400; font-size:1.2rem;">Ph.D. Students</summary>
-  <div class="team-cite">
-    {% assign phd = site.members | where: "role", "phd" | sort_natural: "path" %}
-    {% for m in phd %}
-      {% capture phd_desc -%}
-        {{ m.affiliation }}{% if m.interest %}<br/>{{ m.interest }}{% endif %}
-      {%- endcapture %}
-      {% include citation.html style="rich" title=m.name description=phd_desc image=m.image nolink=true %}
-    {% endfor %}
-  </div>
+  {% assign phd_completed = site.members | where_exp: "m", "m.role == 'phd' and m.coursework == 'completed'" | sort_natural: "path" %}
+  {% assign phd_in_progress = site.members | where_exp: "m", "m.role == 'phd' and m.coursework != 'completed'" | sort_natural: "path" %}
+
+  <section class="student-group">
+    <h3 class="student-subhead">Coursework Completed <span class="student-count">{{ phd_completed.size }}</span></h3>
+    {% if phd_completed.size > 0 %}
+      <div class="team-cite">
+        {% for m in phd_completed %}
+          {% capture phd_desc -%}
+            {{ m.affiliation }}{% if m.interest %}<br/>{{ m.interest }}{% endif %}
+          {%- endcapture %}
+          {% include citation.html style="rich" title=m.name description=phd_desc image=m.image nolink=true %}
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="student-empty">No students marked as coursework completed yet.</p>
+    {% endif %}
+  </section>
+
+  <section class="student-group">
+    <h3 class="student-subhead">Coursework In Progress <span class="student-count">{{ phd_in_progress.size }}</span></h3>
+    <div class="team-cite">
+      {% for m in phd_in_progress %}
+        {% capture phd_desc -%}
+          {{ m.affiliation }}{% if m.interest %}<br/>{{ m.interest }}{% endif %}
+        {%- endcapture %}
+        {% include citation.html style="rich" title=m.name description=phd_desc image=m.image nolink=true %}
+      {% endfor %}
+    </div>
+  </section>
 </details>
 
 <!-- ✅ M.S. Students -->
 <details>
   <summary style="cursor:pointer; font-weight:400; font-size:1.2rem;">M.S. Students</summary>
-  <div class="team-cite">
-    {% assign ms = site.members | where: "role", "ms" | sort_natural: "path" %}
-    {% for m in ms %}
-      {% include citation.html style="rich" title=m.name description=m.affiliation image=m.image nolink=true %}
-    {% endfor %}
-  </div>
+  {% assign ms_completed = site.members | where_exp: "m", "m.role == 'ms' and m.coursework == 'completed'" | sort_natural: "path" %}
+  {% assign ms_in_progress = site.members | where_exp: "m", "m.role == 'ms' and m.coursework != 'completed'" | sort_natural: "path" %}
+
+  <section class="student-group">
+    <h3 class="student-subhead">Coursework Completed <span class="student-count">{{ ms_completed.size }}</span></h3>
+    {% if ms_completed.size > 0 %}
+      <div class="team-cite">
+        {% for m in ms_completed %}
+          {% include citation.html style="rich" title=m.name description=m.affiliation image=m.image nolink=true %}
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="student-empty">No students marked as coursework completed yet.</p>
+    {% endif %}
+  </section>
+
+  <section class="student-group">
+    <h3 class="student-subhead">Coursework In Progress <span class="student-count">{{ ms_in_progress.size }}</span></h3>
+    <div class="team-cite">
+      {% for m in ms_in_progress %}
+        {% include citation.html style="rich" title=m.name description=m.affiliation image=m.image nolink=true %}
+      {% endfor %}
+    </div>
+  </section>
 </details>
 
 <h2 style="font-weight:600; font-size:1.8rem; color:#333;">Alumni</h2>
@@ -183,7 +274,7 @@ nav:
 
 <!-- ✅ M.S. Graduates -->
 <details>
-  <summary style="cursor:pointer; font-weight:400; font-size:1.2rem;">M.S. Students</summary>
+  <summary style="cursor:pointer; font-weight:400; font-size:1.2rem;">M.S. Graduates</summary>
   <div class="team-cite">
     {% assign ms_alumni = site.members | where: "role", "alumni" | where: "degree", "master" | sort_natural: "path" %}
     {% for m in ms_alumni %}
