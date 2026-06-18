@@ -304,10 +304,10 @@ nav:
 <h2 style="font-weight:600; font-size:1.8rem; color:#333;">Alumni</h2>
 
 <!-- ✅ Ph.D. Graduates -->
+{% assign phd_alumni = site.members | where: "role", "alumni" | where: "degree", "phd" | sort_natural: "path" %}
 <details>
-  <summary style="cursor:pointer; font-weight:400; font-size:1.2rem;">Ph.D. Graduates</summary>
+  <summary style="cursor:pointer; font-weight:400; font-size:1.2rem;">Ph.D. Graduates <span class="student-count">{{ phd_alumni.size }}</span></summary>
   <div class="team-cite">
-    {% assign phd_alumni = site.members | where: "role", "alumni" | where: "degree", "phd" | sort_natural: "path" %}
     {% for m in phd_alumni %}
       {% capture phd_alumni_desc -%}{% if m.program %}{{ m.program }}<br/>{% endif %}{{ m.affiliation }}{% if m.interest %}<br/>{{ m.interest }}{% endif %}{%- endcapture %}
       {% include citation.html style="rich" title=m.name description=phd_alumni_desc image=m.image nolink=true %}
@@ -316,10 +316,10 @@ nav:
 </details>
 
 <!-- ✅ M.S. Graduates -->
+{% assign ms_alumni = site.members | where: "role", "alumni" | where: "degree", "master" | sort_natural: "path" %}
 <details>
-  <summary style="cursor:pointer; font-weight:400; font-size:1.2rem;">M.S. Graduates</summary>
+  <summary style="cursor:pointer; font-weight:400; font-size:1.2rem;">M.S. Graduates <span class="student-count">{{ ms_alumni.size }}</span></summary>
   <div class="team-cite">
-    {% assign ms_alumni = site.members | where: "role", "alumni" | where: "degree", "master" | sort_natural: "path" %}
     {% for m in ms_alumni %}
       {% capture ms_alumni_desc -%}{% if m.program %}{{ m.program }}<br/>{% endif %}{{ m.affiliation }}{% if m.interest %}<br/>{{ m.interest }}{% endif %}{%- endcapture %}
       {% include citation.html style="rich" title=m.name description=ms_alumni_desc image=m.image nolink=true %}
