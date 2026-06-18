@@ -160,11 +160,11 @@ nav:
   }
 
   .team-cite .ri-block ul.interest{
-    display:block;
-    width:fit-content;
-    max-width:calc(100% - 24px);
+    display:inline-block;
+    width:auto;
+    max-width:100%;
     margin:var(--ri-gap) auto 0;
-    padding-left:1.25em;
+    padding-left:1.1em;
   }
   .team-cite .ri-block ul.interest li{
     overflow-wrap:normal;
