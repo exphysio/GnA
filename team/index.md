@@ -97,7 +97,7 @@ nav:
     width:100%;
     text-align:center;
     min-width:0;
-    overflow-wrap:anywhere;
+    overflow-wrap:break-word;
     word-break:normal;
   }
 
@@ -110,10 +110,23 @@ nav:
   }
 
   .team-cite .affiliation-text{
-    margin:6px 0 12px;
-    color:#555;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:3px;
+    margin:6px auto 14px;
+    max-width:calc(100% - 16px);
+    line-height:1.3;
+  }
+  .team-cite .program-school{
+    color:#6b7280;
+    font-size:.86rem;
+    font-weight:500;
+  }
+  .team-cite .program-major{
+    color:#1c283a;
     font-size:.95rem;
-    line-height:1.35;
+    font-weight:700;
   }
 
   /* ===== 섹터(블록) 여백 규칙 ===== */
@@ -139,7 +152,8 @@ nav:
     margin: var(--li-gap) 0;
     line-height: var(--li-line);
     white-space:normal;
-    overflow-wrap:anywhere;
+    text-align:left !important;
+    overflow-wrap:break-word;
     word-break:normal;
   }
 
@@ -147,7 +161,8 @@ nav:
   html[data-dark="true"] .team-cite .citation-container{ background:#1b1b1b; border-color:rgba(255,255,255,.15); box-shadow:none; }
   html[data-dark="true"] .team-cite .citation-title{ color:#fff !important; }
   html[data-dark="true"] .team-cite .citation-description{ color:#ddd !important; }
-  html[data-dark="true"] .team-cite .affiliation-text{ color:#bbb !important; }
+  html[data-dark="true"] .team-cite .program-school{ color:#b8b8b8 !important; }
+  html[data-dark="true"] .team-cite .program-major{ color:#f2f2f2 !important; }
   html[data-dark="true"] .team-cite .label,
   html[data-dark="true"] .team-cite ul.interest{ color:#ddd !important; }
 
@@ -359,8 +374,14 @@ nav:
 
     const chunks = [];
     if (affiliation.length){
+      const programHtml = affiliation
+        .map((x, i) => {
+          const className = affiliation.length > 1 && i === 0 ? 'program-school' : 'program-major';
+          return `<div class="${className}">${x}</div>`;
+        })
+        .join('');
       chunks.push(
-        '<div class="affiliation-text">' + affiliation.join('<br/>') + '</div>'
+        '<div class="affiliation-text">' + programHtml + '</div>'
       );
     }
     if (edu.length){
