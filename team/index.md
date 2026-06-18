@@ -307,24 +307,30 @@ nav:
 {% assign phd_alumni = site.members | where: "role", "alumni" | where: "degree", "phd" | sort_natural: "path" %}
 <details>
   <summary style="cursor:pointer; font-weight:400; font-size:1.2rem;">Ph.D. Graduates</summary>
-  <div class="team-cite">
-    {% for m in phd_alumni %}
-      {% capture phd_alumni_desc -%}{% if m.program %}{{ m.program }}<br/>{% endif %}{{ m.affiliation }}{% if m.interest %}<br/>{{ m.interest }}{% endif %}{%- endcapture %}
-      {% include citation.html style="rich" title=m.name description=phd_alumni_desc image=m.image nolink=true %}
-    {% endfor %}
-  </div>
+  <section class="student-group">
+    <h3 class="student-subhead">Ph.D. Graduates <span class="student-count">{{ phd_alumni.size }}</span></h3>
+    <div class="team-cite">
+      {% for m in phd_alumni %}
+        {% capture phd_alumni_desc -%}{% if m.program %}{{ m.program }}<br/>{% endif %}{{ m.affiliation }}{% if m.interest %}<br/>{{ m.interest }}{% endif %}{%- endcapture %}
+        {% include citation.html style="rich" title=m.name description=phd_alumni_desc image=m.image nolink=true %}
+      {% endfor %}
+    </div>
+  </section>
 </details>
 
 <!-- ✅ M.S. Graduates -->
 {% assign ms_alumni = site.members | where: "role", "alumni" | where: "degree", "master" | sort_natural: "path" %}
 <details>
   <summary style="cursor:pointer; font-weight:400; font-size:1.2rem;">M.S. Graduates</summary>
-  <div class="team-cite">
-    {% for m in ms_alumni %}
-      {% capture ms_alumni_desc -%}{% if m.program %}{{ m.program }}<br/>{% endif %}{{ m.affiliation }}{% if m.interest %}<br/>{{ m.interest }}{% endif %}{%- endcapture %}
-      {% include citation.html style="rich" title=m.name description=ms_alumni_desc image=m.image nolink=true %}
-    {% endfor %}
-  </div>
+  <section class="student-group">
+    <h3 class="student-subhead">M.S. Graduates <span class="student-count">{{ ms_alumni.size }}</span></h3>
+    <div class="team-cite">
+      {% for m in ms_alumni %}
+        {% capture ms_alumni_desc -%}{% if m.program %}{{ m.program }}<br/>{% endif %}{{ m.affiliation }}{% if m.interest %}<br/>{{ m.interest }}{% endif %}{%- endcapture %}
+        {% include citation.html style="rich" title=m.name description=ms_alumni_desc image=m.image nolink=true %}
+      {% endfor %}
+    </div>
+  </section>
 </details>
 
 <script>
