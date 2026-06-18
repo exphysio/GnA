@@ -11,6 +11,7 @@ nav:
   :root{
     --grid-max: 1080px;
     --card-min: 260px;
+    --card-max: 340px;
     --card-gap: 28px;          /* 카드-카드 간격 */
     --card-pad: 18px;          /* 카드 내부 패딩 */
     --card-radius: 12px;
@@ -33,7 +34,8 @@ nav:
   /* ===== 카드 그리드 ===== */
   .team-cite{
     display:grid !important;
-    grid-template-columns:repeat(auto-fit, minmax(var(--card-min), 1fr));
+    grid-template-columns:repeat(auto-fill, minmax(var(--card-min), var(--card-max)));
+    justify-content:start;
     gap:var(--card-gap);
     max-width:var(--grid-max);
     margin:0 auto;
