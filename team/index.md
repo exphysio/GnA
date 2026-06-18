@@ -10,8 +10,8 @@ nav:
   /* ===== 전역 값 (숫자만 바꾸면 전체 반영) ===== */
   :root{
     --grid-max: 1080px;
-    --card-min: 260px;
-    --card-max: 300px;
+    --card-min: 240px;
+    --card-max: 280px;
     --card-gap: 28px;          /* 카드-카드 간격 */
     --card-pad: 18px;          /* 카드 내부 패딩 */
     --card-radius: 12px;
