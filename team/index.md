@@ -98,7 +98,7 @@ nav:
     line-height:1.25;
   }
 
-  .team-cite .program-text{
+  .team-cite .affiliation-text{
     margin:6px 0 12px;
     color:#555;
     font-size:.95rem;
@@ -131,7 +131,7 @@ nav:
   html[data-dark="true"] .team-cite .citation-container{ background:#1b1b1b; border-color:rgba(255,255,255,.15); box-shadow:none; }
   html[data-dark="true"] .team-cite .citation-title{ color:#fff !important; }
   html[data-dark="true"] .team-cite .citation-description{ color:#ddd !important; }
-  html[data-dark="true"] .team-cite .program-text{ color:#bbb !important; }
+  html[data-dark="true"] .team-cite .affiliation-text{ color:#bbb !important; }
   html[data-dark="true"] .team-cite .label,
   html[data-dark="true"] .team-cite ul.interest{ color:#ddd !important; }
 
@@ -214,10 +214,7 @@ nav:
     {% if phd_completed.size > 0 %}
       <div class="team-cite">
         {% for m in phd_completed %}
-          {% capture phd_desc -%}
-            {% if m.program %}Program: {{ m.program }}<br/>{% endif %}
-            {{ m.affiliation }}{% if m.interest %}<br/>{{ m.interest }}{% endif %}
-          {%- endcapture %}
+          {% capture phd_desc -%}{% if m.program %}{{ m.program }}<br/>{% endif %}{{ m.affiliation }}{% if m.interest %}<br/>{{ m.interest }}{% endif %}{%- endcapture %}
           {% include citation.html style="rich" title=m.name description=phd_desc image=m.image nolink=true %}
         {% endfor %}
       </div>
@@ -230,10 +227,7 @@ nav:
     <h3 class="student-subhead">Ph.D. Students <span class="student-count">{{ phd_students.size }}</span></h3>
     <div class="team-cite">
       {% for m in phd_students %}
-        {% capture phd_desc -%}
-          {% if m.program %}Program: {{ m.program }}<br/>{% endif %}
-          {{ m.affiliation }}{% if m.interest %}<br/>{{ m.interest }}{% endif %}
-        {%- endcapture %}
+        {% capture phd_desc -%}{% if m.program %}{{ m.program }}<br/>{% endif %}{{ m.affiliation }}{% if m.interest %}<br/>{{ m.interest }}{% endif %}{%- endcapture %}
         {% include citation.html style="rich" title=m.name description=phd_desc image=m.image nolink=true %}
       {% endfor %}
     </div>
@@ -249,10 +243,7 @@ nav:
     <h3 class="student-subhead">M.S. Students <span class="student-count">{{ ms_students.size }}</span></h3>
     <div class="team-cite">
       {% for m in ms_students %}
-        {% capture ms_desc -%}
-          {% if m.program %}Program: {{ m.program }}<br/>{% endif %}
-          {{ m.affiliation }}{% if m.interest %}<br/>{{ m.interest }}{% endif %}
-        {%- endcapture %}
+        {% capture ms_desc -%}{% if m.program %}{{ m.program }}<br/>{% endif %}{{ m.affiliation }}{% if m.interest %}<br/>{{ m.interest }}{% endif %}{%- endcapture %}
         {% include citation.html style="rich" title=m.name description=ms_desc image=m.image nolink=true %}
       {% endfor %}
     </div>
@@ -269,10 +260,7 @@ nav:
     {% if undergraduate_researchers.size > 0 %}
       <div class="team-cite">
         {% for m in undergraduate_researchers %}
-          {% capture undergraduate_desc -%}
-            {% if m.program %}Program: {{ m.program }}<br/>{% endif %}
-            {{ m.affiliation }}{% if m.interest %}<br/>{{ m.interest }}{% endif %}
-          {%- endcapture %}
+          {% capture undergraduate_desc -%}{% if m.program %}{{ m.program }}<br/>{% endif %}{{ m.affiliation }}{% if m.interest %}<br/>{{ m.interest }}{% endif %}{%- endcapture %}
           {% include citation.html style="rich" title=m.name description=undergraduate_desc image=m.image nolink=true %}
         {% endfor %}
       </div>
@@ -290,10 +278,7 @@ nav:
   <div class="team-cite">
     {% assign phd_alumni = site.members | where: "role", "alumni" | where: "degree", "phd" | sort_natural: "path" %}
     {% for m in phd_alumni %}
-      {% capture phd_alumni_desc -%}
-        {% if m.program %}Program: {{ m.program }}<br/>{% endif %}
-        {{ m.affiliation }}{% if m.interest %}<br/>{{ m.interest }}{% endif %}
-      {%- endcapture %}
+      {% capture phd_alumni_desc -%}{% if m.program %}{{ m.program }}<br/>{% endif %}{{ m.affiliation }}{% if m.interest %}<br/>{{ m.interest }}{% endif %}{%- endcapture %}
       {% include citation.html style="rich" title=m.name description=phd_alumni_desc image=m.image nolink=true %}
     {% endfor %}
   </div>
@@ -305,10 +290,7 @@ nav:
   <div class="team-cite">
     {% assign ms_alumni = site.members | where: "role", "alumni" | where: "degree", "master" | sort_natural: "path" %}
     {% for m in ms_alumni %}
-      {% capture ms_alumni_desc -%}
-        {% if m.program %}Program: {{ m.program }}<br/>{% endif %}
-        {{ m.affiliation }}{% if m.interest %}<br/>{{ m.interest }}{% endif %}
-      {%- endcapture %}
+      {% capture ms_alumni_desc -%}{% if m.program %}{{ m.program }}<br/>{% endif %}{{ m.affiliation }}{% if m.interest %}<br/>{{ m.interest }}{% endif %}{%- endcapture %}
       {% include citation.html style="rich" title=m.name description=ms_alumni_desc image=m.image nolink=true %}
     {% endfor %}
   </div>
@@ -330,14 +312,14 @@ nav:
     const parts = raw.split(/<br\s*\/?>/i).map(s => s.trim()).filter(Boolean);
     if (!parts.length) return;
 
-    const program = [];
+    const affiliation = [];
     const edu = [];
     const ri  = [];
     let mode = '';
 
     parts.forEach(line => {
       let m = line.match(/^Program\s*:?\s*(.*)$/i);
-      if (m){ mode = 'program'; if (m[1]) program.push(m[1]); return; }
+      if (m){ mode = 'affiliation'; if (m[1]) affiliation.push(m[1]); return; }
 
       m = line.match(/^Education\s*:?\s*(.*)$/i);
       if (m){ mode = 'edu'; if (m[1]) edu.push(m[1]); return; }
@@ -349,20 +331,22 @@ nav:
         return;
       }
 
-      if (mode === 'program'){ program.push(line); return; }
+      if (mode === 'affiliation'){ affiliation.push(line); return; }
       if (mode === 'edu'){ edu.push(line); return; }
       if (mode === 'ri'){
         const segs = line.split(/\s*,\s*|\s*·\s*/).filter(Boolean);
         ri.push(...(segs.length ? segs : [line]));
+        return;
       }
+      affiliation.push(line);
     });
 
-    if (!program.length && !edu.length && !ri.length) return;
+    if (!affiliation.length && !edu.length && !ri.length) return;
 
     const chunks = [];
-    if (program.length){
+    if (affiliation.length){
       chunks.push(
-        '<div class="program-text">' + program.join('<br/>') + '</div>'
+        '<div class="affiliation-text">' + affiliation.join('<br/>') + '</div>'
       );
     }
     if (edu.length){
