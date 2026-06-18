@@ -159,6 +159,14 @@ nav:
     word-break:normal;
   }
 
+  .team-cite .ri-block ul.interest{
+    display:block;
+    width:max-content;
+    max-width:calc(100% - 8px);
+    margin:var(--ri-gap) auto 0;
+    padding-left:1.25em;
+  }
+
   /* ===== 다크모드 ===== */
   html[data-dark="true"] .team-cite .citation-container{ background:#1b1b1b; border-color:rgba(255,255,255,.15); box-shadow:none; }
   html[data-dark="true"] .team-cite .citation-title{ color:#fff !important; }
