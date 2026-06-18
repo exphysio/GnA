@@ -47,6 +47,7 @@ nav:
     padding:var(--card-pad);
     background:#fff;
     text-align:center;
+    overflow:visible;
   }
 
   /* ===== 카드 내부 스택 ===== */
@@ -57,6 +58,13 @@ nav:
     gap:12px;
     padding:0; margin:0 !important; border:0; box-shadow:none;
     text-align:center;
+    overflow:visible;
+  }
+
+  .team-cite .citation-text{
+    min-width:0;
+    width:100%;
+    overflow:visible;
   }
 
   /* ===== 사진 (3:4) ===== */
@@ -88,6 +96,9 @@ nav:
     margin:0 !important;
     width:100%;
     text-align:center;
+    min-width:0;
+    overflow-wrap:anywhere;
+    word-break:normal;
   }
 
   /* ===== 라벨 ===== */
@@ -121,10 +132,15 @@ nav:
     padding: 0 0 0 1.1em;     /* 불릿 들여쓰기 */
     display: inline-block;    /* 블록 자체는 가운데 */
     text-align: left;         /* 항목은 좌정렬(줄바꿈 정렬 예쁘게) */
+    max-width:100%;
+    box-sizing:border-box;
   }
   .team-cite ul.interest li{
     margin: var(--li-gap) 0;
     line-height: var(--li-line);
+    white-space:normal;
+    overflow-wrap:anywhere;
+    word-break:normal;
   }
 
   /* ===== 다크모드 ===== */
@@ -251,24 +267,22 @@ nav:
 </details>
 
 <!-- Undergraduate Researchers -->
+{% assign undergraduate_researchers = site.members | where_exp: "m", "m.role == 'undergraduate' or m.role == 'undergrad'" | sort_natural: "path" %}
+{% if undergraduate_researchers.size > 0 %}
 <details>
   <summary style="cursor:pointer; font-weight:400; font-size:1.2rem;">Undergraduate Researchers</summary>
-  {% assign undergraduate_researchers = site.members | where_exp: "m", "m.role == 'undergraduate' or m.role == 'undergrad'" | sort_natural: "path" %}
 
   <section class="student-group">
     <h3 class="student-subhead">Undergraduate Researchers <span class="student-count">{{ undergraduate_researchers.size }}</span></h3>
-    {% if undergraduate_researchers.size > 0 %}
-      <div class="team-cite">
-        {% for m in undergraduate_researchers %}
-          {% capture undergraduate_desc -%}{% if m.program %}{{ m.program }}<br/>{% endif %}{{ m.affiliation }}{% if m.interest %}<br/>{{ m.interest }}{% endif %}{%- endcapture %}
-          {% include citation.html style="rich" title=m.name description=undergraduate_desc image=m.image nolink=true %}
-        {% endfor %}
-      </div>
-    {% else %}
-      <p class="student-empty">No undergraduate researchers listed yet.</p>
-    {% endif %}
+    <div class="team-cite">
+      {% for m in undergraduate_researchers %}
+        {% capture undergraduate_desc -%}{% if m.program %}{{ m.program }}<br/>{% endif %}{{ m.affiliation }}{% if m.interest %}<br/>{{ m.interest }}{% endif %}{%- endcapture %}
+        {% include citation.html style="rich" title=m.name description=undergraduate_desc image=m.image nolink=true %}
+      {% endfor %}
+    </div>
   </section>
 </details>
+{% endif %}
 
 <h2 style="font-weight:600; font-size:1.8rem; color:#333;">Alumni</h2>
 
