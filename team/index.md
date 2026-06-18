@@ -166,6 +166,11 @@ nav:
     margin:var(--ri-gap) auto 0;
     padding-left:1.25em;
   }
+  .team-cite .ri-block ul.interest li{
+    overflow-wrap:normal;
+    word-break:normal;
+    hyphens:none;
+  }
 
   /* ===== 다크모드 ===== */
   html[data-dark="true"] .team-cite .citation-container{ background:#1b1b1b; border-color:rgba(255,255,255,.15); box-shadow:none; }
