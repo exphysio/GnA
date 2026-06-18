@@ -11,7 +11,7 @@ nav:
   :root{
     --grid-max: 1080px;
     --card-min: 260px;
-    --card-max: 340px;
+    --card-max: 300px;
     --card-gap: 28px;          /* 카드-카드 간격 */
     --card-pad: 18px;          /* 카드 내부 패딩 */
     --card-radius: 12px;
