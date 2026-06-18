@@ -161,8 +161,8 @@ nav:
 
   .team-cite .ri-block ul.interest{
     display:block;
-    width:max-content;
-    max-width:calc(100% - 8px);
+    width:fit-content;
+    max-width:calc(100% - 24px);
     margin:var(--ri-gap) auto 0;
     padding-left:1.25em;
   }
